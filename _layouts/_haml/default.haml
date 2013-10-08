@@ -1,23 +1,34 @@
 !!!
 %html
   %head
-    %meta{:charset => 'utf-8'}
-    %meta{:'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}
-    %title='{{ page.title }}'
-    %meta{:name => 'viewport', :content => 'width=device-width'}
+    %meta{:charset => "utf-8"}
+    %meta{:'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
+    %title="{{ page.title }}"
+    %meta{:name => "viewport", :content => "width=device-width"}
 
-    <!-- syntax highlighting CSS -->
-    %link{:rel => 'stylesheet', :href => '/css/syntax.css'}
+    <!-- jQuery -->
+    %script{:type => "text/javascript", :src => "/assets/js/jquery-2.0.3.min.js"}
 
-    <!-- Custom CSS -->
-    %link{:rel => 'stylesheet', :href => '/css/main.css'}
+    <!-- Bootstrap -->
+    %link{:rel => "stylesheet", :href => "/assets/css/bootstrap.css"}
+    %script{:type => "text/javascript", :src => "/assets/js/bootstrap.min.js"}
+
+    <!-- CSS -->
+    %link{:rel => "stylesheet", :href => "/assets/css/main.css"}
+    %link{:rel => "stylesheet", :href => "/assets/css/font-awesome.css"}
+    %script{:type => "text/javascript", :src => "/assets/js/prefixfree.min.js"}
+
+    <!-- Fonts -->
+    %script{:type => "text/javascript", :src => "//use.typekit.net/fgl8dse.js"}
+    %script{:type => "text/javascript"} try{Typekit.load();}catch(e){}
 
     %body
-      %div.site
-        %div.header
-          %h1.title
-            %a{:href => '/'} {{ site.name }}
-          %a.extra{:href => '/'} home
+      %div.container
+        %div.row
+          %div.header.col-xs-12.col-sm-12.col-md-12.col-lg-12
+            %h1.title
+              %a{:href => "/"} {{ site.name }}
+            %a.extra{:href => "/"} home
 
         {{ content }}
 
@@ -29,5 +40,5 @@
               you@example.com
           %div.contact
             %p
-              %a{:href => 'https://github.com/yourusername'} github.com/yourusername<br />
-              %a{:href => 'https://twitter.com/yourusername'} twitter.com/yourusername<br />
+              %a{:href => "https://github.com/yourusername"} github.com/yourusername<br />
+              %a{:href => "https://twitter.com/yourusername"} twitter.com/yourusername<br />

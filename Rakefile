@@ -1,3 +1,4 @@
+# From https://gist.github.com/agelber/5977827
 # Rake tasks to parse haml layouts, includes and index files and sass files for jekyll
 # Assumes that the haml files are in (_layouts|_includes)/_haml
 # and the sass files are in css/_sass

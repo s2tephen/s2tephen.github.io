@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: bold;
+}
+
+a {
+  color: #FF9809;
+  border-bottom: 1px dotted #ccc;
+  transition: color .3s;
+  &:hover {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+p {
+  font-size: 1.6em;
+}
