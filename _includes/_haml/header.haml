@@ -1,0 +1,23 @@
+%div.row
+  %div.header.col-xs-12.col-sm-12.col-md-12.col-lg-12
+    %nav.navbar.navbar-default{:role => "navigation"}
+      %div.navbar-header
+        %button.navbar-toggle{:type => "button", :'data-toggle' => "collapse", :'data-target' => ".navbar-ex1-collapse"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "#"} {{ site.name }}
+
+      %div.collapse.navbar-collapse.navbar-ex1-collapse
+        %ul.nav.navbar-nav
+          %li
+            %a.active{:href => "/"} About
+          %li
+            %a{:href => "/"} Blog
+          %li
+            %a{:href => "/"} Work
+          %li
+            %a{:href => "/assets/stephen-suen-resume.pdf"} Résumé
+          %li
+            %a{:href => "#contact", :'data-toggle' => "modal"} Contact

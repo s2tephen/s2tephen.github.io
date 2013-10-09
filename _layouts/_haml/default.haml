@@ -24,21 +24,10 @@
 
     %body
       %div.container
-        %div.row
-          %div.header.col-xs-12.col-sm-12.col-md-12.col-lg-12
-            %h1.title
-              %a{:href => "/"} {{ site.name }}
-            %a.extra{:href => "/"} home
+        {% include header.html %}
 
         {{ content }}
 
-        %class.footer
-          %div.contact
-            %p
-              Your Name<br />
-              What You Are<br />
-              you@example.com
-          %div.contact
-            %p
-              %a{:href => "https://github.com/yourusername"} github.com/yourusername<br />
-              %a{:href => "https://twitter.com/yourusername"} twitter.com/yourusername<br />
+        {% include footer.html %}
+
+        {% include contact.html %}

@@ -19,30 +19,10 @@
     <script type='text/javascript'>try{Typekit.load();}catch(e){}</script>
     <body>
       <div class='container'>
-        <div class='row'>
-          <div class='header col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-            <h1 class='title'>
-              <a href='/'>{{ site.name }}</a>
-            </h1>
-            <a class='extra' href='/'>home</a>
-          </div>
-        </div>
+        {% include header.html %}
         {{ content }}
-        <class class='footer'>
-          <div class='contact'>
-            <p>
-              Your Name<br />
-              What You Are<br />
-              you@example.com
-            </p>
-          </div>
-          <div class='contact'>
-            <p>
-              <a href='https://github.com/yourusername'>github.com/yourusername<br /></a>
-              <a href='https://twitter.com/yourusername'>twitter.com/yourusername<br /></a>
-            </p>
-          </div>
-        </class>
+        {% include footer.html %}
+        {% include contact.html %}
       </div>
     </body>
   </head>

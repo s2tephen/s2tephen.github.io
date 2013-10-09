@@ -15,3 +15,53 @@ a {
 p {
   font-size: 1.6em;
 }
+
+.title {
+  font-size: 3.2em;
+  font-weight: bold;
+}
+
+.header {
+  .navbar {
+    border: 0;
+    border-bottom: 1px solid #e6e6e6;
+    background: none;
+    a {
+      border-bottom: 0;
+      font-size: 1.4em;
+      &.navbar-brand {
+        font-weight: bold;
+        padding-left: 0;
+        color: #999;
+        &:hover {
+          color: #FF9809;
+        }
+      }
+    }
+    .nav {
+      li {
+        a {
+          color: #999;
+          &:hover {
+            color: #FF9809;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-open, .modal-open .navbar-fixed-top {
+  margin-right: 0 !important;
+  .modal-content {
+    box-shadow: none;
+    .modal-body {
+      div {
+        display: inline-block;
+        margin-left: 15px;
+        position: absolute;
+        top: 22px;
+      }
+    }
+  }
+}
