@@ -1,0 +1,11 @@
+---
+layout: default
+title: Stephen Suen
+---
+
+{% for post in site.posts %}
+  <p>
+    {{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a><br />
+    {{ post.excerpt }}
+  </p>
+{% endfor %}

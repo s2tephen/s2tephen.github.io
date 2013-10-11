@@ -1,5 +1,4 @@
 name: Stephen Suen
-markdown: redcarpet
 pygments: true
 exclude: ["vendor"]
 permalink: /:categories/:title/

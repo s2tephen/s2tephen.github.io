@@ -4,7 +4,20 @@ layout: default
 %div.row
   %div.main.col-xs-12.col-sm-12.col-md-12.col-lg-12
     %h2.title {{ page.title }}
-    %p.meta {{ page.date | date_to_string }}
+    %h3.subtitle {{ page.subtitle }}
+    %p.meta {{ page.date | date: "%B %-d, %Y" }}
 
     %div.post
       {{ content }}
+      {% if page.footnotes %}
+      <hr class="visible-xs" />
+      {% for footnote in page.footnotes %}
+      <p class="footnote" id="fn-{{ forloop.index }}"><span>{{ forloop.index }}.</span> {{ footnote }} <a href="#fnref-{{ forloop.index }}">↩</a></p>
+      {% endfor %}
+      {% endif %}
+
+{% if page.fancy %}
+%script{:src => '/assets/js/jquery.debouncedresize.js'}
+%script{:src => '/assets/js/jquery.throttledresize.js'}
+%script{:src => '/assets/js/postprod.js'}
+{% endif %}
