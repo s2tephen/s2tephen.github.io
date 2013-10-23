@@ -2,8 +2,8 @@
  * Reformats post DOM for fancy Verge-esque layouts
  * while minimizing custom markup within Markdown.
  *
- * DOM elements follow five general layouts: basic,
- * full, left, right, split. In the diagrams below:
+ * DOM elements follow seven general layouts: basic,
+ * full, left, right, footnote, caption, split.
  * c = columns (Bootstrap defaults to 12)
  * x = main content (usually text)
  * s = side content (for left/right)
@@ -20,9 +20,18 @@
  * c c c c c c c c c c c c
  *   s s s x x x x x x
  *
- * Right (vertical images, quotes, footnotes)
+ * Right (vertical images, quotes)
  * c c c c c c c c c c c c
  *     x x x x x x s s s
+ *
+ * Footnote (footnotes)
+ * c c c c c c c c c c c c
+ *     x x x x x x x x s s
+ *
+ * Caption (image + caption)
+ * c c c c c c c c c c c c
+ * s s x x x x x x x x
+ *
  * Split (usually image + image)
  * c c c c c c c c c c c c
  * x x x x x x s s s s s s
@@ -59,6 +68,21 @@
     jqo_main.parent().append(jqo_side);
   }
 
+  // takes two jQuery objects and applies "footnote" style
+  var setFootnote = function(jqo_main, jqo_side) {
+    jqo_side.removeClass('col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2')
+        .addClass('col-sm-2 col-md-2 col-lg-2');
+    jqo_main.parent().append(jqo_side);
+  }
+
+  // takes two jQuery objects and applies "caption" style
+  var setCaption = function(jqo_main, jqo_side) {
+    jqo_main.removeClass('col-sm-offset-2 col-md-offset-2 col-lg-offset-2')
+    jqo_side.removeClass('col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2')
+        .addClass('col-sm-2 col-md-2 col-lg-2');
+    jqo_main.parent().prepend(jqo_side);
+  }
+
   // takes two jQuery objects and applies "split" style
   var setSplit = function(jqo_main, jqo_side) {
     jqo_main.removeClass('col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2')
@@ -69,16 +93,21 @@
   }
 
   // lays footnotes on the page depending on viewport
-  // non-mobile: inline "right" footnotes (Grantland)
+  // non-mobile: inline right footnotes (Grantland)
   // mobile: all footnotes in a list at the bottom
   var layFootnotes = function() {
     if ($(window).width() > 767) {
       $('.post a[href^="#fn-"]').each(function(index) {
         // make footnote inline and move to relevant row
         var footnote = $('#fn-' + (index + 1));
-        setRight($(this).parent(), footnote);
+        if ($(this).parent().is('li')) {
+          setFootnote($(this).parents('.post ul'), footnote);
+        }
+        else {
+          setFootnote($(this).parent(), footnote);
+        }
         // recalculate vertical offset (consider font size)
-        var y = $(this).offset().top - footnote.offset().top + 1;
+        var y = $(this).offset().top - footnote.offset().top + 2;
         footnote.css('top', y);
       });
     }
@@ -87,8 +116,26 @@
     }
   }
 
+  // lays captions on the page depending on viewport
+  // non-mobile: inline left captions (Medium)
+  // mobile: caption below photo
+  var layCaptions = function() {
+    $('.caption').remove();
+    $('.post img:not([class])').each(function(index) {
+      if ($(this).attr('alt')) {
+        var caption = '<p class="caption">' + $(this).attr('alt') + '</p>';
+        $(this).parent().append(caption);
+      }
+    });
+    if ($(window).width() > 767) {
+      $('.caption').each(function(index) {
+        setCaption($(this).parent(), $(this));
+      });
+    }
+  }
+
   // row-ify all paragraphs
-  $('.post > p, .post .highlight, .post blockquote').addClass('col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2')
+  $('.post > p, .post .highlight, .post blockquote, .post ul').addClass('col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2')
                                                     .wrap('<div class="row"></div>');
   
   // handle images and blockquotes
@@ -106,8 +153,10 @@
   });
 
   layFootnotes();
+  layCaptions();
 
   // adjust on window resize
   // TODO: improve performance
   $(window).on("throttledresize", layFootnotes);
+  $(window).on("throttledresize", layCaptions);
 })();

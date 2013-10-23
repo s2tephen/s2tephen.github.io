@@ -1,3 +1,5 @@
+{% assign current = page.url | downcase | split: '/' %}
+
 %div.row
   %div.header.col-xs-12.col-sm-12.col-md-12.col-lg-12
     %nav.navbar.navbar-default{:role => "navigation"}
@@ -12,11 +14,23 @@
       %div.collapse.navbar-collapse.navbar-ex1-collapse
         %ul.nav.navbar-nav
           %li
+            {% if current[1] == 'index.html' %}
             %a.active{:href => "/"} About
+            {% else %}
+            %a{:href => "/"} About
+            {% endif %}
           %li
+            {% if current[1] == 'blog' %}
+            %a.active{:href => "/blog"} Blog
+            {% else %}
             %a{:href => "/blog"} Blog
+            {% endif %}
           %li
-            %a{:href => "/"} Work
+            {% if current[1] == 'work' %}
+            %a.active{:href => "/work"} Work
+            {% else %}
+            %a{:href => "/work"} Work
+            {% endif %}
           %li
             %a{:href => "/assets/stephen-suen-resume.pdf"} Résumé
           %li

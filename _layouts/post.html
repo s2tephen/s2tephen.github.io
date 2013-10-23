@@ -5,16 +5,52 @@ layout: default
   <div class='main col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     <h2 class='title'>{{ page.title }}</h2>
     <h3 class='subtitle'>{{ page.subtitle }}</h3>
-    <p class='meta'>{{ page.date | date: "%B %-d, %Y" }}</p>
+    <div class='row'>
+      <div class='meta col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+        <p class='pull-left hidden-xs'>
+          Posted on {{ page.date | date: "%B %-d, %Y" }} in
+          {% for tag in page.tags %}
+          {% if forloop.last %}
+          <span class="tag">{{ tag | remove: ',' }}</span>
+          {% else %}
+          <span class="tag">{{ tag | remove: ',' }}</span>,
+          {% endif %}
+          {% endfor %}
+        </p>
+        <p class='pull-left visible-xs'>
+          Posted on {{ page.date | date: "%B %-d, %Y" }}
+        </p>
+        <div class='social pull-right'>
+          <a href='#disqus_thread'>
+            <i class='icon-comments'></i>
+            <span class='hidden-xs'>Comment</span>
+          </a>
+          <a href='https://twitter.com/intent/tweet?url=http://stephensuen.com{{ page.url }}'>
+            <i class='icon-twitter'></i>
+            <span class='hidden-xs'>Tweet</span>
+          </a>
+          <a href='http://www.facebook.com/sharer.php?u=http://stephensuen.com{{ page.url }}'>
+            <i class='icon-facebook-sign'></i>
+            <span class='hidden-xs'>Like</span>
+          </a>
+        </div>
+      </div>
+    </div>
     <div class='post'>
       {{ content }}
       {% if page.footnotes %}
       <hr class="visible-xs" />
       {% for footnote in page.footnotes %}
-      <p class="footnote" id="fn-{{ forloop.index }}"><span>{{ forloop.index }}.</span> {{ footnote }} <a href="#fnref-{{ forloop.index }}">↩</a></p>
+      <div class="footnote" id="fn-{{ forloop.index }}">{{ footnote | prepend: '. </span>' | prepend: forloop.index | prepend: '<span>' | append: '<a href="#fnref-' | append: forloop.index | append: '">↩</a>' | markdownify }}</div>
       {% endfor %}
       {% endif %}
     </div>
+    <div id='disqus_thread'></div>
+    <script type='text/javascript'>
+      var disqus_shortname = 'ssuen';
+      (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();
+    </script>
+    <a class='dsq-brlink' href='http://disqus.com'></a>
   </div>
 </div>
 {% if page.fancy %}

@@ -5,16 +5,44 @@ layout: default
   %div.main.col-xs-12.col-sm-12.col-md-12.col-lg-12
     %h2.title {{ page.title }}
     %h3.subtitle {{ page.subtitle }}
-    %p.meta {{ page.date | date: "%B %-d, %Y" }}
+    %div.row
+      %div.meta.col-xs-12.col-sm-12.col-md-12.col-lg-12
+        %p.pull-left.hidden-xs
+          Posted on {{ page.date | date: "%B %-d, %Y" }} in
+          {% for tag in page.tags %}
+          {% if forloop.last %}
+          <span class="tag">{{ tag | remove: ',' }}</span>
+          {% else %}
+          <span class="tag">{{ tag | remove: ',' }}</span>, 
+          {% endif %}
+          {% endfor %}
+        %p.pull-left.visible-xs
+          Posted on {{ page.date | date: "%B %-d, %Y" }}
+        %div.social.pull-right
+          %a{:href => '#disqus_thread'}
+            %i.icon-comments
+            %span.hidden-xs Comment
+          %a{:href => 'https://twitter.com/intent/tweet?url=http://stephensuen.com{{ page.url }}'}
+            %i.icon-twitter
+            %span.hidden-xs Tweet
+          %a{:href => 'http://www.facebook.com/sharer.php?u=http://stephensuen.com{{ page.url }}'}
+            %i.icon-facebook-sign
+            %span.hidden-xs Like
 
     %div.post
       {{ content }}
       {% if page.footnotes %}
       <hr class="visible-xs" />
       {% for footnote in page.footnotes %}
-      <p class="footnote" id="fn-{{ forloop.index }}"><span>{{ forloop.index }}.</span> {{ footnote }} <a href="#fnref-{{ forloop.index }}">↩</a></p>
+      <div class="footnote" id="fn-{{ forloop.index }}">{{ footnote | prepend: '. </span>' | prepend: forloop.index | prepend: '<span>' | append: '<a href="#fnref-' | append: forloop.index | append: '">↩</a>' | markdownify }}</div>
       {% endfor %}
       {% endif %}
+
+    %div#disqus_thread
+    %script{:type => 'text/javascript'}
+      var disqus_shortname = 'ssuen';
+      (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);})();
+    %a.dsq-brlink{:href => 'http://disqus.com'}
 
 {% if page.fancy %}
 %script{:src => '/assets/js/jquery.debouncedresize.js'}

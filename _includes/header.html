@@ -1,3 +1,4 @@
+{% assign current = page.url | downcase | split: '/' %}
 <div class='row'>
   <div class='header col-xs-12 col-sm-12 col-md-12 col-lg-12'>
     <nav class='navbar navbar-default' role='navigation'>
@@ -13,13 +14,25 @@
       <div class='collapse navbar-collapse navbar-ex1-collapse'>
         <ul class='nav navbar-nav'>
           <li>
+            {% if current[1] == 'index.html' %}
             <a class='active' href='/'>About</a>
+            {% else %}
+            <a href='/'>About</a>
+            {% endif %}
           </li>
           <li>
+            {% if current[1] == 'blog' %}
+            <a class='active' href='/blog'>Blog</a>
+            {% else %}
             <a href='/blog'>Blog</a>
+            {% endif %}
           </li>
           <li>
-            <a href='/'>Work</a>
+            {% if current[1] == 'work' %}
+            <a class='active' href='/work'>Work</a>
+            {% else %}
+            <a href='/work'>Work</a>
+            {% endif %}
           </li>
           <li>
             <a href='/assets/stephen-suen-resume.pdf'>Résumé</a>
