@@ -1,0 +1,61 @@
+\---
+layout: default
+title: Work
+\---
+%div.row
+  %div.main.col-xs-12.col-sm-12.col-md-12.col-lg-12
+    %h2.title Work
+%div.row.hidden-xs
+  %div.preview.featured.col-xs-12.col-sm-12.col-md-12.col-lg-12
+    {% for post in paginator.posts limit:1 %}
+    %a{:href => "{{ post.url }}"}
+      %div.wrapper
+        %div.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+          %p.meta Posted on {{ post.date | date: "%B %-d, %Y" }}
+          %h2.title {{ post.title }}
+          %h3.subtitle {{ post.subtitle }}
+          %p.excerpt {{ post.excerpt }}
+      %img{:src => "{{ post.image }}"}
+    {% endfor %}
+%div.row
+  %div.preview-container.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+    {% for post in paginator.posts %}
+    {% if forloop.first %}
+    %a.visible-xs{:href => "{{ post.url }}"}
+      %div.preview.col-xs-12.col-sm-6.col-md-4.col-lg-4
+        %div.cover
+          %div.row
+            %div.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+              %p.meta.pull-right View post &rarr;
+        %div.row
+          %div.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+            %p.meta Posted on {{ post.date | date: "%B %-d, %Y" }}
+        %div.img-wrapper
+          %div.cover
+            %p.meta View post &rarr;
+          %img{:src => "{{ post.image }}"}
+        %div.row
+          %div.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+            %h3.title {{ post.title }}
+            %p.excerpt {{ post.excerpt }}
+    {% else %}
+    %a{:href => "{{ post.url }}"}
+      %div.preview.col-xs-12.col-sm-6.col-md-4.col-lg-4
+        %div.cover
+          %div.row
+            %div.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+              %p.meta.pull-right View post &rarr;
+        %div.row
+          %div.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+            %p.meta Posted on {{ post.date | date: "%B %-d, %Y" }}
+        %div.img-wrapper
+          %div.cover
+            %p.meta View post &rarr;
+          %img{:src => "{{ post.image }}"}
+        %div.row
+          %div.col-xs-12.col-sm-10.col-md-10.col-lg-10.col-sm-offset-1.col-md-offset-1.col-lg-offset-1
+            %h3.title {{ post.title }}
+            %p.excerpt {{ post.excerpt }}
+    {% endif %}
+    %hr.divider.visible-xs
+    {% endfor %}

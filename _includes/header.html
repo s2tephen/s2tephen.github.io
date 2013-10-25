@@ -1,47 +1,90 @@
 {% assign current = page.url | downcase | split: '/' %}
 <div class='row'>
   <div class='header col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-    <nav class='navbar navbar-default' role='navigation'>
-      <div class='navbar-header'>
-        <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
-          <span class='sr-only'>Toggle navigation</span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-        </button>
-        <a class='navbar-brand' href='#'>{{ site.name }}</a>
-      </div>
-      <div class='collapse navbar-collapse navbar-ex1-collapse'>
-        <ul class='nav navbar-nav'>
-          <li>
-            {% if current[1] == 'index.html' %}
-            <a class='active' href='/'>About</a>
-            {% else %}
-            <a href='/'>About</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if current[1] == 'blog' %}
-            <a class='active' href='/blog'>Blog</a>
-            {% else %}
-            <a href='/blog'>Blog</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if current[1] == 'work' %}
-            <a class='active' href='/work'>Work</a>
-            {% else %}
-            <a href='/work'>Work</a>
-            {% endif %}
-          </li>
-          <li>
-            <a href='/assets/stephen-suen-resume.pdf'>Résumé</a>
-          </li>
-          <li>
-            <a data-toggle='modal' href='#contact'>Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class='container'>
+      <nav class='navbar navbar-default' role='navigation'>
+        <div class='navbar-header'>
+          <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <img class='logo' src='/assets/img/logo1.svg'>
+          <a class='navbar-brand' href='#'>{{ site.name }}</a>
+        </div>
+        <div class='collapse navbar-collapse navbar-ex1-collapse'>
+          <ul class='nav navbar-nav'>
+            <li>
+              {% if current[1] == 'index.html' %}
+              <a class='active' href='/'>
+                <div>
+                  <i class='icon-user visible-xs'></i>
+                  About
+                </div>
+              </a>
+              {% else %}
+              <a href='/'>
+                <div>
+                  <i class='icon-user visible-xs'></i>
+                  About
+                </div>
+              </a>
+              {% endif %}
+            </li>
+            <li>
+              {% if current[1] == 'blog' %}
+              <a class='active' href='/blog'>
+                <div>
+                  <i class='icon-quote-left visible-xs'></i>
+                  Blog
+                </div>
+              </a>
+              {% else %}
+              <a href='/blog'>
+                <div>
+                  <i class='icon-quote-left visible-xs'></i>
+                  Blog
+                </div>
+              </a>
+              {% endif %}
+            </li>
+            <li>
+              {% if current[1] == 'work' %}
+              <a class='active' href='/work'>
+                <div>
+                  <i class='icon-folder-open visible-xs'></i>
+                  Work
+                </div>
+              </a>
+              {% else %}
+              <a href='/work'>
+                <div>
+                  <i class='icon-folder-open visible-xs'></i>
+                  Work
+                </div>
+              </a>
+              {% endif %}
+            </li>
+            <li>
+              <a href='/assets/stephen-suen-resume.pdf'>
+                <div>
+                  <i class='icon-briefcase visible-xs'></i>
+                  Résumé
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-toggle='modal' href='#contact'>
+                <div>
+                  <i class='icon-envelope visible-xs'></i>
+                  Contact
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   </div>
 </div>

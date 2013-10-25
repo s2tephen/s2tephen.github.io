@@ -2,36 +2,62 @@
 
 %div.row
   %div.header.col-xs-12.col-sm-12.col-md-12.col-lg-12
-    %nav.navbar.navbar-default{:role => "navigation"}
-      %div.navbar-header
-        %button.navbar-toggle{:type => "button", :'data-toggle' => "collapse", :'data-target' => ".navbar-ex1-collapse"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand{:href => "#"} {{ site.name }}
+    %div.container
+      %nav.navbar.navbar-default{:role => "navigation"}
+        %div.navbar-header
+          %button.navbar-toggle{:type => "button", :'data-toggle' => "collapse", :'data-target' => ".navbar-ex1-collapse"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %img.logo{:src => "/assets/img/logo1.svg"}
+          %a.navbar-brand{:href => "#"} {{ site.name }}
 
-      %div.collapse.navbar-collapse.navbar-ex1-collapse
-        %ul.nav.navbar-nav
-          %li
-            {% if current[1] == 'index.html' %}
-            %a.active{:href => "/"} About
-            {% else %}
-            %a{:href => "/"} About
-            {% endif %}
-          %li
-            {% if current[1] == 'blog' %}
-            %a.active{:href => "/blog"} Blog
-            {% else %}
-            %a{:href => "/blog"} Blog
-            {% endif %}
-          %li
-            {% if current[1] == 'work' %}
-            %a.active{:href => "/work"} Work
-            {% else %}
-            %a{:href => "/work"} Work
-            {% endif %}
-          %li
-            %a{:href => "/assets/stephen-suen-resume.pdf"} Résumé
-          %li
-            %a{:href => "#contact", :'data-toggle' => "modal"} Contact
+        %div.collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav
+            %li
+              {% if current[1] == 'index.html' %}
+              %a.active{:href => "/"}
+                %div
+                  %i.icon-user.visible-xs
+                  About
+              {% else %}
+              %a{:href => "/"}
+                %div
+                  %i.icon-user.visible-xs
+                  About
+              {% endif %}
+            %li
+              {% if current[1] == 'blog' %}
+              %a.active{:href => "/blog"}
+                %div
+                  %i.icon-quote-left.visible-xs
+                  Blog
+              {% else %}
+              %a{:href => "/blog"}
+                %div
+                  %i.icon-quote-left.visible-xs
+                  Blog
+              {% endif %}
+            %li
+              {% if current[1] == 'work' %}
+              %a.active{:href => "/work"}
+                %div
+                  %i.icon-folder-open.visible-xs
+                  Work
+              {% else %}
+              %a{:href => "/work"}
+                %div
+                  %i.icon-folder-open.visible-xs
+                  Work
+              {% endif %}
+            %li
+              %a{:href => "/assets/stephen-suen-resume.pdf"}
+                %div
+                  %i.icon-briefcase.visible-xs
+                  Résumé
+            %li
+              %a{:href => "#contact", :'data-toggle' => "modal"}
+                %div
+                  %i.icon-envelope.visible-xs
+                  Contact

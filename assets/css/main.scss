@@ -13,6 +13,7 @@ html {
 body {
   background: #fdfdfd;
   border: 1em solid #fcd18c;
+  padding-top: 70px;
   min-height: 100%;
   @media screen and (max-width: 767px) {
     border-width: 0.75em;
@@ -21,6 +22,13 @@ body {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 900;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 
 .title {
@@ -55,42 +63,98 @@ hr {
 }
 
 .header {
-  .navbar {
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    background: none;
-    @media screen and (min-width: 768px) {
-      padding: 15px 0 0;
-    }
-    .navbar-collapse {
-      border-color: #ccc;
-    }
-    a {
-      border-bottom: 0;
-      font-size: 1.4em;
-      &.navbar-brand {
-        font-weight: bold;
-        padding-left: 0;
-        color: #999;
-        &:hover {
-          color: #ff9809;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-top: 1em solid #fcd18c;
+  .container {
+    background: #fff;
+    .navbar {
+      border: 0;
+      padding: 5px 0;
+      margin-bottom: 0;
+      box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1),0 1px 0 0 rgba(0, 0, 0, 0.1);
+      border-radius: 0;
+      background: none;
+      @media screen and (max-width: 767px) {
+        padding-bottom: 0px;
+      }
+      .navbar-header {
+        @media screen and (max-width: 767px) {
+          padding-bottom: 5px;
+        }
+        .logo {
+          left: 0;
+          width: 40px;
+          position: absolute;
+          margin-top: 5px;
         }
       }
-    }
-    .navbar-toggle {
-      margin-right: 0;
-    }
-    .nav {
-      li {
-        a {
-          color: #999;
+      .navbar-collapse {
+        border: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      a {
+        border-bottom: 0;
+        font-size: 1.4em;
+        &.navbar-brand {
+          font-weight: bold;
+          padding: 15px 0;
+          margin-left: 65px;
+          @media screen and (max-width: 767px) {
+            width: 100%;
+            margin-left: 0;
+            position: absolute;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            letter-spacing: 0.1em;
+          }
+          color: #000;
           &:hover {
             color: #ff9809;
           }
-          &.active {
-            color: #ff9809;
+        }
+      }
+      .navbar-toggle {
+        margin-right: 0;
+        z-index: 2;
+      }
+      .nav {
+        margin: 0 -15px;
+        @media screen and (min-width: 768px) {
+          margin-left: 15px;
+        }
+        li {
+          a {
+            color: #999;
+            @media screen and (max-width: 767px) {
+              border-top: 1px solid #eee;
+              font-size: 1.2em;
+              div {
+                width: 100%;
+                text-align: center;
+                i {
+                  float: left;
+                  position: absolute;
+                }
+              }
+              &:after {
+                content: "";
+                clear: both;
+                display: table;
+              }
+            }
             &:hover {
-              cursor: default;
+              color: #ff9809;
+            }
+            &.active {
+              color: #ff9809;
+              &:hover {
+                cursor: default;
+              }
             }
           }
         }
@@ -236,6 +300,9 @@ hr {
   color: #000;
   @media screen and (min-width: 768px) {
     padding: 0;
+  }
+  img {
+    width: 100%;
   }
   > .cover {
     height: 100%;
@@ -401,7 +468,7 @@ hr {
     margin-bottom: 30px;
   }
   .credits {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ddd;
     padding: 15px 0;
     color: #999;
     p {
