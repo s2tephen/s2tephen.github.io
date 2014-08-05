@@ -1,90 +1,28 @@
-{% assign current = page.url | downcase | split: '/' %}
-<div class='row'>
-  <div class='header col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-    <div class='container'>
-      <nav class='navbar navbar-default' role='navigation'>
-        <div class='navbar-header'>
-          <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <img class='logo' src='/assets/img/logo1.svg'>
-          <a class='navbar-brand' href='/'>{{ site.name }}</a>
-        </div>
-        <div class='collapse navbar-collapse navbar-ex1-collapse'>
-          <ul class='nav navbar-nav'>
-            <li>
-              {% if current[1] == 'index.html' %}
-              <a class='active' href='/'>
-                <div>
-                  <i class='icon-user visible-xs'></i>
-                  About
-                </div>
-              </a>
-              {% else %}
-              <a href='/'>
-                <div>
-                  <i class='icon-user visible-xs'></i>
-                  About
-                </div>
-              </a>
-              {% endif %}
-            </li>
-            <li>
-              {% if current[1] == 'blog' %}
-              <a class='active' href='/blog'>
-                <div>
-                  <i class='icon-quote-left visible-xs'></i>
-                  Blog
-                </div>
-              </a>
-              {% else %}
-              <a href='/blog'>
-                <div>
-                  <i class='icon-quote-left visible-xs'></i>
-                  Blog
-                </div>
-              </a>
-              {% endif %}
-            </li>
-            <li>
-              {% if current[1] == 'work' %}
-              <a class='active' href='/work'>
-                <div>
-                  <i class='icon-folder-open visible-xs'></i>
-                  Work
-                </div>
-              </a>
-              {% else %}
-              <a href='/work'>
-                <div>
-                  <i class='icon-folder-open visible-xs'></i>
-                  Work
-                </div>
-              </a>
-              {% endif %}
-            </li>
-            <li>
-              <a href='/assets/stephen-suen-resume.pdf'>
-                <div>
-                  <i class='icon-briefcase visible-xs'></i>
-                  Résumé
-                </div>
-              </a>
-            </li>
-            <li>
-              <a data-toggle='modal' href='#contact'>
-                <div>
-                  <i class='icon-envelope visible-xs'></i>
-                  Contact
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+<header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        {% for page in site.pages %}
+          {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+
   </div>
-</div>
+
+</header>
