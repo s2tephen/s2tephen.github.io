@@ -106,13 +106,14 @@
         else {
           setFootnote($(this).parent(), footnote);
         }
-        // recalculate vertical offset (consider font size)
-        var y = $(this).offset().top - footnote.offset().top + 2;
-        footnote.css('top', y);
+        // recalculate vertical offset
+        var y = $(this).position().top + 2;
+        footnote.css({ paddingTop: 80, top: y - 80 });
       });
     }
     else {
-      $('.footnote').appendTo($('.post .row').last()).css('top', 0);
+      $('.footnote').appendTo($('.post .row').last())
+                    .css({ paddingTop: 0, top: 0});
     }
   }
 
@@ -136,7 +137,7 @@
 
   // row-ify all paragraphs
   $('.post > p, .post .highlight, .post blockquote, .post ul').addClass('col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2')
-                                                    .wrap('<div class="row"></div>');
+                                                              .wrap('<div class="row"></div>');
   
   // handle images and blockquotes
   $('.post img, .post blockquote p').each(function() {
@@ -152,11 +153,20 @@
     // TODO: apply split styles
   });
 
-  layFootnotes();
-  layCaptions();
+  // footnote link effects
+  $('.post a[href^="#fn-"]').click(function(e) {
+    e.preventDefault();
+    $('body').animate({scrollTop:$(this.hash).offset().top}, 500);
+  });
 
   // adjust on window resize
-  // TODO: improve performance
-  $(window).on("throttledresize", layFootnotes);
-  $(window).on("throttledresize", layCaptions);
+  var reLayout = function() {
+    layFootnotes();
+    layCaptions();
+  }
+
+  enquire.register('screen and (max-width: 767px)', reLayout)
+         .register('screen and (min-width: 768px) and (max-width: 991px)', reLayout)
+         .register('screen and (min-width: 992px) and (max-width: 1199px)', reLayout)
+         .register('screen and (min-width: 1200px)', reLayout);
 })();

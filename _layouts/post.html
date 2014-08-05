@@ -39,7 +39,6 @@ layout: default
     <div class='post'>
       {{ content }}
       {% if page.footnotes %}
-      <hr class="visible-xs" />
       {% for footnote in page.footnotes %}
       <div class="footnote" id="fn-{{ forloop.index }}">{{ footnote | prepend: '. </span>' | prepend: forloop.index | prepend: '<span>' | append: '<a href="#fnref-' | append: forloop.index | append: '">↩</a>' | markdownify }}</div>
       {% endfor %}
@@ -54,7 +53,5 @@ layout: default
   </div>
 </div>
 {% if page.fancy %}
-<script src='/assets/js/jquery.debouncedresize.js'></script>
-<script src='/assets/js/jquery.throttledresize.js'></script>
 <script src='/assets/js/postprod.js'></script>
 {% endif %}

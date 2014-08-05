@@ -37,7 +37,7 @@ title: Blog
             </div>
           </div>
         </div>
-        <div class='row'>
+        <div class='row hidden-xs'>
           <div class='col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1'>
             <p class='meta'>Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
           </div>
@@ -51,6 +51,7 @@ title: Blog
         <div class='row'>
           <div class='col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1'>
             <h3 class='title'>{{ post.title }}</h3>
+            <p class='meta visible-xs'>Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
             <p class='excerpt'>{{ post.excerpt }}</p>
           </div>
         </div>
@@ -66,7 +67,7 @@ title: Blog
             </div>
           </div>
         </div>
-        <div class='row'>
+        <div class='row hidden-xs'>
           <div class='col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1'>
             <p class='meta'>Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
           </div>
@@ -80,6 +81,7 @@ title: Blog
         <div class='row'>
           <div class='col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1'>
             <h3 class='title'>{{ post.title }}</h3>
+            <p class='meta visible-xs'>Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
             <p class='excerpt'>{{ post.excerpt }}</p>
           </div>
         </div>

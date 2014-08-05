@@ -11,7 +11,7 @@ fancy:      true
 footnotes:
   - "The month of January is MIT's [Independent Activities Period](http://web.mit.edu/iap/), during which students take classes off the beaten path, participate in massive coding/robotics competitions, and generally fool around and do crazy things."
   - "HASS = Humanities, Arts, and Social Sciences. Yes, MIT has a [school for it](http://shass.mit.edu/). All MIT undergrads must take eight HASS classes to graduate. Sadly, the term is usually invoked with contempt or derision."
-  - "I had to actually apply to get into this class, with a portfolio and everything. Pulling all the materials together was nostalgic, to say the least. If you're interested, you can see [what I submitted](http://ssuen.scripts.mit.edu/cms634/)—it's definitely more interesting than what I have on this site right now."
+  - "I had to actually apply to get into this class, with a portfolio and everything. Pulling all the materials together was nostalgic, to say the least. If you're interested, you can see [what I submitted](http://ssuen.scripts.mit.edu/cms634/)."
   - "I've actually already finished a first draft of my paper, but am currently in the process of revising it for submission to journals and/or conferences. I'm still new to this whole academia thing, so give it some time."
 ---
 

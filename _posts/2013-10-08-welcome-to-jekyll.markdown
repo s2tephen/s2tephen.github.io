@@ -2,7 +2,7 @@
 layout:     post
 title:      "Welcome to Jekyll!"
 subtitle:   "Dusting off the old blog"
-date:       2013-10-08 06:02:10
+date:       2014-10-08 06:02:10
 categories: blog
 tags:       meta, code, design
 image:      "/assets/img/pdl.jpg"

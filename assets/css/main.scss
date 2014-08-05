@@ -2,7 +2,7 @@ p, li, body, .preview .subtitle, h3.subtitle {
   font-family: "TisaPro" !important;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .header .navbar a, .footer .credits p, .footnote p, .preview .meta {
+h1, h2, h3, h4, h5, h6,.h1, .h2, .h3, .h4, .h5, .h6, .header .navbar a, .footer .credits p, .footnote p, .preview .meta {
   font-family: "DagnyPro" !important;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 input:focus,
@@ -70,13 +70,16 @@ hr {
   border-top: 1em solid #fcd18c;
   .container {
     background: #fff;
+    @media screen and (max-width: 767px) {
+      padding: 0 10px;
+    }
     .navbar {
       border: 0;
       padding: 5px 0;
       margin-bottom: 0;
-      box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1),0 1px 0 0 rgba(0, 0, 0, 0.1);
       border-radius: 0;
       background: none;
+      box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1),0 1px 0 0 rgba(0, 0, 0, 0.1);
       @media screen and (max-width: 767px) {
         padding-bottom: 0px;
       }
@@ -90,6 +93,13 @@ hr {
           position: absolute;
           margin-top: 5px;
         }
+        .navbar-toggle {
+          border: 0;
+          .icon-bar {
+            background: #000;
+            height: 3px;
+          }
+        }
       }
       .navbar-collapse {
         border: 0;
@@ -98,9 +108,9 @@ hr {
       }
       a {
         border-bottom: 0;
-        font-size: 1.4em;
+        font-size: 1.2em;
         &.navbar-brand {
-          font-weight: bold;
+          font-weight: 900;
           padding: 15px 0;
           margin-left: 65px;
           @media screen and (max-width: 767px) {
@@ -108,9 +118,6 @@ hr {
             margin-left: 0;
             position: absolute;
             text-align: center;
-            text-transform: uppercase;
-            font-size: 1.2em;
-            letter-spacing: 0.1em;
           }
           color: #000;
           &:hover {
@@ -169,7 +176,7 @@ hr {
   }
   .subtitle {
     font-size: 2.4em;
-    font-weight: normal;
+    font-weight: 400;
     font-style: italic;
     color: #999;
     margin-top: 0;
@@ -188,6 +195,9 @@ hr {
         border-bottom: 0;
         i {
           margin-right: 5px;
+          &:last-of-type {
+            margin-right: 0;
+          }
         }
         span {
           @media screen and (min-width: 768px) {
@@ -219,7 +229,7 @@ hr {
       }
       p {
         font-size: 2.4em;
-        font-weight: bold;
+        font-weight: 700;
         font-style: italic;
         padding: 0;
         &.basic {
@@ -233,24 +243,29 @@ hr {
     a[href^="#fn-"] {
       vertical-align: super;
       font-size: 0.5em;
-      font-weight: bold;
+      font-weight: 700;
       border-bottom: 0;
     }
     .footnote {
+      @media screen and (max-width: 767px) {
+        padding-left: 0;
+      }
       p {
         font-size: 0.8em;
+        margin-bottom: 0;
         @media screen and (max-width: 767px) {
           font-size: 0.9em;
           padding: 0 15px;
+          margin-bottom: 20px;
         }
         color: #999;
       }
       span {
-        font-weight: bold;
+        font-weight: 700;
         color: #ff9809;
       }
       a[href^="#fnref-"] {
-        font-weight: bold;
+        font-weight: 700;
         border-bottom: 0;
         display: inline;
         @media screen and (min-width: 768px) {
@@ -289,6 +304,7 @@ hr {
     border: 0;
   }
   .divider {
+    border-top-color: #ddd;
     margin: 0 15px;
     &:last-child {
       display: none !important;
@@ -418,11 +434,17 @@ hr {
     margin: 20px 0 0;
     font-size: 1em;
     color: #999;
+    @media screen and (max-width: 767px) {
+      margin: 2px 0 10px;
+    }
   }
   .img-wrapper {
     margin: 15px 0;
     position: relative;
     float: left;
+    @media screen and (max-width: 767px) {
+      margin: 20px 0 10px;
+    }
     .cover {
       width: 100%;
       height: 100%;
@@ -452,7 +474,7 @@ hr {
     font-size: 2em;
   }
   .subtitle {
-    font-weight: normal;
+    font-weight: 400;
     font-style: italic;
     color: #999;
     margin-top: 0;
@@ -460,6 +482,153 @@ hr {
   }
   p {
     font-size: 1.2em;
+  }
+}
+
+.work-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  .thumbs {
+    .thumb-wrapper {
+      &:last-child .thumb {
+        margin-bottom: 0;
+      }
+      @media screen and (min-width: 768px) {
+        padding-right: 0;
+        &:nth-last-child(-n+3) .thumb {
+          margin-bottom: 0;
+        }
+      }
+      .thumb {
+        position: relative;
+        margin-bottom: 15px;
+        .cover {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          color: #fff;
+          font-size: 0.8em;
+          padding: 15px;
+          text-align: center;
+          z-index: 2;
+          transition: background .3s;
+          @media screen and (max-width: 767px) {
+            font-size: 1.2em;
+          }
+          &.external {
+            > .outer {
+              &:after {
+                font-family: "FontAwesome";
+                content: "\f08e";
+                float: right;
+                font-size: 1.2em;
+              }
+            }
+          }
+          &:hover {
+            background: rgba(0,0,0,0.4);
+            cursor: pointer;
+            > .outer {
+              opacity: 1.0;
+            }
+          }
+          > .outer {
+            position: relative;
+            height: 100%;
+            opacity: 0;
+            transition: opacity .3s;
+            .inner {
+              position: absolute;
+              top: 50%;
+              width: 100%;
+              height: 3em;
+              margin-top: -1.5em;
+              h3 {
+                font-weight: 700;
+                margin: 0;
+                font-size: 1.05em;
+              }
+            }
+          }
+        }
+        img {
+          width: 100%;
+          filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+          filter: gray;
+          -webkit-filter: grayscale(1);
+          -webkit-filter: grayscale(100%);
+             -moz-filter: grayscale(100%);
+              -ms-filter: grayscale(100%);
+               -o-filter: grayscale(100%);
+                  filter: grayscale(100%);
+          -webkit-transform: translateZ(0);
+                  transform: translateZ(0);
+          transition: all 0.3s;
+        }
+        &:hover {
+          img {
+            filter: none;
+            -webkit-filter: grayscale(0);
+               -moz-filter: grayscale(0);
+                -ms-filter: grayscale(0);
+                 -o-filter: grayscale(0);
+                    filter: grayscale(0);
+          }
+        }
+        &.active {
+          .cover {
+            &:hover {
+              cursor: none;
+            }
+          }
+          img {
+            filter: none;
+            -webkit-filter: grayscale(0);
+               -moz-filter: grayscale(0);
+                -ms-filter: grayscale(0);
+                 -o-filter: grayscale(0);
+                    filter: grayscale(0);
+            transition: all 0.65s;
+          }
+        }
+      }
+    }
+  }
+  .description {
+    display: none;
+    padding: 0 15px;
+    .well {
+      height: 100%;
+      margin: 0;
+      overflow-y: auto;
+      > div {
+        h2 {
+          margin: 0;
+        }
+        h3 {
+          font-style: italic;
+          font-weight: 400;
+          color: #999;
+          margin-top: 0;
+          margin-bottom: 20px;
+          font-size: 1.4em;
+        }
+        img {
+          width: 100%;
+        }
+        i {
+          margin-right: 5px;
+        }
+        p:last-child {
+          margin: 0;
+          a {
+            border: 0;
+            font-size: 0.85em;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -471,6 +640,9 @@ hr {
     border-top: 1px solid #ddd;
     padding: 15px 0;
     color: #999;
+    a:hover {
+      color: #999;
+    }
     p {
       font-size: 0.9em;
     }
@@ -502,6 +674,7 @@ hr {
       }
       p {
         font-size: 1.2em;
+        margin-top: 10px;
         margin-bottom: 0;
       }
     }
