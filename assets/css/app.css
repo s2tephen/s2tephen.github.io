@@ -1,0 +1,31 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+header {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  header:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+section {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  section:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+footer {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  footer:after {
+    content: "";
+    display: table;
+    clear: both; }

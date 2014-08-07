@@ -1,0 +1,14 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+header {
+  @include outer-container;
+}
+
+section {
+  @include outer-container;
+}
+
+footer {
+  @include outer-container;
+}
