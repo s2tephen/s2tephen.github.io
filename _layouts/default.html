@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   {% include head.html %}
-  <body>
+  <body class="preload">
     {% include header.html %}
-    <section>
-      {{ content }}
+    <section class="main">
+      <article>
+        {{ content }}
+      </article>
     </section>
     {% include footer.html %}
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="{{ '/assets/js/app.js' | prepend: site.baseurl }}"></script>
   </body>
 </html>
