@@ -1,9 +1,9 @@
 <nav>
   {% include logo.html %}
   <ul class="menu">
-    <li><a href="/">Work</a></li>
-    <li><a href="/about/">About</a></li>
-    <li class="active"><a href="/resume/">Resume</a></li>
-    <li><a href="/blog/">Blog</a></li>
+    <li{% if page.categories contains 'work' %} class="active"{% endif %}><a href="/">Work</a></li>
+    <li{% if page.categories contains 'about' %} class="active"{% endif %}><a href="/about/">About</a></li>
+    <li{% if page.categories contains 'resume' %} class="active"{% endif %}><a href="/resume/">Resume</a></li>
+    <li{% if page.categories contains 'blog' %} class="active"{% endif %}><a href="/blog/">Blog</a></li>
   </ul>
 </nav>
