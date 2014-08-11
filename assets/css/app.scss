@@ -174,6 +174,9 @@ header {
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
+  @include media(print) {
+    display: none;
+  }
   .cover {
     @include position(absolute, 0 null null null);
     height: 100vh;
