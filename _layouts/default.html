@@ -2,9 +2,15 @@
 <html lang="en-us">
   {% include head.html %}
   <body class="preload">
-    {% include header.html %}
+    {% if page.cover %}
+      {% include cover.html %}
+    {% else %}
+      <header class="no-cover">
+        {% include nav.html %}
+      </header>
+    {% endif %}
     <section class="main">
-      <article>
+      <article class="{{ page.categories }}">
         {{ content }}
       </article>
     </section>

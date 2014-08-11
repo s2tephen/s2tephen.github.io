@@ -1,10 +1,17 @@
 @mixin media($query:$feature $value $columns, $total-columns: $grid-columns) {
   @if length($query) == 1 {
-    @media screen and ($default-feature: nth($query, 1)) {
-      $default-grid-columns: $grid-columns;
-      $grid-columns: $total-columns !global;
-      @content;
-      $grid-columns: $default-grid-columns !global;
+    @if $query == 'print' {
+      @media print {
+        @content;
+      }
+    }
+    @else {
+      @media screen and ($default-feature: nth($query, 1)) {
+        $default-grid-columns: $grid-columns;
+        $grid-columns: $total-columns !global;
+        @content;
+        $grid-columns: $default-grid-columns !global;
+      }
     }
   }
 

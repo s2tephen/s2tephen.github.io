@@ -1,18 +1,22 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
+cover: false
+categories: about
 ---
 
 ## About me
 
-I am currently a senior at the [Massachusetts Institute of Technology](//mit.edu) where I am majoring in [Comparative Media Studies](//cms.mit.edu). Outside the classroom, I am the online media editor at [The MIT Tech](//tech.mit.edu).
+I am currently a senior at the Massachusetts Institute of Technology where I am majoring in [Comparative Media Studies](//cms.mit.edu). Outside the classroom, I am the online media editor at [The MIT Tech](//tech.mit.edu).
 
-For more information, check out [my CV](/cv/).
+I use design, code, and words to tell compelling stories and enable participatory creativity. My work spans a variety of fields such as data journalism, game design, and internet research. 
+
+For more information, check out [my resume](/resume/).
 
 ## Contact me
 
-The best way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@mit.edu](mailto:ssuen@mit.edu), if you're not into the whole brevity thing.
+The best way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@mit.edu](mailto:ssuen@mit.edu), if you're not into the whole brevity thing. I am also open to IRL meetups in the Boston area.
 
 ## Colophon
 
