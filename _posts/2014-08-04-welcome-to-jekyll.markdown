@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "There and Back Again"
+subtitle: "Starting from zero"
 date:   2014-08-04 19:30:26
 categories: blog
 ---

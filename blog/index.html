@@ -1,0 +1,11 @@
+---
+layout: default
+title: Blog
+categories: blog
+---
+
+{% for post in paginator.posts %}
+  <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <h2 class="subtitle">{{ post.subtitle }}</h2>
+  <p>{{ post.content }}</p>
+{% endfor %}

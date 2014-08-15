@@ -11,3 +11,5 @@ permalink: /:categories/:title
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'pretty_print.xsl', 'vendor']
 sass:
   sass_dir: assets/_sass
+paginate: 5
+paginate_path: "blog/page:num"
