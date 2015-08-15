@@ -1,0 +1,11 @@
+{% if include.class %}
+  {% assign classes = include.class | split: ' ' %}
+  <figure class="image{% for c in classes %} image--{{c}}{% endfor %}">
+{% else %}
+  <figure class="image">
+{% endif %}
+    {% if include.src %}<img src="{{ '/assets/img/' | prepend: site.baseurl | append: include.src }}" alt="{{ include.alt }}"{% if include.caption %} title="{{ include.alt }}"{% endif %}>{% endif %}
+    {% if include.caption %}
+      <figcaption>{{ include.caption }}</figcaption>
+    {% endif %}
+  </figure>

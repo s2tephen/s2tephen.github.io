@@ -1,15 +1,54 @@
 ---
 layout: default
 ---
-<div class="post">
 
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+{% unless page.cover %}
+  <div class="post-header">
+    <p class="meta">{{ page.date | date: '%b %-d, %Y' }}</p>
+    <h1 class="title">{{ page.title }}</h1>
+    {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+  </div>
+{% endunless %}
 
-  <article class="post-content">
+<div class="post-content">
   {{ content }}
-  </article>
+  <img class="post-end" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+</div>
 
+<div class="post-footer">
+  {% if page.previous %}
+    <a class="post-nav post-prev" href="{{ page.previous.url | prepend: site.baseurl }}">
+      <span></span>
+      <span>{{ page.previous.title }}</span>
+    </a>
+  {% else %}
+    <a class="post-nav post-nav--inactive post-prev">
+      <span></span>
+    </a>
+  {% endif %}
+  <div class="post-social">
+    <p class="meta">Share this post</p>
+    <ul>
+      <li><a href="//twitter.com/intent/tweet/?text={{ page.title }}&url={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+      <li><a href="//www.facebook.com/sharer/sharer.php?u={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
+      <li><a href="mailto:?subject={{ page.title }}&body={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
+    </ul>
+  </div>
+  {% if page.next %}
+    <a class="post-nav post-next" href="{{ page.next.url | prepend: site.baseurl }}">
+      <span></span>
+      <span>{{ page.next.title }}</span>
+    </a>
+  {% else %}
+    <a class="post-nav post-nav--inactive post-next">
+      <span></span>
+    </a>
+  {% endif %}
+</div>
+
+<div class="post-bio">
+  <a href="/about" title="About me"><img class="avatar" src="/assets/img/self_thumb.jpg"></a>
+  <h3>Stephen Suen</h3>
+  <p>I'm a designer and developer that tells stories through data visualization and interactive media. I graduated from MIT's Comparative Media Studies program.</p>
+  <a class="btn" href="//twitter.com/intent/follow?screen_name=s2tephen" target="_blank"><i class="fa fa-twitter"></i> <span>Follow</span></a>
 </div>

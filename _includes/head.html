@@ -1,13 +1,37 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>{% unless page.categories contains 'home' %}{{ page.title }} | {% endunless %}{{ site.title }}</title>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="{{ site.description }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="icon" href="/assets/img/favicon.ico">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@s2tephen">
+  <meta name="twitter:title" content="{% if page.categories contains 'home' %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.categories contains 'work' or page.categories contains 'blog' %}{{ page.subtitle }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:creator" content="@s2tephen">
+
+  <meta property="og:title" content="{% if page.categories contains 'home' %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:description" content="{% if page.categories contains 'work' or page.categories contains 'blog' %}{{ page.subtitle }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:site_name" content="Stephen Suen">
+  <meta property="article:author" content="ssuen">
+  {% if page.categories contains 'blog' %}
+    <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}">
+  {% endif %}
+
+  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="icon" href="{{ '/assets/img/favicon.ico' | prepend: site.baseurl }}">
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic">
+  <script src="//use.typekit.net/rzu6dry.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  
   <link rel="stylesheet" href="{{ '/assets/css/app.css' | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!--[if lt IE 9]>
+  <script src="{{ '/assets/js/html5shiv-printshiv.min.js' | prepend: site.baseurl }}"></script>
+  <![endif]-->
 </head>

@@ -8,24 +8,14 @@ categories: about
 
 ## About me
 
-I am currently a senior at the Massachusetts Institute of Technology where I am majoring in [Comparative Media Studies](//cms.mit.edu). Outside the classroom, I am the online media editor at [The MIT Tech](//tech.mit.edu).
+I recently graduated from the Massachusetts Institute of Technology, where I majored in [Comparative Media Studies](//cms.mit.edu), blending computer science, design, and the social sciences. There, I was the online media and interactives editor at the school newspaper, [*The Tech*](//thetech.com).
 
-I use design, code, and words to tell compelling stories and enable participatory creativity. My work spans a variety of fields such as data journalism, game design, and internet research. 
+I was born in Los Angeles, but I grew up in Hong Kong and now live in Boston. I am seeking a full-time position as a digital designer or frontend developer, particularly in news and media. You can see my qualifications in [my resume](/resume/).
 
-For more information, check out [my resume](/resume/).
+## Contact
 
-## Contact me
-
-The best way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@mit.edu](mailto:ssuen@mit.edu), if you're not into the whole brevity thing. I am also open to IRL meetups in the Boston area.
+The best way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@mit.edu](mailto:ssuen@mit.edu), if you're not into the whole brevity thing. I am available to meet over Skype/Google Hangout or IRL in the Boston area.
 
 ## Colophon
 
-This site is powered by [Jekyll](//jekyllrb.com), [Bourbon](//bourbon.io), and [Neat](//neat.bourbon.io) and served via [GitHub Pages](//pages.github.com). Words are set in [Karla](//www.google.com/fonts/specimen/Karla) and [FF Tisa](//www.fontfont.com/fonts/tisa); the logo uses [Braggadocio](//www.linotype.com/en/146816/braggadocio-family.html). Icons courtesy of [Font Awesome](//fortawesome.github.io). The source code is on [GitHub](//github.com/s2tephen/stephensuen.com).
-
-Key sources of inspiration during the creation of this website:
-
-* [Robert Vinluan](//robertvinluan.com)
-* [Frank Chimero](//frankchimero.com)
-* [The Verge](//theverge.com) and [Polygon](//polygon.com)
-* [Medium](//medium.com)
-* [kottke.org](//kottke.org)
+This site is powered by [Jekyll](//jekyllrb.com), [Bourbon](//bourbon.io), and [Neat](//neat.bourbon.io). The words are set in [Karla](//www.google.com/fonts/specimen/Karla) and [Freight Text Pro](//typekit.com/fonts/freight-text-pro); the logo uses [Braggadocio](//www.linotype.com/en/146816/braggadocio-family.html). Icons courtesy of [Font Awesome](//fortawesome.github.io). The source code is stored on and served via [GitHub Pages](//github.com/s2tephen/stephensuen.com).

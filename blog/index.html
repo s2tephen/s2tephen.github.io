@@ -5,7 +5,15 @@ categories: blog
 ---
 
 {% for post in paginator.posts %}
-  <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <h2 class="subtitle">{{ post.subtitle }}</h2>
-  <p>{{ post.content }}</p>
+  <div class="preview">
+    <a class="preview-header" href="{{ post.url | prepend: site.baseurl }}">
+      <p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+      <h1 class="title">{{ post.title }}</h1>
+      {% if post.subtitle %}<h2 class="subtitle">{{ post.subtitle }}</h2>{% endif %}
+    </a>
+    <div class="preview-content">
+      {{ post.excerpt }}
+      <a class="preview-link" href="{{ post.url | prepend: site.baseurl }}" title="Continue reading"></a>
+    </div>
+  </div>
 {% endfor %}

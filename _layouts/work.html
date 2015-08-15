@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+{% unless page.cover %}
+  <div class="post-header">
+    <p class="meta">{{ page.year }}</p>
+    <h1 class="title">{{ page.title }}</h1>
+    {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+  </div>
+{% endunless %}
+
+<div class="post-content">
+  {{ content }}
+  <img class="post-end" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+</div>
+
+<div class="post-footer">
+  {% if page.prev %}
+    <a class="post-nav post-prev" href="{{ '/work/' | prepend: site.baseurl | append: page.prev }}">
+      <span></span>
+      <span>{{ page.prev-title }}</span>
+    </a>
+  {% else %}
+    <a class="post-nav post-nav--inactive post-prev">
+      <span></span>
+    </a>
+  {% endif %}
+  {% if page.links %}
+    <div class="post-links">
+      <ul>
+        {% for link in page.links %}
+          <li class="post-link">
+            <a class="btn" href="{{ link.url }}">
+              <i class="fa fa-fw fa-{{ link.icon }}"></i> <span>{{ link.text }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  {% if page.next %}
+    <a class="post-nav post-next" href="{{ '/work/' | prepend: site.baseurl | append: page.next }}">
+      <span></span>
+      <span>{{ page.next-title }}</span>
+    </a>
+  {% else %}
+    <a class="post-nav post-nav--inactive post-next">
+      <span></span>
+    </a>
+  {% endif %}
+</div>

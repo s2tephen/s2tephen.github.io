@@ -1,8 +1,8 @@
 desc "build the site"
-task :go do
+task :default do
   pids = [
-    spawn("jekyll serve --watch --baseurl ''"),
-    spawn("scss --watch assets")
+    spawn("jekyll serve --watch --baseurl ''")
+    # spawn("scss --watch assets")
   ]
  
   trap "INT" do

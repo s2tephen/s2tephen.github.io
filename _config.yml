@@ -1,7 +1,7 @@
 # Site settings
 title: Stephen Suen
 email: ssuen@mit.edu
-description: 'The online portfolio of Stephen Suen - design, storytelling, and the internets.'
+description: 'Stephen Suen is a designer and developer that tells stories through data visualization and interactive media.'
 baseurl: 'http://s2tephen.github.io/stephensuen.com/'
 url: 'http://stephensuen.com'
 
@@ -11,5 +11,10 @@ permalink: /:categories/:title
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'pretty_print.xsl', 'vendor']
 sass:
   sass_dir: assets/_sass
+  style: compressed
 paginate: 5
-paginate_path: "blog/page:num"
+paginate_path: 'blog/page:num'
+collections:
+  work:
+    output: true
+    permalink: /work/:path/
