@@ -26,10 +26,10 @@
   {% elsif page.post-img %}
     <meta property="og:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.post-img }}">
   {% endif %}
-  {% if page.categories contains 'blog' %}
+  {% if page.categories contains 'blog' and page.date %}
     <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}">
   {% endif %}
-  
+
   <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.url }}">
   <link rel="icon" href="{{ '/assets/img/favicon.ico' | prepend: site.baseurl }}">
 
