@@ -3,4 +3,3 @@ _site
 .bundle
 .sass-cache
 vendor
-feed.xml

@@ -91,7 +91,7 @@ html {
     font-size: 2.6vw;
   }
   @include media(max-width 479px) {
-    font-size: 4vw;
+    font-size: 3.6vw;
   }
   @media print {
     font-size: 100%;
@@ -217,6 +217,10 @@ p > span > a {
     color: $primary-color;
     @include transition-duration($transition/3);
   }
+  @media print {
+    background-image: none;
+    border-bottom: 2px solid rgb(204,204,204);
+  }
 }
 
 ::selection {
@@ -225,6 +229,14 @@ p > span > a {
 
 ::-moz-selection {
   background-color: rgb(208,221,253);
+}
+
+hr {
+  width: 30%;
+  height: 1px;
+  margin: golden-ratio($font-size, 1) 35%;
+  background-color: rgb(221,221,221);
+  border: 0;
 }
 
 .btn {
@@ -257,8 +269,8 @@ p > span > a {
   max-height: 95vh;
   overflow: hidden;
   @media print {
-    height: 500px;
-    min-height: 500px;
+    height: 300px;
+    min-height: 300px;
     margin-bottom: golden-ratio($font-size, 2);
   }
 }
@@ -266,10 +278,6 @@ p > span > a {
 .page-header--full {
   height: 100vh;
   max-height: 100vh;
-}
-
-.menu {
-  @include hide-print;
 }
 
 .header-overlay {
@@ -320,6 +328,7 @@ p > span > a {
     padding: 0 5vw;
     background-color: $primary-color;
   }
+  @include hide-print;
 }
 
 .header-nav > a {
@@ -382,6 +391,7 @@ p > span > a {
     height: 48px;
     margin-bottom: 0;
   }
+  @include hide-print;
 }
 
 .nav-menu > li {
@@ -473,6 +483,9 @@ p > span > a {
     font-size: golden-ratio($icon-size, 2);
     letter-spacing: 1rem;
   }
+  @media print {
+    font-size: golden-ratio($font-size, 1);
+  }
 }
 
 .header-intro > .title:after {
@@ -494,6 +507,9 @@ p > span > a {
   @include shadow;
   @include media($small) {
     font-size: golden-ratio($font-size, 1);
+  }
+  @media print {
+    font-size: $font-size;
   }
 }
 
@@ -625,6 +641,12 @@ article {
     margin-top: $font-size;
     margin-bottom: $font-size;
   }
+  @media print {
+    @include fill-parent;
+    @include shift(0);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
   
 article p {
@@ -634,7 +656,7 @@ article p {
 // Images
 
 .image {
-  @include span-columns(8 of 8);
+  width: 100%;
   margin: golden-ratio($icon-size, -1) 0 $font-size;
   @include media($small) {
     left: 0;
@@ -671,10 +693,17 @@ article p {
     color: $primary-color;
     @include transition-duration($transition/3);
   }
+  @media print {
+    background-image: none;
+    border-bottom: 2px solid rgb(204,204,204);
+  }
 }
 
 .image--shadow > img {
   box-shadow: 0rem .3rem 1rem 0 rgba(0,0,0,.1);
+  @media print {
+    box-shadow: none;
+  }
 }
 
 .image--full {
@@ -688,6 +717,11 @@ article p {
     width: 125%;
     margin-left: -12.5%;
   }
+  @media print {
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+  }
 }
 
 .image--wide {
@@ -697,6 +731,10 @@ article p {
   @include media($small) {
     width: 125%;
     margin-left: -12.5%;
+  }
+  @media print {
+    width: 100%;
+    margin-left: 0;
   }
 }
 
@@ -739,6 +777,11 @@ article p {
     width: 125%;
     margin: 0 0 $font-size -12.5%;
   }
+  @media print {
+    @include span-columns(4 of 8);
+    margin-left: 0;
+    margin-bottom: $icon-size; 
+  }
 }
 
 .image--right-overflow {
@@ -754,6 +797,11 @@ article p {
     float: left;
     width: 125%;
     margin: 0 0 $font-size -12.5%;
+  }
+  @media print {
+    @include span-columns(4 of 8);
+    margin-left: 0;
+    margin-bottom: $icon-size; 
   }
 }
 
@@ -891,6 +939,12 @@ article p {
     @include span-columns(12);
     @include shift(0);
   }
+  @media print {
+    @include span-columns(12);
+    @include omega;
+    @include shift(0);
+    margin-bottom: 0;
+  }
 }
 
 .home > p > .wbr {
@@ -909,6 +963,11 @@ article p {
   background-color: rgb(238,238,238);
   @include media($xlarge) {
     margin-left: -24vw;
+  }
+  @media print {
+    width: 80%;
+    margin-left: 10%;
+    background: none;
   }
 }
 
@@ -935,6 +994,11 @@ article p {
     flex-direction: column;
     margin: 0 0 golden-ratio($font-size, 2);
   }
+  @media print {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 golden-ratio($font-size, 1);
+  }
 }
 
 .work-item:last-child {
@@ -960,6 +1024,16 @@ article p {
     text-align: center;
     @include transition(color $transition linear);
   }
+  @media print {
+    position: relative;
+    @include span-columns(12);
+    @include omega;
+    padding: 0;
+    margin-top: golden-ratio($icon-size, -2);
+    margin-bottom: 0;
+    line-height: golden-ratio($font-size, 1);
+    text-align: center;
+  }
 }
 
 .work-title > sup {
@@ -982,9 +1056,8 @@ article p {
   text-align: center;
   border-radius: 100%;
   @include transition(background-color $transition linear);
-  @include media($small) {
-    display: none;
-  }
+  @include hide-small;
+  @include hide-print;
 }
 
 $work-colors: rgb(153,51,51) rgb(19,79,124) rgb(99,38,43) rgb(17,17,17) rgb(119,63,155) $primary-color;
@@ -995,6 +1068,11 @@ $work-colors: rgb(153,51,51) rgb(19,79,124) rgb(99,38,43) rgb(17,17,17) rgb(119,
     > .work-title {
       background-color: $c;
       @include media($small) {
+        @if $i == 4 { color: rgb(186,78,42); }
+        @else { color: $c; }
+        background: none;
+      }
+      @media print {
         @if $i == 4 { color: rgb(186,78,42); }
         @else { color: $c; }
         background: none;
@@ -1019,6 +1097,12 @@ $work-colors: rgb(153,51,51) rgb(19,79,124) rgb(99,38,43) rgb(17,17,17) rgb(119,
     margin: 0 -12.5%;
     order: -1;
   }
+  @media print {
+    left: 0;
+    width: 125%;
+    margin: 0 -12.5%;
+    order: -1;
+  }
 }
 
 .work-image > img {
@@ -1036,9 +1120,8 @@ $work-colors: rgb(153,51,51) rgb(19,79,124) rgb(99,38,43) rgb(17,17,17) rgb(119,
   @include span-columns(2);
   padding-right: golden-ratio(1rem, 1);
   margin-top: golden-ratio($icon-size, 2);
-  @include media($small) {
-    display: none;
-  }
+  @include hide-small;
+  @include hide-print;
 }
 
 .work-services {
@@ -1445,6 +1528,7 @@ p + .post-end {
 .post-footer {
   margin: $font-size 0 0;
   text-align: center;
+  @include hide-print;
 }
 
 .post-nav {
@@ -1776,6 +1860,9 @@ p + .post-end {
 .preview:last-child {
   padding-bottom: 0;
   margin-bottom: $font-size;
+  @media print {
+    margin-bottom: 0;
+  }
 }
 
 .preview:last-child:after {

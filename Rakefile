@@ -24,7 +24,7 @@ task :pp do
     html = Nokogiri(File.open(f))
     text = xsl.apply_to(html).to_s
     text = "<!DOCTYPE html>" + text[text.index("\n") + 1, text.size]
-    text.gsub!(/(?<=.js")\/>/, "></script>") # rewrite script tags
+    # text.gsub!(/(?<=.js")\/>/, "></script>") # rewrite script tags
     File.open(f, "w"){|file| file.write(text)}
   end
 end

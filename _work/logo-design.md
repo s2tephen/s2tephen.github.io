@@ -14,7 +14,7 @@ links:
 
 {% include image.html src='vojo_logo.png' alt='Vojo.co, a community storytelling platform optimized for low-cost mobile phones (2012)' caption='<a href="//vojo.co">Vojo.co</a>, a community storytelling platform optimized for low-cost mobile phones (2012)' %}
 
-{% include image.html src='hitched_logo.png' alt='Hitched, a customized online wedding planning tool (2013)' caption='<a href="//github.com/s2tephen/hitched">Hitched</a>, a customized online wedding planning tool (2013)' %}
+{% include image.html src='hitched_logo.png' alt='Hitched, an online wedding planning tool (2013)' caption='<a href="//github.com/s2tephen/hitched">Hitched</a>, an online wedding planning tool (2013)' %}
 
 {% include image.html src='monkeybiz_logo.png' alt='Monkey Business, an electronic ring toss game about ruthless capitalism (2013)' caption='<a href="//web.mit.edu/2.00b/www/pages/Gallery/monkeybusiness.html">Monkey Business</a>, an electronic ring toss game about corporate espionage (2013)' %}
 

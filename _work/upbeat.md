@@ -44,4 +44,4 @@ For this project, I was the task force leader for the software side of the produ
 
 {% include image.html src='upbeat_logo.png' alt='The UpBeat logo, simple and sunny' caption='The UpBeat logo, simple and sunny' class='right' %}
 
-In addition to my development role, I also contributed to the app's UX design, planning out the onboarding process, basic user flows, and the interface itself. I also designed UpBeat's branding — I was inspired by the Dropbox logo but opted to use less harsh, rounded corners along with the whimsical Bryant typeface. This creates an identity that is minimalist and professional (for parents and educators), but at the same time also playful and child-friendly.
+In addition to my development role, I also contributed to the app's UX design, planning out the initial onboarding process, basic user flows, and the interface itself. I also designed UpBeat's branding — I was inspired by the Dropbox logo but opted to use less harsh, rounded corners along with the whimsical Bryant typeface. This creates an identity that is minimalist and professional enough for parents and instructors, but at the same time also playful and child-friendly.
