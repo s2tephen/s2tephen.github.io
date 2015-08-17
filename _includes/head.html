@@ -6,18 +6,27 @@
   <meta name="description" content="{{ site.description }}">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@s2tephen">
   <meta name="twitter:title" content="{% if page.categories contains 'home' %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.categories contains 'work' or page.categories contains 'blog' %}{{ page.subtitle }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:site" content="@s2tephen">
   <meta name="twitter:creator" content="@s2tephen">
-
-  <meta property="og:title" content="{% if page.categories contains 'home' %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
+  {% if page.cover-img %}
+    <meta name="twitter:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.cover-img }}">
+  {% elsif page.post-img %}
+    <meta name="twitter:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.post-img }}">
+  {% endif %}
   <meta property="og:type" content="article">
   <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | prepend: site.url }}">
+  <meta property="og:title" content="{% if page.categories contains 'home' %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
   <meta property="og:description" content="{% if page.categories contains 'work' or page.categories contains 'blog' %}{{ page.subtitle }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:site_name" content="Stephen Suen">
   <meta property="article:author" content="ssuen">
-  {% if page.categories contains 'blog' %}
+  {% if page.cover-img %}
+    <meta property="og:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.cover-img }}">
+  {% elsif page.post-img %}
+    <meta property="og:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.post-img }}">
+  {% endif %}
+  {% if page.categories contains 'blog' and page.date %}
     <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%d' }}">
   {% endif %}
 
