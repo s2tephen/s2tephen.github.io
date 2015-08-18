@@ -6,15 +6,25 @@ categories: blog
 ---
 
 {% for post in paginator.posts %}
-  <div class="preview">
-    <a class="preview-header" href="{{ post.url | prepend: site.baseurl }}">
+  <div class="post post--index">
+    <a class="post-header" href="{{ post.url | prepend: site.baseurl }}">
       <p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>
       <h1 class="title">{{ post.title }}</h1>
       {% if post.subtitle %}<h2 class="subtitle">{{ post.subtitle }}</h2>{% endif %}
     </a>
-    <div class="preview-content">
-      {{ post.excerpt }}
-      <a class="preview-link" href="{{ post.url | prepend: site.baseurl }}" title="Continue reading"></a>
+    <div class="post-content">
+      {{ post.content }}
+      <img class="post-end" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+    </div>
+    <div class="post-footer">
+      <div class="post-social">
+        <p class="meta">Share this post</p>
+        <ul>
+          <li><a href="//twitter.com/intent/tweet/?text={{ page.title }}&url={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+          <li><a href="//www.facebook.com/sharer/sharer.php?u={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
+          <li><a href="mailto:?subject={{ page.title }}&body={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 {% endfor %}
