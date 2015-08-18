@@ -20,9 +20,9 @@ categories: blog
       <div class="post-social">
         <p class="meta">Share this post</p>
         <ul>
-          <li><a href="//twitter.com/intent/tweet/?text={{ page.title }}&url={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-          <li><a href="//www.facebook.com/sharer/sharer.php?u={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
-          <li><a href="mailto:?subject={{ page.title }}&body={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
+          <li><a href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+          <li><a href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
+          <li><a href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
         </ul>
       </div>
     </div>
