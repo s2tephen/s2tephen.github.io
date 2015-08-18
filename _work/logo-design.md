@@ -4,6 +4,7 @@ title: Logo Design
 subtitle: Branding and logo design for various products and projects
 categories: work
 year: 2012-2014
+post-img: ssuen_logo.png
 prev: upbeat
 prev-title: UpBeat
 links:

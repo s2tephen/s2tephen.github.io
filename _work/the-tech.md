@@ -4,6 +4,7 @@ title: The Tech
 subtitle: The first newspaper on the web, rebuilt for the modern web
 categories: work
 year: 2015
+post-img: tech_home.png
 next: govt-snooping
 next-title: Gov't Snooping
 links:

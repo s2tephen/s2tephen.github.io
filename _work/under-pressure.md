@@ -4,6 +4,7 @@ title: Under Pressure
 subtitle: Visualizing the stress of drinking from the MIT firehose
 categories: work
 year: 2012
+post-img: pressure_tech.jpg
 prev: govt-snooping
 prev-title: Gov't Snooping
 next: 21st-century-boy

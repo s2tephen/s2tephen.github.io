@@ -4,6 +4,7 @@ title: UpBeat
 subtitle: Universal drum attachments for interactive music learning
 categories: work
 year: 2014
+post-img: upbeat_top.jpg
 prev: 21st-century-boy
 prev-title: 21st Century Boy
 next: logo-design

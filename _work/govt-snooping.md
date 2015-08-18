@@ -4,6 +4,7 @@ title: Has the Gov't Lied on Snooping?
 subtitle: Debunking claims about NSA surveillance via pop-up video
 categories: work
 year: 2013
+post-img: nsa_video.png
 prev: the-tech
 prev-title: The Tech
 next: under-pressure
