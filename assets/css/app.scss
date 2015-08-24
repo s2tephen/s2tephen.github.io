@@ -209,11 +209,8 @@ h3 {
   color: $primary-color;
   text-align: center;
   @include transform(translateX(-50%));
-  @include media($medium) {
-    border-bottom-width: 3px;
-  }
   @include media($small) {
-    border-bottom-width: 1vw;
+    margin-bottom: ($font-size * 2);
   }
 }
 
@@ -223,6 +220,12 @@ h3 {
   width: 100%;
   margin-top: golden-ratio($font-size, -2);
   border-top: 4px solid $primary-color;
+  @include media($medium) {
+    border-top-width: 3px;
+  }
+  @include media($small) {
+    border-top-width: 1vw;
+  }
 }
 
 a {
@@ -585,7 +588,7 @@ hr {
   overflow: visible;
   padding-bottom: $font-size;
   @include media($small) {
-    padding-bottom: 4.5rem;
+    padding-bottom: 5rem;
   }
   @include hide-print;
 }
@@ -962,6 +965,7 @@ article p {
   @include media($small) {
     @include span-columns(12);
     @include shift(0);
+    margin-bottom: ($font-size * 2);
   }
   @media print {
     @include span-columns(12);
@@ -985,6 +989,9 @@ article p {
   margin-left: -12.5%;
   clear: both;
   background-color: rgb(238,238,238);
+  @include media($small) {
+    padding: ($font-size * 2) 0;
+  }
   @media print {
     width: 80%;
     margin-left: 10%;
@@ -995,7 +1002,7 @@ article p {
 .work-container > .section {
   margin-bottom: 0;
   @include media($small) {
-    margin-bottom: $font-size;
+    margin-bottom: ($font-size * 2);
   }
 }
 
@@ -1768,6 +1775,12 @@ p + .post-end {
   margin: 0;
 }
 
+.post-link {
+  @include media($small) {
+    margin-bottom: $font-size;
+  }
+}
+
 .post-link > .btn {
   padding: .65rem 1rem;
   @include media($small) {
@@ -1853,9 +1866,6 @@ p + .post-end {
   border-color: rgb(85,172,238);
   &:hover {
     background-color: rgb(85,172,238);
-  }
-  @include media($small) {
-    margin-bottom: golden-ratio($icon-size, 1);
   }
 }
 
