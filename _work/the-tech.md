@@ -7,8 +7,8 @@ year: 2015
 post-img: tech_home.png
 prev: snap-judgments
 prev-title: SNAP Judgments
-next: govt-snooping
-next-title: Gov't Snooping
+next: upbeat
+next-title: UpBeat
 links:
   - url: //thetech.com
     text: Link

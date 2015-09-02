@@ -7,8 +7,8 @@ year: 2010-2011
 post-img: 21cb_article.jpg
 prev: under-pressure
 prev-title: Under Pressure
-next: upbeat
-next-title: UpBeat
+next: logo-design
+next-title: Logo Design
 links:
   - url: //21cb.net
     text: Link
