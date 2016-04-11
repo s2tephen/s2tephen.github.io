@@ -1322,9 +1322,7 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
     @include span-columns(6);
     margin-bottom: $font-size;
   }
-  @media print {
-    display: none;
-  }
+  @include hide-print;
 }
 
 .resume-controls > .btn:first-child {
@@ -1361,8 +1359,9 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
 }
 
 .resume-body > div > ul > li {
+  margin-bottom: 0;
   font: $icon-size $sans-font;
-  line-height: golden-ratio($font-size, 0);
+  line-height: golden-ratio($font-size, 1);
   @media print {
     margin-bottom: 0;
     font-size: .8rem;
@@ -1443,13 +1442,6 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
   }
 }
 
-.resume-education > h3:last-of-type {
-  margin-top: 1.9rem;
-  @media print {
-    margin-top: (golden-ratio($icon-size, -2) * -1);
-  }
-}
-
 .resume-skills {
   @include span-columns(3);
   @include media($medium) {
@@ -1459,8 +1451,14 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
     @include span-columns(12);
   }
   @media print {
-    @include span-columns(5);
+    @include span-columns(4);
   } 
+}
+
+.resume-body > .resume-education > p {
+  @media print {
+    margin-bottom: $font-size;
+  }
 }
 
 .resume-experience > p {
@@ -1483,20 +1481,13 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
 .resume-education > h3,
 .resume-skills > h3 {
   @media print {
-    padding-top: golden-ratio($icon-size, -4);
+    padding-top: golden-ratio($icon-size, -3);
   } 
 }
 
 .resume-education > h3:first-of-type {
   @media print {
     padding-top: 0;
-  }
-}
-
-.resume-skills > ul:first-of-type > li:first-child {
-  margin-top: 1.4rem;
-  @media print {
-    margin-top: 0;
   }
 }
 
