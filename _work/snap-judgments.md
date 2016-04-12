@@ -5,7 +5,7 @@ subtitle: Visualizing food (in)security and building empathy via game design
 categories: work
 year: 2015
 post-img: snap_browser.png
-next: the-tech
+next-slug: the-tech
 next-title: The Tech
 links:
   - url: /foodsec/final

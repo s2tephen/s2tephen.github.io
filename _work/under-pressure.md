@@ -5,9 +5,9 @@ subtitle: Visualizing the stress of drinking from the MIT firehose
 categories: work
 year: 2012
 post-img: pressure_tech.jpg
-prev: govt-snooping
+prev-slug: govt-snooping
 prev-title: Gov't Snooping
-next: 21st-century-boy
+next-slug: 21st-century-boy
 next-title: 21st Century Boy
 links:
   - url: //tech.mit.edu/V132/N59/pressure/index.htm

@@ -5,9 +5,9 @@ subtitle: Blogging the flows of Asian pop culture and politics
 categories: work
 year: 2010-2011
 post-img: 21cb_article.jpg
-prev: under-pressure
+prev-slug: under-pressure
 prev-title: Under Pressure
-next: logo-design
+next-slug: logo-design
 next-title: Logo Design
 links:
   - url: //21cb.net

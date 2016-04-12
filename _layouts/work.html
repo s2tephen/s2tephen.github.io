@@ -16,8 +16,8 @@ layout: default
 </div>
 
 <div class="post-footer">
-  {% if page.prev %}
-    <a class="post-nav post-prev" href="{{ '/work/' | prepend: site.baseurl | append: page.prev }}">
+  {% if page.prev-slug %}
+    <a class="post-nav post-prev" href="{{ '/work/' | prepend: site.baseurl | append: page.prev-slug }}">
       <span></span>
       <span>{{ page.prev-title }}</span>
     </a>
@@ -39,8 +39,8 @@ layout: default
       </ul>
     </div>
   {% endif %}
-  {% if page.next %}
-    <a class="post-nav post-next" href="{{ '/work/' | prepend: site.baseurl | append: page.next }}">
+  {% if page.next-slug %}
+    <a class="post-nav post-next" href="{{ '/work/' | prepend: site.baseurl | append: page.next-slug }}">
       <span></span>
       <span>{{ page.next-title }}</span>
     </a>

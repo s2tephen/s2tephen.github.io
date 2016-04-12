@@ -5,9 +5,9 @@ subtitle: The first newspaper on the web, rebuilt for the modern web
 categories: work
 year: 2015
 post-img: tech_home.png
-prev: snap-judgments
+prev-slug: snap-judgments
 prev-title: SNAP Judgments
-next: upbeat
+next-slug: upbeat
 next-title: UpBeat
 links:
   - url: //thetech.com

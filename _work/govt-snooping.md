@@ -5,9 +5,9 @@ subtitle: Debunking claims about NSA surveillance via pop-up video
 categories: work
 year: 2013
 post-img: nsa_video.png
-prev: the-tech
+prev-slug: the-tech
 prev-title: The Tech
-next: under-pressure
+next-slug: under-pressure
 next-title: Under Pressure
 links:
   - url: //projects.propublica.org/graphics/nsa-claims

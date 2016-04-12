@@ -5,9 +5,9 @@ subtitle: Universal drum attachments for interactive music learning
 categories: work
 year: 2014
 post-img: upbeat_top.jpg
-prev: the-tech
+prev-slug: the-tech
 prev-title: The Tech
-next: govt-snooping
+next-slug: govt-snooping
 next-title: Gov't Snooping
 links:
   - url: //designed.mit.edu/gallery/view-2014-UpBeat.html
