@@ -39,7 +39,7 @@ layout: default
       </ul>
     </div>
   {% endif %}
-  {% unless page.title == 'Logo Design' %}
+  {% if page.next-slug %}
     <a class="post-nav post-next" href="{{ '/work/' | prepend: site.baseurl | append: page.next-slug }}">
       <span></span>
       <span>{{ page.next-title }}</span>
@@ -48,5 +48,5 @@ layout: default
     <a class="post-nav post-nav--inactive post-next">
       <span></span>
     </a>
-  {% endunless %}
+  {% endif %}
 </div>
