@@ -6,6 +6,7 @@ baseurl: ''
 url: 'http://stephensuen.com'
 
 # Build settings
+gems: [jekyll-paginate]
 markdown: kramdown
 permalink: /:categories/:title
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'pretty_print.xsl', 'vendor']
