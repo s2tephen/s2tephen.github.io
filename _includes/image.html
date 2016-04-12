@@ -4,7 +4,9 @@
 {% else %}
   <figure class="image">
 {% endif %}
-    <img src="{{ '/assets/img/' | prepend: site.baseurl | append: include.src }}" alt="{{ include.alt }}" title="{{ include.alt }}">
+    {% if include.src %}
+      <img src="{{ '/assets/img/' | prepend: site.baseurl | append: include.src }}" alt="{{ include.alt }}" title="{{ include.alt }}">
+    {% endif %}
     {% if include.caption %}
       <figcaption>{{ include.caption }}</figcaption>
     {% endif %}
