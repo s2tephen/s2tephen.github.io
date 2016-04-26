@@ -7,9 +7,9 @@ categories: about
 
 ## About me
 
-I recently graduated from the Massachusetts Institute of Technology, where I majored in [Comparative Media Studies](//cms.mit.edu), blending computer science, design, and the social sciences. There, I was the online media and interactives editor at the school newspaper, [*The Tech*](//thetech.com).
+I recently graduated from the Massachusetts Institute of Technology, where I concentrated in [Comparative Media Studies](//cms.mit.edu), essentially creating my own major that blended computer science, design, and the social sciences. There, I did research with the [MIT Media Lab](//media.mit.edu) and the [MIT Game Lab](//gamelab.mit.edu) and worked at the school newspaper, [*The Tech*](//thetech.com), as its online media and interactives editor.
 
-I was born in Los Angeles, but I grew up in Hong Kong and now live in Boston. I am seeking a full-time position as a digital designer or front-end developer, particularly in news and media. You can see my qualifications in [my resume](/resume/).
+I was born in Los Angeles, but I grew up in Hong Kong and currently live in Boston. I am now seeking a full-time position as a digital product designer or front-end developer, particularly in news and media. You can see my technical qualifications and previous work experience on [my resume](/resume/).
 
 ## Contact
 
