@@ -6,125 +6,70 @@ categories: resume
 ---
 
 <div class="resume-head">
-  <h1>Stephen<br>
+  <ul class="resume-contact">
+    <li class="resume-logo">{% include logo.html %}</li>
+    <li><img class="avatar" src="{{ '/assets/img/self_thumb.jpg' | prepend: site.baseurl }}"></a></li>
+    <li><i class="fa fa-fw fa-globe"></i> <a href="//stephensuen.com">stephensuen.com</a></li>
+    <li><i class="fa fa-fw fa-envelope"></i> <a href="mailto:ssuen@mit.edu">ssuen@mit.edu</a></li>
+    <li><i class="fa fa-fw fa-twitter"></i> <a href="//twitter.com/s2tephen">@s2tephen</a></li>
+    <li><i class="fa fa-fw fa-phone"></i> 805 252 4498</li>
+  </ul>
+  <div class="resume-title">
+    <h1>Stephen<br>
     J Suen</h1>
-  <div class="resume-contact">
-    <ul>
-      <li><h3>Web</h3></li>
-      <li><h3>Email</h3></li>
-      <li><h3>Twitter</h3></li>
-      <li><h3>Phone</h3></li>
-    </ul>
-  </div>
-  <div class="resume-contact">
-    <ul>
-      <li>stephensuen.com</li>
-      <li>ssuen@mit.edu</li>
-      <li>@s2tephen</li>
-      <li>+1 805 252 4498</li>
-    </ul>
-  </div>
-  <div class="resume-controls">
-    <a class="btn" href="javascript:window.print()"><i class="fa fa-fw fa-file-text"></i> <span>Print</span></a>
-    <a class="btn" href="{{ '/assets/files/stephen-suen-resume-2016.pdf' | prepend: site.baseurl }}"><i class="fa fa-fw fa-cloud-download"></i> <span>Download</span></a>
-    {% include logo.html %}
+    <h2>Front-end Developer / <span class="wbr">Product Designer</span></h2>
+    <a class="btn" href="{{ '/assets/files/stephen-suen-resume-2016.pdf' | prepend: site.baseurl }}"><i class="fa fa-fw fa-cloud-download"></i> <span></span></a>
   </div>
 </div>
-<div class="resume-body">
-  <div class="resume-education">
-    <h3>Education</h3>
-    <p>
-      <strong>Massachusetts Institute of Technology</strong><br>
-      B.S. in Comparative Media Studies <br>
-      Graduated Jun 2015, GPA: 4.6/5.0
-    </p>
-    <h3>Relevant Coursework</h3>
+
+<div class="resume-section">
+  <div class="resume-subtitle">
+    <h2>Experience</h2>
+  </div>
+  <div class="resume-block">
+    <h2>The Tech <span>Cambridge, MA</span></h2>
+    <h3>Online Media Editor <span>Sep 2012 to Jun 2015</span></h3>
+    <p>Led the newspaper’s interactive graphics team to develop visualizations and deploy online packages for data-driven news stories. Conducted internal hack nights and workshops in HTML/CSS/JS, d3.js, and web scraping. Launched the website’s first redesign in nearly a decade as its sole designer and lead front-end developer, transitioning from a legacy PHP content management system to a digital-first, mobile-responsive Rails app.</p>
+  </div>
+  <div class="resume-block">
+    <h2>Microsoft <span>Redmond, WA</span></h2>
+    <h3>Program Manager Intern, Outlook</strong> <span>Jun 2014 to Aug 2014</span></h3>
+    <p>Designed and wrote functional specs for UI/UX features in the Windows 10 Calendar universal app. Integrated design patterns from the OS, other Office apps, Outlook.com, and legacy conventions while still pushing new interaction paradigms. Created animated mockups and C#/XAML prototypes for user testing and design crits. Coordinated with an engineer to ship these features through agile methodologies and sprint planning.</p>
+  </div>
+  <div class="resume-block">
+    <h2>ProPublica <span>New York, NY</span></h2>
+    <h3>Google Journalism Fellow <span>Jun 2013 to Aug 2013</span></h3>
+    <p>Produced online news graphics on NSA surveillance and unpaid internships as a part of ProPublica’s news apps team. Designed and implemented a reusable lawsuit tracker in Sinatra, oEmbed-based modules for a social media story-sharing platform in Rails, and a synchronized video transcript using JavaScript and the YouTube API.</p>
+  </div>
+</div>
+
+<div class="resume-section">
+  <div class="resume-subtitle">
+    <h2>Education</h2>
+  </div>
+  <div class="resume-block">
+    <h2>Massachusetts Institute of Technology <span>Cambridge, MA</span></h2>
+    <h3>B.S. in Comparative Media Studies <span>Class of 2015, GPA: 4.6/5.0</span></h3>
+    <p>Relevant Coursework: The Product Engineering Process, Software Studio, Software Construction, Intro to Algorithms, User Interface Design and Implementation, Designing Interactions, Toy Product Design, Game Design for Expression, Data Storytelling Studio, Future of News and Participatory Media, Qualitative Research Methods</p>
+  </div>
+</div>
+
+<div class="resume-section">
+  <div class="resume-subtitle">
+    <h2>Skills</h2>
+  </div>
+  <div class="resume-block">
+    <h2>Development</h2>
     <ul>
-      <li>The Product Engineering Process</li>
-      <li>Toy Product Design</li>
-      <li>Game Design for Expression</li>
-      <li>Designing Interactions</li>
-      <li>User Interface Design</li>
-      <li>Software Studio</li>
-      <li>Data Storytelling Studio</li>
-      <li>Media Systems &amp; Texts</li>
-      <li>News &amp; Participatory Media</li>
-      <li>Qualitative Research Methods</li>
-    </ul>
-    <h3>Activities &amp; Awards</h3>
-    <ul>
-      <li>Burchard Scholars Program, UPOP</li>
-      <li>Google Journalism Fellowship</li>
-      <li>Discover Product Design</li>
-      <li>East Campus Web/CameraComm</li>
-      <li>The Tech, WMBR 88.1 FM</li>
+      <li>HTML5, CSS3, SASS/LESS<span>/Stylus</span>, JavaScript, jQuery, d3.js, Node.js, React, Express</li>
+      <li>Python, Django, Ruby, Rails, PHP,<span> Wordpress, Drupal,</span> SQL, Java, C#, Arduino, Unix, Git</li>
     </ul>
   </div>
-
-  <div class="resume-experience">
-    <h3>Work Experience</h3>
-    <p>
-      <strong>The Tech</strong><br>
-      <span class="job-title"><strong>Online Media Editor</strong>Sep 2012 to Jun 2015</span><br>
-      Coordinated news and interactive graphics teams to deploy data-driven stories and develop visualizations. Managed social media presence and digital strategy, doubling Facebook and Twitter followership. Led front-end development of website redesign.
-    </p>
-    <p>
-      <strong>Microsoft</strong><br>
-      <span class="job-title"><strong>Program Manager Intern</strong>Jun 2014 to Aug 2014</span><br>
-      Designed and wrote functional specs for Outlook Calendar UX. Created mockups and prototypes for user tests and weekly design crits. Coordinated with an engineer to implement features, including project planning and working with partner teams.
-    </p>
-    <p>
-      <strong>ProPublica</strong><br>
-      <span class="job-title"><strong>Google Journalism Fellow</strong>Jun 2013 to Aug 2013</span><br>
-      Produced interactive graphics as a transplant in ProPublica's news apps team, working on stories about NSA surveillance and unpaid internships. Contributed writing, code, design, and video editing.
-    </p>
-    <p>
-      <strong>Berkman Center for Internet &amp; Society</strong><br>
-      <span class="job-title"><strong>Youth &amp; Media Intern</strong>Jun 2012 to Aug 2012</span><br>
-      Coordinated ten interns in the analysis of focus group transcripts on teen information consumption. Provided writing, infographics, media production, and curriculum development.
-    </p>
-    <p>
-      <strong>Singapore-MIT GAMBIT Game Lab</strong><br>
-      <span class="job-title"><strong>Undergraduate Researcher</strong>Feb 2012 to May 2012</span><br>
-      Developed quests and AI behaviors for <em>Skyrim</em> using the game's modding toolset in order to explore the feasibility of procedural storytelling within the engine through proof-of-concept prototypes.
-    </p>
-    <p>
-      <strong>MIT Center for Civic Media</strong><br>
-      <span class="job-title"><strong>Undergraduate Researcher</strong>Feb 2012 to May 2012</span><br>
-      Designed visual identity and UI elements for Vojo, a community mobile blogging platform optimized for feature phones. Liveblogged ROFLcon and MIT-Knight Civic Media Conference.
-    </p>
-    <p>
-      <strong>21st Century Boy</strong><br>
-      <span class="job-title"><strong>Web Developer</strong>Mar 2010 to Dec 2011</span><br>
-      Oversaw two redesigns that grew the personal blog to a full-fledged news site driving 80,000 views/month. Maintained 21CB's technical aspects, including its custom Wordpress theme and plugins.
-    </p>
-  </div>
-
-  <div class="resume-skills">
-    <h3>Skills</h3>
+  <div class="resume-block resume-block--last">
+    <h2>Design / UI / UX</h2>
     <ul>
-      <li><strong>Development</strong></li>
-      <li>HTML5, CSS3, SASS, LESS</li>
-      <li>JavaScript, jQuery, d3.js</li>
-      <li>Node.js, Express, Meteor, React</li>
-      <li>Ruby, Rails, Sinatra</li>
-      <li>Python, Django, Flask</li>
-      <li>PHP, Java, C#, Arduino, Unix, Git</li>
-    </ul>
-    <ul>
-      <li><strong>Design</strong></li>
-      <li>Adobe Creative Suite, Sketch</li>
-      <li>User research, UI/UX methods</li>
-      <li>Visualization, mapping/GIS</li>
-      <li>Graphic design, branding</li>
-    </ul>
-    <ul>
-      <li><strong>Video/Animation</strong></li>
-      <li>Final Cut Pro, Premiere, Flash</li>
-    </ul>
-    <ul>
-      <li><strong>Languages</strong></li>
-      <li>Cantonese, Mandarin</li>
+      <li>Sketch, Illustrator, Photoshop, InDesign, Flash, visualization<span>/mapping</span>, animation</li>
+      <li>Ethnographic research, storyboarding, <span>rapid </span>prototyping, user testing, branding</li>
     </ul>
   </div>
 </div>

@@ -14,7 +14,14 @@ $sans-font: 'Karla', -apple-system-font, '.SFNSDisplay-Regular', 'Helvetica Neue
 $serif-font: 'freight-text-pro', 'Georgia', serif;
 $font-size: 1.5rem;
 $icon-size: 1.1rem;
+$resume-lsp: 4px;
+
 $primary-color: rgb(243,178,21);
+$dark-gray: rgb(102,102,102);
+$medium-gray: rgb(153,153,153);
+$light-gray: rgb(204,204,204);
+$lighter-gray: rgb(238,238,238);
+$white: rgb(255,255,255);
 $transition: .15s;
 
 @import 'neat/neat';
@@ -41,29 +48,28 @@ $small: new-breakpoint(max-width 767px);
   margin-#{$direction}: (($column-pct + $gutter-pct) * -2);
 }
 
-@mixin hide-small {
-  @include media($small) {
-    display: none;
+@mixin hide($media) {
+  @if $media == print {
+    @media print {
+      display: none;
+    }
+  } @else {
+    @include media($media) {
+      display: none;
+    }
   }
 }
 
-@mixin show-small {
+@mixin show($media) {
   display: none;
-  @include media($small) {
-    display: block;
-  }
-}
-
-@mixin hide-print {
-  @media print {
-    display: none;
-  }
-}
-
-@mixin show-print {
-  display: none;
-  @media print {
-    display: block;
+  @if $media == print {
+    @media print {
+      display: block;
+    }
+  } @else {
+    @include media($media) {
+      display: block;
+    }
   }
 }
 
@@ -191,7 +197,7 @@ h2:first-child {
 .subtitle {
   margin-top: 0;
   font: 400 golden-ratio($icon-size, 1) $sans-font;
-  color: rgb(153,153,153);
+  color: $medium-gray;
 }
 
 h3 {
@@ -246,7 +252,7 @@ p > span > a {
   }
   @media print {
     background-image: none;
-    border-bottom: 2px solid rgb(204,204,204);
+    border-bottom: 2px solid $light-gray;
   }
 }
 
@@ -262,7 +268,7 @@ hr {
   width: 30%;
   height: 1px;
   margin: golden-ratio($font-size, 1) 35%;
-  background-color: rgb(221,221,221);
+  background-color: $lighter-gray;
   border: 0;
 }
 
@@ -274,10 +280,10 @@ hr {
   @include black(color);
   text-align: center;
   text-transform: uppercase;
-  background-color: rgb(238,238,238);
+  background-color: $lighter-gray;
   @include transition(color $transition linear, background-color $transition linear);
   &:hover {
-    color: rgb(255,255,255);
+    color: $white;
     background-color: $primary-color;
     @include transition-duration($transition/3);
   }
@@ -355,7 +361,7 @@ hr {
     padding: 0 5vw;
     background-color: $primary-color;
   }
-  @include hide-print;
+  @include hide(print);
 }
 
 .header-nav > a {
@@ -391,7 +397,7 @@ hr {
 }
 
 .header-nav > a > .logo > path {
-  fill: rgb(255,255,255);
+  fill: $white;
   @include transition(fill $transition linear);
   @include media($small) {
     @include black(fill);
@@ -402,7 +408,7 @@ hr {
   fill: $primary-color;
   @include transition-duration($transition/3);
   @include media($small) {
-    fill: rgb(255,255,255);
+    fill: $white;
   }
 }
 
@@ -418,7 +424,7 @@ hr {
     height: 48px;
     margin-bottom: 0;
   }
-  @include hide-print;
+  @include hide(print);
 }
 
 .nav-menu > li {
@@ -447,10 +453,10 @@ hr {
 .nav-menu > li > a {
   padding-bottom: golden-ratio($font-size, -2);
   font-family: $sans-font;
-  color: rgb(204,204,204);
+  color: $light-gray;
   @include transition(color $transition linear);
   &:hover {
-    color: rgb(255,255,255);
+    color: $white;
     @include transition-duration($transition/3);
   }
   @include media($small) {
@@ -478,12 +484,12 @@ hr {
     cursor: default;
   }
   @include media($small) {
-    color: rgb(255,255,255);
-    border-bottom-color: rgb(255,255,255);
+    color: $white;
+    border-bottom-color: $white;
     border-bottom-width: 3px;
     &:hover {
-      color:rgb(255,255,255);
-      border-bottom-color: rgb(255,255,255);
+      color:$white;
+      border-bottom-color: $white;
     }
   }
 }
@@ -496,15 +502,15 @@ hr {
 
 .header-intro > .meta {
   font-size: $font-size;
-  color: rgb(204,204,204);
+  color: $light-gray;
 }
 
 .header-intro > .title {
   margin: 0;
   font-size: golden-ratio($font-size, 2);
   letter-spacing: .5rem;
+  color: $white;
   text-transform: uppercase;
-  color: rgb(255,255,255);
   @include shadow;
   @include media($small) {
     font-size: golden-ratio($icon-size, 2);
@@ -530,7 +536,7 @@ hr {
 .header-intro > .subtitle {
   margin: golden-ratio($icon-size, -2) 0 0;
   font: 400 golden-ratio($font-size, 1) $serif-font;
-  color: rgb(238,238,238);
+  color: $lighter-gray;
   @include shadow;
   @include media($small) {
     font-size: golden-ratio($font-size, 1);
@@ -541,23 +547,23 @@ hr {
 }
 
 .header-intro > .subtitle--large {
-  @include hide-small;
+  @include hide($small);
 }
 
 .header-intro > .subtitle--small {
-  @include show-small;
+  @include show($small);
 }
 
 .page-header--full > .header-intro > h2 > a {
   display: inline;
-  color: rgb(238,238,238);
+  color: $lighter-gray;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 95%, rgba(119,123,145,0.6) 95%);
   @include transition(color $transition linear);
   @include media($small) {
     display: inline-block;
   }
   &:hover {
-    color: rgb(153,153,153);
+    color: $medium-gray;
     @include transition-duration($transition/3);
   }
 }
@@ -567,18 +573,18 @@ hr {
   left: 10vw;
   bottom: golden-ratio($icon-size, 3);
   font: golden-ratio($font-size, -1) $sans-font;
-  color: rgb(153,153,153);
+  color: $medium-gray;
   @include media($small) {
     bottom: golden-ratio($font-size, 3);
   }
 }
 
 .footer-credit > a {
-  color: rgb(153,153,153);
+  color: $medium-gray;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 95%, rgba(119,123,145,0.6) 95%);
   @include transition(color $transition linear);
   &:hover {
-    color: rgb(255,255,255);
+    color: $white;
     @include transition-duration($transition/3);
   }
 }
@@ -590,7 +596,7 @@ hr {
   @include media($small) {
     padding-bottom: 5rem;
   }
-  @include hide-print;
+  @include hide(print);
 }
 
 .page-header--nocover > .header-nav {
@@ -606,7 +612,7 @@ hr {
 .page-header--nocover > .header-nav > a:hover > .logo > path {
   fill: $primary-color;
   @include media($small) {
-    fill: rgb(255,255,255);
+    fill: $white;
   }
 }
 
@@ -619,7 +625,7 @@ hr {
 }
 
 .page-header--nocover > .header-nav > .nav-menu > li > a {
-  color: rgb(153,153,153);
+  color: $medium-gray;
   @include media($small) {
     @include black(color);
   }
@@ -635,9 +641,9 @@ hr {
     cursor: default;
   }
   @include media($small) {
-    color: rgb(255,255,255);
+    color: $white;
     &:hover {
-      color: rgb(255,255,255);
+      color: $white;
     }
   }
 }
@@ -701,7 +707,7 @@ article p {
 .embed > figcaption {
   margin-top: golden-ratio($font-size, -1);
   font: $icon-size $sans-font;
-  color: rgb(153,153,153);
+  color: $medium-gray;
   @include media($medium) {
     margin-top: golden-ratio($font-size, -2);
   }
@@ -713,7 +719,7 @@ article p {
 
 .image > figcaption > a,
 .embed > figcaption > a {
-  color: rgb(153,153,153);
+  color: $medium-gray;
   background-image: linear-gradient(to bottom, rgba(0,0,0,0) 95%, rgba(119,123,145,0.6) 95%);
   @include transition(color $transition linear);
   &:hover {
@@ -722,7 +728,7 @@ article p {
   }
   @media print {
     background-image: none;
-    border-bottom: 2px solid rgb(204,204,204);
+    border-bottom: 2px solid $light-gray;
   }
 }
 
@@ -988,7 +994,7 @@ article p {
   padding: golden-ratio($font-size, 2) 0;
   margin-left: -12.5%;
   clear: both;
-  background-color: rgb(238,238,238);
+  background-color: $lighter-gray;
   @include media($small) {
     padding: ($font-size * 2) 0;
   }
@@ -1040,7 +1046,7 @@ article p {
   padding: golden-ratio($icon-size, -3) $font-size;
   margin-top: (golden-ratio($icon-size, 1) * -1);
   font-size: golden-ratio($icon-size, 2);
-  color: rgb(255,255,255);
+  color: $white;
   @include transition(background-color $transition linear);
   @include media($small) {
     position: relative;
@@ -1080,12 +1086,12 @@ article p {
   margin: 30% 0 0 (golden-ratio($font-size, 2) * -.5);
   font-size: golden-ratio($icon-size, 1);
   line-height: golden-ratio($font-size, 2);
-  color: rgb(255,255,255);
+  color: $white;
   text-align: center;
   border-radius: 100%;
   @include transition(background-color $transition linear);
-  @include hide-small;
-  @include hide-print;
+  @include hide($small);
+  @include hide(print);
 }
 
 $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99,38,43) rgb(17,17,17) $primary-color;
@@ -1149,8 +1155,8 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
   @include span-columns(2);
   padding-right: golden-ratio(1rem, 1);
   margin-top: golden-ratio($icon-size, 2);
-  @include hide-small;
-  @include hide-print;
+  @include hide($small);
+  @include hide(print);
 }
 
 .work-services {
@@ -1160,7 +1166,7 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
 .work-services > li {
   margin-bottom: 0;
   font: 1rem/1.3rem $sans-font;
-  color: rgb(102,102,102);
+  color: $dark-gray;
 }
 
 .work-services > li:before {
@@ -1177,7 +1183,7 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
   @include shift(2);
   margin-top: $font-size;
   font-size: $font-size;
-  color: rgb(102,102,102);
+  color: $dark-gray;
   text-align: center;
   @include media($small) {
     left: 0;
@@ -1205,302 +1211,341 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
   }
 }
 
-.resume-head {
+.resume p,
+.resume li {
+  font-family: $sans-font;
+}
+
+.resume h2 {
+  font-size: $icon-size;
+  @include media($xlarge) {
+    font-size: $font-size;
+  }
+}
+
+.resume-head,
+.resume-section {
   @include fill-parent;
   @include row;
 }
-  
-.resume-head > h1 {
-  @include span-columns(4);
-  line-height: golden-ratio($font-size, 1);
-  @include media($xlarge) {
-    @include span-columns(3);
+
+.resume-head {
+  @include media($small) {
+    @include flex;
+    @include flex-column;
   }
-  @include media($medium) {
-    @include span-columns(6);
-  }
+}
+
+.resume-contact {
+  @include span-columns(2);
   @include media($small) {
     @include span-columns(12);
-    @include omega;
   }
   @media print {
-    @include span-columns(5);
+    @include span-columns(2 of 9);
   }
 }
 
-.resume-contact > ul > li {
-  line-height: $font-size;
-  @media print {
-    line-height: 1.2rem;
-  }
-}
-
-.resume-contact > ul > li:before {
-  content: none;
-}
-
-.resume-contact:first-of-type {
-  @include span-columns(1);
-  @include media($medium) {
-    @include span-columns(2);
-  }
-  @include media($small) {
-    @include span-columns(4);
-  }
-  @media print {
-    @include span-columns(2);
-  }
-}
-
-.resume-contact:first-of-type > ul > li {
-  margin-bottom: golden-ratio($icon-size, -3);
-  @media print {
-    margin-bottom: 0;
-  }
-}
-
-.resume-contact > ul > li > h3 {
-  margin-bottom: 0;
-  color: $primary-color;
-  letter-spacing: 2px;
-  @media print {
-    font-size: golden-ratio($icon-size, -1);
-  }
-}
-
-.resume-contact:nth-of-type(2) {
-  @include span-columns(4);
-  @include media($xlarge) {
-    @include span-columns(5);
-  }
-  @include media($medium) {
-    @include span-columns(4);
-    @include omega;
-  }
-  @include media($small) {
-    @include span-columns(8);
-    @include omega;
-  }
-  @media print {
-    @include span-columns(3);
-    font-size: .8rem;
-  }
-}
-
-.resume-contact:nth-of-type(2) > ul > li { 
-  font: $icon-size $sans-font;
-  margin-bottom: golden-ratio($icon-size, -2);
-  @media print {
-    font-size: .8rem;
-    margin-bottom: golden-ratio($icon-size, -3);
-  }
-}
-
-.resume-contact > ul > li:nth-child(3) {
-  @include show-print;
-}
-
-.resume-controls {
-  @include span-columns(3);
-  @include media($medium) {
-    @include span-columns(12);
-    @include omega;
-  }
-  @include media($small) {
-    @include span-columns(12);
-    @include omega;
-    margin-bottom: $font-size;
-  }
-  @media print {
-    @include span-columns(2);
-    @include omega;
-  }
-}
-
-.resume-controls > .btn {
-  @include media($medium) {
-    @include span-columns(6);
-    margin-bottom: $font-size;
-  }
-  @include hide-print;
-}
-
-.resume-controls > .btn:first-child {
-  margin-bottom: 5px;
-}
-
-.resume-controls > .btn:nth-child(2) {
-  @include omega;
-}
-
-.resume-controls > a:last-child {
+.resume-contact > li {
   float: right;
-  margin-top: 2px;
-  @include show-print;
-}
-
-.resume-controls > a:last-child > .logo {
-  height: 72px;
-  width: 72px;
-}
-
-.resume-body {
-  @include row;
-}
-
-.resume-contact > h3,
-.resume-body > div > h3 {
-  margin-bottom: golden-ratio($font-size, -1);
-  color: $primary-color;
-  letter-spacing: 2px;
-  @media print {
-    font-size: golden-ratio($icon-size, -1);
-  }
-}
-
-.resume-body > div > ul > li {
   margin-bottom: 0;
-  font: $icon-size $sans-font;
-  line-height: golden-ratio($font-size, 1);
+  font-size: $icon-size;
+  line-height: $font-size;
+  text-align: right;
+  @include media($small) {
+    @include span-columns(6);
+    font-size: golden-ratio($font-size, -1);
+    text-align: left;
+  }
   @media print {
-    margin-bottom: 0;
-    font-size: .8rem;
+    font-size: golden-ratio($font-size, -1);
     line-height: $icon-size;
   }
 }
 
-.resume-body > div > ul > li:before {
+.resume-contact > li:nth-child(2n) {
+  @include media($small) {
+    @include omega();
+  }
+}
+
+.resume-contact > li:before {
   content: none;
 }
 
-.resume-body > div > p {
-  font: $icon-size $sans-font;
-  line-height: golden-ratio($font-size, 1);
-  @media print {
-    font-size: .8rem;
-    line-height: $icon-size;
+.resume-contact > .resume-logo {
+  @include show(print);
+}
+
+.resume-logo > a > .logo {
+  width: 50px;
+  height: 50px;
+  margin: golden-ratio($icon-size, -3) $icon-size * -1 golden-ratio($icon-size, -1) 0;
+}
+
+.resume-contact > li > .avatar {
+  display: inline;
+  width: golden-ratio($font-size, 2);
+  height: golden-ratio($font-size, 2);
+  margin: 0 $font-size * -1 golden-ratio($font-size, -1) 0;
+  border-radius: golden-ratio($font-size, 2)/2;
+  @include media($xlarge) {
     margin-bottom: $icon-size;
   }
+  @include media($medium) {
+    margin-bottom: golden-ratio($icon-size, -1);
+  }
+  @include media($small) {
+    display: none;
+  }
+  @include hide(print);
 }
 
-.job-title {
-  color: rgb(153,153,153);
-  @media print {
-    text-align: right;
-    display: block;
-    margin-bottom: .5rem;
+.resume-contact > li:nth-of-type(2) {
+  @include media($medium) {
+    float: right;
   }
 }
 
-.job-title > strong {
-  padding-right: 1em;
+.resume-contact > li > i {
+  margin-right: golden-ratio($icon-size, -2);
+  color: $medium-gray;
+  @include show($small);
+  @include media($small) {
+    display: inline;
+  }
+}
+
+.resume-contact > li > a {
+  @include black(color);
+  @include transition(color $transition linear);
+  &:hover {
+    color: $primary-color;
+    @include transition-duration($transition/3);
+  }
+}
+
+.resume-title {
+  @include span-columns(8);
+  padding-left: $gutter-pct/2;
+  margin-bottom: golden-ratio($font-size, -1);
+  @include media($small) {
+    @include span-columns(12);
+    padding-left: 0;
+    margin-bottom: 0;
+    @include order(-1);
+  }
+  @media print {
+    @include span-columns(7 of 9);
+    margin-bottom: 0;
+  }
+}
+
+.resume-title > h1 {
+  margin-bottom: 0;
+  font-size: golden-ratio($font-size, 2);
+  line-height: golden-ratio($font-size, 2);
+  color: $primary-color;
+  @media print {
+    line-height: golden-ratio($font-size, 2) - .5rem;
+  }
+}
+
+.resume-title > h2 {
+  @include span-columns(10);
+  margin-top: golden-ratio($icon-size, 1);
+  color: $medium-gray;
+  letter-spacing: $resume-lsp;
+  text-transform: uppercase;
+  @include media($xlarge) {
+    @include span-columns(9);
+  }
+  @include media($medium) {
+    @include span-columns(12);
+    letter-spacing: $resume-lsp/2;
+  }
+  @include media($small) {
+    @include span-columns(12);
+    letter-spacing: $resume-lsp/2;
+  }
+  @media print {
+    margin: golden-ratio($icon-size, -1) 0 golden-ratio($font-size, -1);
+    letter-spacing: $resume-lsp/2;
+  }
+}
+
+.resume-title > h2 > .wbr {
   @include media($small) {
     display: block;
   }
-  @media print {
-    float: left;
-  }
 }
 
-.job-title + br {
-  @include hide-print;
-}
-
-.resume-education {
-  @include span-columns(4);
+.resume-title > .btn {
+  @include span-columns(2);
+  margin-top: golden-ratio($icon-size, 1) - .25rem;
+  float: right;
+  margin-bottom: $font-size;
   @include media($xlarge) {
     @include span-columns(3);
   }
   @include media($medium) {
-    @include span-columns(6);
+    @include span-columns(12);
+    margin-top: 0;
   }
   @include media($small) {
     @include span-columns(12);
-  }
-  @media print {
-    @include span-columns(5);
-  }
-}
-
-.resume-experience {
-  @include span-columns(5);
-  @include media($xlarge) {
-    @include span-columns(6);
-  }
-  @include media($medium) {
-    @include span-columns(6);
-    float: right;
-    margin-right: 0;
-  }
-  @include media($small) {
-    @include span-columns(12);
-  }
-  @media print {
-    @include span-columns(7);
-    float: right;
-    margin-right: 0;
-  }
-}
-
-.resume-skills {
-  @include span-columns(3);
-  @include media($medium) {
-    @include span-columns(6);
-  }
-  @include media($small) {
-    @include span-columns(12);
-  }
-  @media print {
-    @include span-columns(4);
-  } 
-}
-
-.resume-body > .resume-education > p {
-  @media print {
-    margin-bottom: $font-size;
-  }
-}
-
-.resume-experience > p {
-  margin-top: -.9rem;
-  @media print {
     margin-top: 0;
   }
 }
 
-.resume-experience > p:first-of-type {
-  margin-top: 0;
+.resume-title > .btn > span:before {
+  content: 'PDF';
+  @include media($xlarge) {
+    content: 'Download';
+  }
+  @include media($medium) {
+    content: 'Download';
+  }
+  @include media($small) {
+    content: 'Download';
+  }
 }
 
-.resume-experience > p:last-child {
+.resume-subtitle {
+  @include span-columns(2);
+  @include media($small) {
+    @include span-columns(12);
+  }
+  @media print {
+    @include span-columns(2 of 9);
+  }
+}
+
+.resume-subtitle > h2 {
+  margin-right: $resume-lsp * -1;
+  letter-spacing: $resume-lsp;
+  color: $primary-color;
+  text-align: right;
+  text-transform: uppercase;
+  @include media($medium) {
+    float: right;
+    margin-right: $resume-lsp/2 * -1;
+    letter-spacing: $resume-lsp/2;
+  }
+  @include media($small) {
+    letter-spacing: $resume-lsp/2;
+    text-align: left;
+  }
+  @media print {
+    letter-spacing: $resume-lsp/2;
+  }
+}
+
+.resume-section > div:nth-child(2) {
+  @include shift(0);
+}
+
+.resume-block {
+  @include span-columns(8);
+  @include shift(2);
+  @include omega();
+  padding-left: $gutter-pct/2;
+  @include media($small) {
+    @include span-columns(12);
+    @include shift(0);
+    padding-left: 0;
+  }
+  @media print {
+    @include span-columns(7 of 9);
+    @include shift(2 of 9);
+    @include omega();
+  }
+}
+
+.resume-block > h2 {
+  margin-bottom: golden-ratio($icon-size, -1);
+  @media print {
+    margin-bottom: golden-ratio($icon-size, -3);
+  }
+}
+
+.resume-block > h2 > span {
+  margin-left: golden-ratio($icon-size, -2);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.resume-block > h3 {
+  margin-bottom: golden-ratio($icon-size, -1);
+  font-size: $icon-size;
+  color: $medium-gray;
+  text-transform: capitalize;
+  @include media($small) {
+    font-size: golden-ratio($font-size, -1);
+  }
+  @media print {
+    margin-bottom: golden-ratio($icon-size, -2);
+    font-size: golden-ratio($font-size, -1);
+    line-height: $icon-size;
+  }
+}
+
+.resume-block > h3 > span {
+  font-weight: 400;
+  @include media($small) {
+    display: block;
+  }
+}
+
+.resume-block > h3 > span:before {
+  content: '— ';
+  @include media($small) {
+    content: none;
+  }
+}
+
+.resume-block > p {
+  font-size: $icon-size;
+  line-height: golden-ratio($icon-size, 1);
+  @include media($small) {
+    font-size: golden-ratio($font-size, -1);
+  }
+  @media print {
+    margin-bottom: golden-ratio($font-size, -1);
+    font-size: golden-ratio($font-size, -1);
+    line-height: $icon-size;
+  }
+}
+
+.resume-block > ul {
+  margin-bottom: golden-ratio($font-size, -1);
+}
+
+.resume-block--last > ul {
   @media print {
     margin-bottom: 0;
   }
 }
 
-.resume-education > h3,
-.resume-skills > h3 {
+.resume-block > ul > li {
+  margin-bottom: 0;
+  font-size: $icon-size;
+  line-height: golden-ratio($icon-size, 1);
+  @include media($small) {
+    font-size: golden-ratio($font-size, -1);
+  }
   @media print {
-    padding-top: golden-ratio($icon-size, -3);
-  } 
-}
-
-.resume-education > h3:first-of-type {
-  @media print {
-    padding-top: 0;
+    font-size: golden-ratio($font-size, -1);
+    line-height: $icon-size;
   }
 }
 
-.resume-skills > ul > li:first-child {
-  @media print {
-    margin-top: (golden-ratio($icon-size, -2) * -1);
-  }
+.resume-block > ul > li:before {
+  content: none;
 }
 
-.resume-skills > ul:last-child {
-  @media print {
-    margin-bottom: 0;
-  }
+.resume-block > ul > li > span {
+  @include hide(print);
 }
 
 // Blog/work posts
@@ -1521,7 +1566,7 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
   margin-bottom: golden-ratio($icon-size, -1);
   font: golden-ratio($font-size, -1) $sans-font;
   line-height: 1em;
-  color: rgb(153,153,153);
+  color: $medium-gray;
   text-transform: uppercase;
 }
 
@@ -1548,14 +1593,14 @@ p + .post-end {
 .post-footer {
   margin: $font-size 0 0;
   text-align: center;
-  @include hide-print;
+  @include hide(print);
 }
 
 .post-nav {
   @include span-columns(4);
   margin-top: golden-ratio($icon-size, 1);
   font-family: $sans-font;
-  color: rgb(153,153,153);
+  color: $medium-gray;
   @include media($small) {
     @include span-columns(3);
     margin-top: ($icon-size * 2);
@@ -1577,7 +1622,7 @@ p + .post-end {
   font-weight: 700;
   @include black(color);
   @include transition(color $transition linear);
-  @include hide-small;
+  @include hide($small);
 }
 
 .post-nav:hover > span:first-child {
@@ -1588,21 +1633,21 @@ p + .post-end {
 }
 
 .post-nav:hover > span:nth-child(2) {
-  color: rgb(153,153,153);
+  color: $medium-gray;
   @include transition-duration($transition/3);
 }
 
 .post-nav--inactive {
-  @include show-small;
+  @include show($small);
 }
 
 .post-nav--inactive > span:first-child {
-  color: rgb(204,204,204);
+  color: $light-gray;
   background: none;
 }
 
 .post-nav--inactive:hover > span:first-child {
-  color: rgb(204,204,204);
+  color: $light-gray;
 }
 
 .post-prev {
@@ -1614,7 +1659,7 @@ p + .post-end {
   margin-left: -1.5em;
   margin-right: .5em;
   @include transition(margin $transition linear);
-  @include hide-small;
+  @include hide($small);
 }
 
 .post-prev > span:first-child:after {
@@ -1648,7 +1693,7 @@ p + .post-end {
   margin-right: -1.5em;
   margin-left: .5em;
   @include transition(margin $transition linear);
-  @include hide-small;
+  @include hide($small);
 }
 
 .post-next:hover > span:first-child:after {
@@ -1682,7 +1727,7 @@ p + .post-end {
 .post-social > ul > li {
   float: left;
   margin: 0;
-  background-color: rgb(238,238,238);
+  background-color: $lighter-gray;
   @include transition(background-color $transition linear);
 }
 
@@ -1714,7 +1759,7 @@ p + .post-end {
 }
 
 .post-social > ul > li:hover > a {
-  color: rgb(255,255,255);
+  color: $white;
   @include transition-duration($transition/3);
 }
 
@@ -1732,7 +1777,7 @@ p + .post-end {
   width: 30%;
   margin: golden-ratio($font-size, 1) 35%;
   clear: both;
-  border-bottom: 1px solid rgb(221,221,221);
+  border-bottom: 1px solid $lighter-gray;
   @include media($small) {
     width: 100%;
     margin-left: 0;
@@ -1845,7 +1890,7 @@ p + .post-end {
   margin: 0 20% golden-ratio($font-size, -1);
   font-size: $icon-size;
   line-height: $font-size;
-  color: rgb(153,153,153);
+  color: $medium-gray;
   @include media($small) {
     width: 100%;
     margin: 0 0 golden-ratio($font-size, -1);
@@ -1865,7 +1910,7 @@ p + .post-end {
 }
 
 .post--index > .post-header:hover > .title {
-  color: rgb(102,102,102);
+  color: $dark-gray;
   @include transition-duration($transition/3);
 }
 
@@ -1922,7 +1967,7 @@ p + .post-end {
   content: '';
   display: block;
   height: golden-ratio($icon-size, 2);
-  @include hide-print;
+  @include hide(print);
 }
 
 .page-footer {
@@ -1933,7 +1978,7 @@ p + .post-end {
     height: auto;
     padding-bottom: golden-ratio($icon-size, -1);
   }
-  @include hide-print;
+  @include hide(print);
 }
 
 .footer-wrapper {
@@ -1994,7 +2039,7 @@ p + .post-end {
     font-size: $font-size;
     @include transition(color $transition linear);
     &:hover {
-      color: rgb(255,255,255);
+      color: $white;
       @include transition-duration($transition/3);
     }
   }
