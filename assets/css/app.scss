@@ -1247,6 +1247,8 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
 }
 
 .resume-contact > li {
+  @include span-columns(12);
+  @include omega();
   float: right;
   margin-bottom: 0;
   font-size: $icon-size;
