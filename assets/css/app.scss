@@ -1369,6 +1369,7 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
     letter-spacing: $resume-lsp/2;
   }
   @media print {
+    @include span-columns(12);
     margin: golden-ratio($icon-size, -1) 0 golden-ratio($font-size, -1);
     letter-spacing: $resume-lsp/2;
   }
@@ -1396,6 +1397,7 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
     @include span-columns(12);
     margin-top: 0;
   }
+  @include hide(print);
 }
 
 .resume-title > .btn > span:before {
@@ -1544,8 +1546,29 @@ $work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99
   content: none;
 }
 
-.resume-block > ul > li > span {
+.resume-skill--hide {
+  @include hide($medium);
+  @include hide(min-width 480px max-width 767px);
   @include hide(print);
+}
+
+.resume-skill--swap:first-of-type {
+  @include media($medium) {
+    display: none;
+  }
+  @include media(min-width 480px max-width 767px) {
+    display: none;
+  }
+}
+
+.resume-skill--swap:nth-of-type(2) {
+  display: none;
+  @include media($medium) {
+    display: inline;
+  }
+  @include media(min-width 480px max-width 767px) {
+    display: inline;
+  }
 }
 
 // Blog/work posts
