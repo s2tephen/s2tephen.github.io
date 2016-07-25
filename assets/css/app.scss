@@ -1094,7 +1094,7 @@ article p {
   @include hide(print);
 }
 
-$work-colors: rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99,38,43) rgb(17,17,17) $primary-color;
+$work-colors: rgb(192,132,151) rgb(0,179,90) rgb(153,51,51) rgb(119,63,155) rgb(19,79,124) rgb(99,38,43) rgb(17,17,17) $primary-color;
 @for $i from 1 through length($work-colors) {
   $c: nth($work-colors, $i);
   .work-item:nth-of-type(#{$i}) > a {

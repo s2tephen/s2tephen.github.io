@@ -27,7 +27,7 @@ To address these issues, we formed a dedicated web design team with the goal of 
 
 {% include image.html src='tech_article.png' alt='The redesigned article page' caption='The redesigned article page' class='wide shadow' %}
 
-On this project, I served as the lead designer and front-end developer, planning the site architecture, creating wireframes and mockups, and implementing most of the page templates. As one of the few members on the development team who also had editorial experience, I had to advocate for certain features and design decisions, inspired by my time at [ProPublica](//propublica.org) and informed by industry best practices.
+On this project, I served as the lead designer and front-end developer, planning the site architecture, creating wireframes and mockups in Sketch, and implementing most of the page templates. As one of the few members on the development team who also had editorial experience, I had to advocate for certain features and design decisions, inspired by my time at [ProPublica](//propublica.org) and informed by industry best practices.
 
 From an aesthetic standpoint, I sought to emphasize readable typographic systems supplemented by large photos and inline contextual content, all optimized for mobile devices. In addition, I designed the home page to better evoke the front page of a newspaper. On the back-end, this is powered a feature that allows editors to organize stories and photos to intentionally design the fold, as we do in our print edition.
 

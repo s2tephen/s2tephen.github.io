@@ -5,6 +5,8 @@ subtitle: Visualizing food (in)security and building empathy via game design
 categories: work
 year: 2015
 post-img: snap_browser.png
+prev-slug: chartisan
+prev-title: Chartisan
 next-slug: the-tech
 next-title: The Tech
 links:
@@ -36,4 +38,4 @@ In playtesting, many people went into the game planning to eat healthy but ended
 
 In addition to the game, I also created an interactive map of food insecurity using similar datasets for 11.188, a class on GIS ([Geographic Information Systems](//en.wikipedia.org/wiki/Geographic_information_system)) and spatial analysis. I cross-referencing the Thrifty Food Plan — the U.S. government's "minimum viable diet" and the basis for SNAP calculations — and USDA data on the price of food in different regions to see whether food stamps were actually sufficient. Ultimately, I found that the maximum SNAP allotment does not always cover the required dietary intake once you factor in variations in local food prices.
 
-For the class, I produced a static choropleth using various data wrangling tools — spreadsheet calculations, OpenRefine, csvkit — and ArcGIS's mapping tool. I eventually converted the entire map to a fully interactive version, powered by the d3.js and GeoJSON JavaScript libraries. Unlike the static image, this graphic allows readers to filter the data by age and sex, as the Thrifty Food Plan lists dietary requirements for different combinations of these variables.
+For the class, I produced a static choropleth using various data wrangling tools — spreadsheet calculations, OpenRefine, csvkit — and ArcGIS's mapping tool. I eventually converted the entire map to a fully interactive version, powered by the D3 and GeoJSON JavaScript libraries. Unlike the static image, this graphic allows readers to filter the data by age and sex, as the Thrifty Food Plan lists dietary requirements for different combinations of these variables.
