@@ -1981,6 +1981,10 @@ p + .post-end {
   width: 100%;
 }
 
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
 // Footer
 
 .page-wrap {
