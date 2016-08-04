@@ -5,8 +5,8 @@ subtitle: Branding and logo design for various products and projects
 categories: work
 year: 2012-2014
 post-img: ssuen_logo.png
-prev-slug: upbeat
-prev-title: UpBeat
+prev-slug: 21st-century-boy
+prev-title: 21st Century Boy
 links:
   - url: /resume
     text: Resume

@@ -1701,7 +1701,11 @@ p + .post-end {
 }
 
 .post-next {
+  @include shift(4);
   text-align: right;
+  @include media($small) {
+    @include shift(6);
+  }
 }
 
 .post-next > span:first-child:before {
@@ -1725,6 +1729,11 @@ p + .post-end {
   margin-right: -2em;
   margin-left: 1em;
   @include transition-duration($transition/3);
+}
+
+.post-social + .post-next,
+.post-links + .post-next {
+  @include shift(0);
 }
 
 .post-social,
