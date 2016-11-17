@@ -45,6 +45,10 @@
     }
   }
 
+  &-coverVideo::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+
   &-coverImage--alignLeft {
     background-position-x: left;
   }
