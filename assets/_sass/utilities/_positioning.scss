@@ -1,0 +1,79 @@
+/**
+ * Positioning
+ */
+
+.u-absoluteTop {
+  position: absolute;
+  top: 0;
+}
+
+.u-absoluteBottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.u-centerVertical {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+.u-centerHorizontal {
+  position: relative;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+.u-centerFlex {
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+}
+
+.u-centerMargin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.u-pt-resetPos {
+  @media print {
+    position: relative;
+    top: auto;
+    @include transform(none);
+  }
+}
+
+.u-zi-1 {
+  z-index: 1;
+}
+
+.u-zi-2 {
+  z-index: 2;
+}
+
+.u-zi-3 {
+  z-index: 3;
+}
+
+.u-floatNone {
+  float: none;
+}
+
+.u-floatLeft {
+  float: left;
+}
+
+.u-floatRight {
+  float: right;
+}
+
+.u-clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}

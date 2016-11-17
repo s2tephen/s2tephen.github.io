@@ -5,71 +5,56 @@ permalink: /resume/
 categories: resume
 ---
 
-<div class="resume-head">
-  <ul class="resume-contact">
-    <li class="resume-logo">{% include logo.html %}</li>
-    <li><img class="avatar" src="{{ '/assets/img/self_thumb.jpg' | prepend: site.baseurl }}"></a></li>
-    <li><i class="fa fa-fw fa-globe"></i> <a href="//stephensuen.com">stephensuen.com</a></li>
-    <li><i class="fa fa-fw fa-envelope"></i> <a href="mailto:ssuen@mit.edu">ssuen@mit.edu</a></li>
-    <li><i class="fa fa-fw fa-twitter"></i> <a href="//twitter.com/s2tephen">@s2tephen</a></li>
-    <li><i class="fa fa-fw fa-phone"></i> 805 252 4498</li>
+<div class="Resume-header u-flex u-clearfix">
+  <ul class="Resume-contact u-mb-0">
+    <li class="Resume-contactItem u-pt-visible">{% include logo.html source='resume' %}</li>
+    <li class="Resume-contactItem u-pt-hidden"><img class="Resume-avatar u-ns-visible u-floatRight u-circle" src="{{ '/assets/img/self_thumb.jpg' | prepend: site.baseurl }}"></a></li>
+    <li class="Resume-contactItem u-textTruncate"><i class="fa fa-fw fa-globe u-ns-hidden u-pt-hidden u-textGray"></i> <a href="//stephensuen.com">stephensuen.com</a></li>
+    <li class="Resume-contactItem"><i class="fa fa-fw fa-envelope u-ns-hidden u-pt-hidden u-textGray"></i> <a href="mailto:ssuen@mit.edu">ssuen@mit.edu</a></li>
+    <li class="Resume-contactItem"><i class="fa fa-fw fa-twitter u-ns-hidden u-pt-hidden u-textGray"></i> <a href="//twitter.com/s2tephen">@s2tephen</a></li>
+    <li class="Resume-contactItem"><i class="fa fa-fw fa-phone u-ns-hidden u-pt-hidden u-textGray"></i> 805 252 4498</li>
   </ul>
-  <div class="resume-title">
-    <h1>Stephen<br>
-    J Suen</h1>
-    <h2>Front-end Developer / <span class="wbr">Product Designer</span></h2>
-    <a class="btn" href="{{ '/assets/files/stephen-suen-resume-2016.pdf' | prepend: site.baseurl }}"><i class="fa fa-fw fa-cloud-download"></i> <span></span></a>
+  <div class="Resume-title">
+    <h1 class="Resume-name u-mb-0 u-textYellow">Stephen<br>J Suen</h1>
+    <h3 class="Resume-role u-inlineBlock u-mb-0 u-textUppercase u-textGray">Front-end Developer / <span class="u-sm-wbr u-mt-0"><span class="u-md-hidden">Product </span>Designer</span></h3>
+    <a class="Resume-button Button u-pt-hidden" href="{{ '/assets/files/stephen-suen-resume-2016.pdf' | prepend: site.baseurl }}"><i class="Button-icon fa fa-fw fa-cloud-download"></i><span class="u-ns-hidden u-textUppercase"> Download</span><span class="u-inline u-xs-hidden u-sm-hidden"> PDF</span></a>
   </div>
 </div>
 
-<div class="resume-section">
-  <div class="resume-subtitle">
-    <h2>Experience</h2>
+<div class="u-clearfix">
+  <div class="Resume-aside">
+    <h3 class="Resume-section u-textYellow">Experience</h3>
   </div>
-  <div class="resume-block">
-    <h2>The Tech <span>Cambridge, MA</span></h2>
-    <h3>Online Media Editor <span>Sep 2012 to Jun 2015</span></h3>
-    <p>Led the newspaper’s interactive graphics team to develop visualizations and deploy online packages for data-driven news stories. Conducted internal hack nights and workshops in HTML/CSS/JS, d3.js, and web scraping. Launched the website’s first redesign in nearly a decade as its sole designer and lead front-end developer, transitioning from a legacy PHP content management system to a digital-first, mobile-responsive Rails app.</p>
+  {% for hash in site.data.resume.experience %}
+    {% assign position = hash[1] %}
+    <div class="Resume-item u-mr-0">
+      <h3 class="Resume-itemTitle">{{ position.title }} <span class="Resume-itemLocation">{{ position.location }}</span></h3>
+      <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ position.role }}</strong><span class="u-xs-hidden u-sm-hidden"> — </span><span class="u-sm-wbr u-mt-0">{{ position.date }}</span></h3>
+      <p class="Resume-itemDescription">{{ position.description }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="u-clearfix">
+  <div class="Resume-aside">
+    <h3 class="Resume-section u-textYellow">Education</h3>
   </div>
-  <div class="resume-block">
-    <h2>Microsoft <span>Redmond, WA</span></h2>
-    <h3>Program Manager Intern, Outlook</strong> <span>Jun 2014 to Aug 2014</span></h3>
-    <p>Designed and wrote functional specs for UI/UX features in the Windows 10 Calendar universal app. Integrated design patterns from the OS, other Office apps, Outlook.com, and legacy conventions while still pushing new interaction paradigms. Created animated mockups and C#/XAML prototypes for user testing and design crits. Coordinated with an engineer to ship these features through agile methodologies and sprint planning.</p>
-  </div>
-  <div class="resume-block">
-    <h2>ProPublica <span>New York, NY</span></h2>
-    <h3>Google Journalism Fellow <span>Jun 2013 to Aug 2013</span></h3>
-    <p>Produced online news graphics on NSA surveillance and unpaid internships as a part of ProPublica’s news apps team. Designed and implemented a reusable lawsuit tracker in Sinatra, oEmbed-based modules for a social media story-sharing platform in Rails, and a synchronized video transcript using JavaScript and the YouTube API.</p>
+  {% assign education = site.data.resume.education %}
+  <div class="Resume-item u-mr-0">
+    <h3 class="Resume-itemTitle">{{ education.title }} <span class="Resume-itemLocation">{{ education.location }}</span></h3>
+    <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ education.role }}</strong><span class="u-xs-hidden u-sm-hidden"> — </span><span class="u-sm-wbr u-mt-0">{{ education.date }}</span></h3>
+    <p class="Resume-itemDescription">Relevant Courses: {{ education.courses | join: ', ' }}</p>
   </div>
 </div>
 
-<div class="resume-section">
-  <div class="resume-subtitle">
-    <h2>Education</h2>
+<div class="u-clearfix">
+  <div class="Resume-aside">
+    <h3 class="Resume-section u-textYellow">Skills</h3>
   </div>
-  <div class="resume-block">
-    <h2>Massachusetts Institute of Technology <span>Cambridge, MA</span></h2>
-    <h3>B.S. in Comparative Media Studies <span>Class of 2015, GPA: 4.6/5.0</span></h3>
-    <p>Relevant Coursework: The Product Engineering Process, Software Studio, Software Construction, Intro to Algorithms, User Interface Design and Implementation, Designing Interactions, Toy Product Design, Game Design for Expression, Data Storytelling Studio, Future of News and Participatory Media, Qualitative Research Methods</p>
-  </div>
-</div>
-
-<div class="resume-section">
-  <div class="resume-subtitle">
-    <h2>Skills</h2>
-  </div>
-  <div class="resume-block">
-    <h2>Development</h2>
-    <ul>
-      <li>HTML<span class="resume-skill--hide">5</span>, CSS<span class="resume-skill--hide">3</span>, SASS/LESS<span class="resume-skill--hide">/Stylus</span>, JavaScript, jQuery, d3<span class="resume-skill--hide">.js</span>, Node<span class="resume-skill--hide">.js</span>, React, Express</li>
-      <li>Python, Django, Ruby, Rails, PHP,<span class="resume-skill--hide"> Wordpress, Drupal,</span> SQL, Java, C#, Arduino, Unix, Git</li>
-    </ul>
-  </div>
-  <div class="resume-block resume-block--last">
-    <h2>Design / UI / UX</h2>
-    <ul>
-      <li>Sketch, Illustrator, Photoshop, InDesign, Flash, <span class="resume-skill--swap">visualization</span><span class="resume-skill--swap">dataviz</span><span class="resume-skill--hide">/mapping</span>, animation</li>
-      <li><span class="resume-skill--swap">Ethnographic</span><span class="resume-skill--swap">User</span> research, storyboarding, <span class="resume-skill--hide">rapid </span>prototyping, user testing, branding</li>
-    </ul>
-  </div>
+  {% for hash in site.data.resume.skills %}
+    <div class="Resume-item u-mr-0">
+      <h3 class="Resume-itemTitle">{{ hash.category }}</h3>
+      <p class="Resume-itemDescription">{% for line in hash.skills %}{% if forloop.first %}{{ line | join: ', ' }}<span class="u-ns-hidden u-pt-hidden">, </span>{% else %}<span class="u-ns-wbr u-mt-0">{{ line | join: ', ' }}</span>{% unless forloop.last %}<span class="u-ns-hidden u-pt-hidden">, </span>{% endunless %}{% endif %}{% endfor %}</p>
+    </div>
+  {% endfor %}
 </div>

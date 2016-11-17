@@ -6,32 +6,32 @@ categories: blog
 ---
 
 {% for post in paginator.posts %}
-  <div class="post post--index">
-    <a class="post-header" href="{{ post.url | prepend: site.baseurl }}">
-      <p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-      <h1 class="title">{{ post.title }}</h1>
-      {% if post.subtitle %}<h2 class="subtitle">{{ post.subtitle }}</h2>{% endif %}
+  <div class="Post">
+    <a class="Post-header Post-header--index" href="{{ post.url | prepend: site.baseurl }}">
+      <p class="Post-meta u-textUppercase u-textGray">{{ post.date | date: "%b %-d, %Y" }}</p>
+      {% if post.subtitle %}
+        <h1 class="Post-title u-mb-0">{{ post.title }}</h1>
+        <h2 class="Post-subtitle u-mt-0 u-textGray">{{ post.subtitle }}</h2>
+      {% else %}
+        <h1 class="Post-title">{{ post.title }}</h1>
+      {% endif %}
     </a>
-    <div class="post-content">
+    <div class="Post-content">
+      {% if post.cover %}
+        {% include image.html src=post.cover-img class='wide' %}
+      {% endif %}
       {{ post.content }}
-      <img class="post-end" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+      <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
     </div>
-    <div class="post-footer">
-      <div class="post-social">
-        <p class="meta">Share this post</p>
-        <ul>
-          <li><a href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-          <li><a href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
-          <li><a href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
-        </ul>
-      </div>
+    <div class="Post-footer u-pt-hidden u-textCenter u-textGray">
+      <p class="Post-meta u-pt-hidden u-textUppercase">Share this post</p>
+      <ul class="Post-social u-inlineList u-mb-0">
+        <li><a class="Post-socialLink Post-socialLink--twitter u-block u-bgGray" href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+        <li><a class="Post-socialLink Post-socialLink--facebook u-block u-bgGray" href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
+        <li><a class="Post-socialLink Post-socialLink--email u-block u-bgGray" href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
+      </ul>
     </div>
   </div>
 {% endfor %}
 
-<div class="post-bio">
-  <a href="{{ '/about' | prepend: site.baseurl }}" title="About me"><img class="avatar" src="{{ '/assets/img/self_thumb.jpg' | prepend: site.baseurl }}"></a>
-  <h3>Stephen Suen</h3>
-  <p>I'm a designer and developer with a passion for data-driven storytelling and human-centered products. I graduated from MIT's Comparative Media Studies program.</p>
-  <a class="btn" href="//twitter.com/intent/follow?screen_name=s2tephen" target="_blank"><i class="fa fa-twitter"></i> <span>Follow</span></a>
-</div>
+{% include bio.html %}

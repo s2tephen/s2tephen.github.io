@@ -1,0 +1,82 @@
+/**
+ * Display
+ */
+
+.u-block {
+  display: block;
+}
+
+.u-flex {
+  @include display(flex);
+}
+
+.u-inline {
+  display: inline;
+}
+
+.u-inlineBlock {
+  display: inline-block;
+}
+
+.u-sm-wbr {
+  display: block;
+  margin-top: scale(0);
+  @include media($not-small) {
+    display: inline;
+  }
+  @media print {
+    display: inline;
+  }
+}
+
+.u-ns-wbr {
+  display: inline;
+  margin-top: scale(0);
+  @include media($not-small) {
+    display: block;
+  }
+  @media print {
+    display: block;
+  }
+}
+
+.u-inlineList > li {
+  display: inline-block;
+  &::before {
+    content: none;
+  }
+}
+
+$breakpoints: (
+  xs: $xsmall, nx: $not-xsmall,
+  sm: $small,  ns: $not-small,
+  md: $medium, lg: $large, xl: $xlarge
+);
+
+@each $bp, $mq in $breakpoints {
+  .u-#{$bp}-hidden {
+    @include media($mq) {
+      display: none;
+    }
+  }
+
+  .u-#{$bp}-visible {
+    display: none;
+    @include media($mq) {
+      display: block;
+    }
+  }
+}
+
+.u-pt-hidden {
+  @media print {
+    display: none;
+  }
+}
+
+.u-pt-visible {
+  display: none;
+  @media print {
+    display: block;
+  }
+}

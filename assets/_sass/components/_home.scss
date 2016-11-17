@@ -1,0 +1,40 @@
+/**
+ * Home
+ */
+
+.Home {
+  margin-bottom: 0;
+  @include media($not-small) {
+    margin-top: scale(2);
+  }
+
+  &-section {
+    font-size: scale(0);
+    letter-spacing: .25em;
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% - .25em);
+      margin-top: scale(-4);
+      border-top: 4px solid $primary-color;
+    }
+  }
+
+  &-intro {
+    margin-top: scale(0);
+    margin-bottom: scale(2);
+    @include media($not-small) {
+      margin-top: 0;
+    }
+    @media print {
+      margin-top: scale(0);
+    }
+  }
+
+  &-caseStudies {
+    padding-top: scale(2);
+    @media print {
+      padding-top: 0;
+    }
+  }
+}

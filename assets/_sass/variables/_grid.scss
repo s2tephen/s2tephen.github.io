@@ -1,0 +1,48 @@
+/**
+ * Grid
+ */
+
+$container-width: 80%;
+$max-width:       1200px;
+$min-height:      600px;
+$column-width:    flex-grid(1);
+$gutter-width:    flex-gutter(12);
+
+/* Breakpoints */
+
+$xlarge:     new-breakpoint(min-width 1441px);
+$large:      new-breakpoint(min-width 992px max-width 1440px);
+$medium:     new-breakpoint(min-width 768px max-width 991px);
+$small:      new-breakpoint(min-width 480px max-width 767px);
+$xsmall:     new-breakpoint(max-width 479px);
+
+$not-small:  new-breakpoint(min-width 768px);
+$not-xsmall: new-breakpoint(min-width 480px);
+
+.breakpoint {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  &::after {
+    content: 'xsmall';
+    @include media($small) {
+      content: 'small';
+    }
+    @include media($medium) {
+      content: 'medium';
+    }
+    @include media($large) {
+      content: 'large';
+    }
+    @include media($xlarge) {
+      content: 'xlarge';
+    }
+    @media print {
+      display: none;
+    }
+  }
+}

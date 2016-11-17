@@ -1,18 +1,19 @@
 ---
 layout: work
 title: Has the Gov't Lied on Snooping?
+shortname: Gov't Snooping
+slug: govt-snooping
 subtitle: Debunking claims about NSA surveillance via pop-up video
 categories: work
+post-img: nsa_thumb.jpg
 year: 2013
-post-img: nsa_video.png
-prev-slug: the-tech
-prev-title: The Tech
-next-slug: under-pressure
-next-title: Under Pressure
+services:
+  - Design
+  - Development
 links:
   - url: //projects.propublica.org/graphics/nsa-claims
-    text: Video
-    icon: youtube-play
+    text: Project page
+    icon: link
 ---
 
 {% include image.html src='nsa_video.png' alt='This video graphic utilizes the aesthetic of VH1\'s Pop Up Video, a popular music video program from the \'90s' caption='This video graphic utilizes the aesthetic of VH1\'s Pop Up Video, a popular music video program from the \'90s' class='wide shadow' %}

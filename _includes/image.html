@@ -1,13 +1,13 @@
 {% if include.class %}
-  {% assign classes = include.class | split: ' ' %}
-  <figure class="image{% for c in classes %} image--{{c}}{% endfor %}">
+  {% capture class-list %}{% assign classes = include.class | split: ' ' %}{% for class in classes %}{% assign chunks = class | split: '-' %} Image--{{ chunks | first }}{% assign remainder = chunks | shift %}{% for chunk in remainder %}{{ chunk | capitalize }}{% endfor %}{% endfor %}{% endcapture %}
+  <figure class="Image{{ class-list }}">
 {% else %}
-  <figure class="image">
+  <figure class="Image">
 {% endif %}
-    {% if include.src %}
-      <img src="{{ '/assets/img/' | prepend: site.baseurl | append: include.src }}" alt="{{ include.alt }}" title="{{ include.alt }}">
-    {% endif %}
-    {% if include.caption %}
-      <figcaption>{{ include.caption }}</figcaption>
-    {% endif %}
-  </figure>
+{% if include.src %}
+  <img src="{{ '/assets/img/' | prepend: site.baseurl | append: include.src }}" alt="{{ include.alt }}" title="{{ include.alt }}">
+{% endif %}
+{% if include.caption %}
+  <figcaption class="Image-caption u-textGray">{{ include.caption }}</figcaption>
+{% endif %}
+</figure>

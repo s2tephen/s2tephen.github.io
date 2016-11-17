@@ -1,0 +1,28 @@
+/**
+ * Button
+ */
+
+.Button {
+  display: inline-block;
+  padding: scale(-4) scale(-2);
+  font: 700 scale(-2) $sans-font;
+  letter-spacing: .1em;
+  text-align: center;
+  @include prop-black(color);
+  background-color: $lighter-gray;
+  @include prop-transition(color, background-color);
+  &:hover {
+    color: $white;
+    background-color: $primary-color;
+  }
+
+  &-icon {
+    float: left;
+    margin-top: 2px;
+    margin-right: scale(-5);
+  }
+
+  &--twitter:hover {
+    background-color: $twitter-color;
+  }
+}

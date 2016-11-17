@@ -1,0 +1,70 @@
+/**
+ * Sizing
+ */
+
+.u-fullWidth {
+  width: 100%;
+}
+
+.u-fullHeight {
+  height: 100%;
+}
+
+.u-container {
+  width: $container-width;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  @media print {
+    width: 100%;
+  }
+}
+
+.u-ns-container {
+  @include media($not-small) {
+    width: $container-width;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.u-ns-inner {
+  @include media($not-small) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
+
+.u-ns-col-2 {
+  @include media($not-small) {
+    @include span-columns(2);
+  }
+}
+
+.u-ns-col-10 {
+  @include media($not-small) {
+    @include span-columns(10);
+  }
+}
+
+.u-coverHeight {
+  height: 95vh;
+  min-height: $min-height;
+  @media print {
+    height: auto;
+    min-height: auto;
+  }
+}
+
+.u-ma-0 {
+  margin: 0;
+}
+
+@each $direction in (top, right, bottom, left) {
+  $d: str-slice($direction, 1, 1);
+
+  .u-m#{$d}-0 {
+    margin-#{$direction}: 0;
+  }
+}

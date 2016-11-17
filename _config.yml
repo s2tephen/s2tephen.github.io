@@ -1,7 +1,7 @@
 # Site settings
 title: Stephen Suen
 email: ssuen@mit.edu
-description: 'Stephen Suen is a designer and developer of data-driven stories and human-centered products.'
+description: 'Stephen Suen is a designer and developer of data visualizations and human-centered products.'
 baseurl: ''
 url: 'http://stephensuen.com'
 
@@ -18,4 +18,4 @@ paginate_path: 'blog/page:num'
 collections:
   work:
     output: true
-    permalink: /work/:path/
+    permalink: /work/:slug/

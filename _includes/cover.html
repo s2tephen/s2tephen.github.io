@@ -1,27 +1,34 @@
-<header class="page-header{% if page.cover == 'full' %} page-header--full{% endif %}">
+<header class="Header">
   {% if page.cover-img %}
-    <div class="header-overlay"></div>
-    <div class="header-cover{% if page.cover-align %} header-cover--{{ page.cover-align }}{% endif %}" style="background-image: url('{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-img }}');"></div>
+    <div class="Header-overlay u-absoluteTop u-pt-hidden u-zi-1 u-fullWidth u-coverHeight"></div>
+    <div class="Header-coverImage{% if page.cover-align %} Header-coverImage--align{{ page.cover-align | capitalize }}{% endif %} u-absoluteTop u-pt-hidden u-fullWidth u-coverHeight" style="background-image: url('{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-img }}');"></div>
   {% elsif page.cover-vid %}
-    <div class="header-overlay"></div>
-    <video class="header-cover header-cover--video" autoplay loop muted poster="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.jpg' }}">
+    <div class="Header-overlay u-absoluteTop u-pt-hidden u-zi-1 u-fullWidth{% if page.categories contains 'error' %} u-fullHeight{% else %} u-coverHeight{% endif %}"></div>
+    <video class="Header-coverVideo u-absoluteTop u-pt-hidden" autoplay loop muted poster="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.jpg' }}">
       <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.webm' }}" type="video/webm">
       <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.mp4' }}" type="video/mp4">
     </video>
   {% endif %}
-  {% include nav.html %}
-  <div class="header-intro">
-    {% if page.categories contains 'blog' %}
-      <p class="meta">{{ page.date | date: '%b %-d, %Y' }}</p>
-    {% elsif page.categories contains 'work' %}
-      <p class="meta">{{ page.year }}</p>
-    {% endif %}
-    <h1 class="title">{{ page.title }}</h1>
-    {% if page.subtitle-small %}
-      <h2 class="subtitle subtitle--large">{{ page.subtitle }}</h2>
-      <h2 class="subtitle subtitle--small">{{ page.subtitle-small }}</h2>
-    {% else %}
-      <h2 class="subtitle">{{ page.subtitle }}</h2>
-    {% endif %}
+  {% include navbar.html %}
+  <div class="Header-content u-container u-coverHeight">
+    <div class="u-zi-2 u-centerVertical u-pt-resetPos">
+      {% if page.categories contains 'blog' %}
+        <p class="Header-meta u-textUppercase u-textGray u-textShadow">{{ page.date | date: '%b %-d, %Y' }}</p>
+      {% elsif page.categories contains 'work' %}
+        <p class="Header-meta u-textUppercase u-textGray u-textShadow">{{ page.year }}</p>
+      {% endif %}
+      <h1 class="Header-title u-mb-0 u-textUppercase u-pt-textNormal u-textWhite u-textShadow">{{ page.title }}</h1>
+      {% if page.subtitle-small %}
+        <h2 class="Header-subtitle u-mt-0 u-mb-0 u-textLightGray u-textShadow u-ns-visible">{{ page.subtitle }}</h2>
+        <h2 class="Header-subtitle u-mt-0 u-mb-0 u-textLightGray u-textShadow u-ns-hidden">{{ page.subtitle-small }}</h2>
+      {% else %}
+        <h2 class="Header-subtitle u-mt-0 u-mb-0 u-textLightGray u-textShadow">{{ page.subtitle }}</h2>
+      {% endif %}
+      {% if page.cover-img %}
+        <div class="Header-coverImage--print u-pt-visible">
+          <img class="u-pt-visible" src="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-img }}">
+        </div>
+      {% endif %}
+    </div>
   </div>
 </header>

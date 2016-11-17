@@ -1,23 +1,26 @@
 ---
 layout: work
 title: SNAP Judgments
+slug: snap-judgments
 subtitle: Visualizing food (in)security and building empathy via game design
 categories: work
+post-img: snap_map.png
 year: 2015
-post-img: snap_browser.png
-prev-slug: chartisan
-prev-title: Chartisan
-next-slug: the-tech
-next-title: The Tech
+services:
+  - Development
+  - Visualization
 links:
   - url: /foodsec/final
-    text: Link
+    text: Project page
     icon: link
+  - url: //github.com/s2tephen/foodsec
+    text: GitHub repository
+    icon: github
 ---
 
 {% include image.html src='snap_browser.png' alt='Choropleth map of the estimated cost of the Thrifty Food Plan, the U.S. government\'s minimum viable diet' caption='Choropleth map of the estimated cost of the Thrifty Food Plan, the U.S. government\'s "minimum viable diet"' class='wide shadow' %}
 
-During my senior spring term at MIT, I took two courses related to data analysis and visualization: CMS.631, a [data storytelling studio class](//cms631.datatherapy.org), and 11.188, an [urban planning GIS lab](//web.mit.edu/11.188/www/index.html). My final projects in these two classes revolved around the topic of food security and nutritional assistance in America. Using datasets from the USDA, I eventually created a [text-based choose-your-own-adventure game](//philome.la/s2tephen/cms631-final/play) and an [interactive choropleth map](/foodsec/final).
+During my senior spring term at MIT, I took two courses related to data analysis and visualization: CMS.631, a [data storytelling studio class](//datastudio2015.datatherapy.org), and 11.188, an [urban planning GIS lab](//web.mit.edu/11.188/www/index.html). My final projects in these two classes revolved around the topic of food security and nutritional assistance in America. Using datasets from the USDA, I eventually created a [text-based choose-your-own-adventure game](//philome.la/s2tephen/cms631-final/play) and an [interactive choropleth map](/foodsec/final).
 
 The two projects began with data investigation — my project partner and I wanted to explore the economic circumstances and challenges of those faced with food insecurity and how other aspects of their lives were being affected as a result. We began by looking at food consumption data for SNAP (Supplemental Nutrition Assistance Program — i.e., food stamps) recipients to see whether or not their nutritional needs were being met.
 
@@ -26,7 +29,7 @@ Popular media narratives such as [the food stamp challenge](//en.wikipedia.org/w
 {% include image.html src='snap_sculpture.png' alt='Early dataviz prototypes: a Lunchables-inspired data sculpture...' caption='Early visualization prototypes: a Lunchables-inspired data sculpture...' class='left-overflow double' %}
 {% include image.html src='snap_multiples.png' alt='...and small multiple line charts of market prices across food groups.' caption='...and small multiple line charts of market prices across food groups' class='right-overflow double' %}
 
-Throughout CMS.631, we created prototypes using various visualization techniques, such as data sculpture ([nutritionally balanced TV dinner-style meals based on SNAP budgets](//cms631.datatherapy.org/2015/04/23/data-sculpture-snap-tv-dinners)) and traditional charting ([small multiples of food prices in Boston](/foodsec/smlines)). Ultimately, we opted for a more interactive medium to express our ideas — inspired by "empathy simulators" like [Depression Quest](//www.depressionquest.com) and [Cart Life](//www.richardhofmeier.com/cartlife), we created a game that puts players in the shoes of SNAP recipients.
+Throughout CMS.631, we created prototypes using various visualization techniques, such as data sculpture ([nutritionally balanced TV dinner-style meals based on SNAP budgets](//datastudio2015.datatherapy.org/2015/04/23/data-sculpture-snap-tv-dinners)) and traditional charting ([small multiples of food prices in Boston](/foodsec/smlines)). Ultimately, we opted for a more interactive medium to express our ideas — inspired by "empathy simulators" like [Depression Quest](//www.depressionquest.com) and [Cart Life](//www.richardhofmeier.com/cartlife), we created a game that puts players in the shoes of SNAP recipients.
 
 {% include image.html src='snap_game.png' alt='Grocery shopping in SNAP Judgments, which was developed with the Twine game engine' caption='Grocery shopping in SNAP Judgments, which was developed with the <a href="//twinery.org">Twine</a> game engine' class='wide shadow' %}
 

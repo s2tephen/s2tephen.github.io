@@ -3,50 +3,45 @@ layout: default
 ---
 
 {% unless page.cover %}
-  <div class="post-header">
-    <p class="meta">{{ page.year }}</p>
-    <h1 class="title">{{ page.title }}</h1>
-    {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+  <div class="Post-header">
+    <p class="Post-meta u-textUppercase u-textGray">{{ page.year }}</p>
+    {% if page.subtitle %}
+      <h1 class="Post-title u-mb-0">{{ page.title }}</h1>
+      <h2 class="Post-subtitle u-mt-0 u-textGray">{{ page.subtitle }}</h2>
+    {% else %}
+      <h1 class="Post-title">{{ page.title }}</h1>
+    {% endif %}
   </div>
 {% endunless %}
 
-<div class="post-content">
+<div class="Post-content">
   {{ content }}
-  <img class="post-end" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+  <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
 </div>
 
-<div class="post-footer">
-  {% if page.prev-slug %}
-    <a class="post-nav post-prev" href="{{ '/work/' | prepend: site.baseurl | append: page.prev-slug }}">
-      <span></span>
-      <span>{{ page.prev-title }}</span>
-    </a>
-  {% else %}
-    <a class="post-nav post-nav--inactive post-prev">
-      <span></span>
+<div class="Post-footer u-pt-hidden u-textCenter">
+  <p class="Post-meta u-textUppercase u-textGray">See more</p>
+  {% if page.previous %}
+    <a class="Post-nav Post-nav--prev u-textLeft" href="{{ '/work/' | prepend: site.baseurl | append: page.previous.slug }}">
+      <div class="Post-navLabel u-nx-hidden u-inlineBlock">Prev</div>
+      <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{{ page.previous.year }}</div>
+      <div class="Post-navTitle u-xs-hidden u-textTruncate">{% if page.previous.shortname %}{{ page.previous.shortname }}{% else %}{{ page.previous.title }}{% endif %}</div>
     </a>
   {% endif %}
   {% if page.links %}
-    <div class="post-links">
-      <ul>
-        {% for link in page.links %}
-          <li class="post-link">
-            <a class="btn" href="{{ link.url }}">
-              <i class="fa fa-fw fa-{{ link.icon }}"></i> <span>{{ link.text }}</span>
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+    <ul class="Post-related u-inlineList u-mb-0">
+      {% for link in page.links %}
+        <li><a class="Post-relatedLink u-block u-bgGray" href="{{ link.url }}" title="{{ link.text }}"><i class="fa fa-fw fa-{{ link.icon }}"></i></a></li>
+      {% endfor %}
+    </ul>
   {% endif %}
-  {% if page.next-slug %}
-    <a class="post-nav post-next" href="{{ '/work/' | prepend: site.baseurl | append: page.next-slug }}">
-      <span></span>
-      <span>{{ page.next-title }}</span>
-    </a>
-  {% else %}
-    <a class="post-nav post-nav--inactive post-next">
-      <span></span>
+  {% if page.next %}
+    <a class="Post-nav Post-nav--next u-textRight" href="{{ '/work/' | prepend: site.baseurl | append: page.next.slug }}">
+      <div class="Post-navLabel u-nx-hidden u-inlineBlock">Next</div>
+      <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{{ page.next.year }}</div>
+      <div class="Post-navTitle u-xs-hidden u-textTruncate">{% if page.next.shortname %}{{ page.next.shortname }}{% else %}{{ page.next.title }}{% endif %}</div>
     </a>
   {% endif %}
 </div>
+
+{% include bio.html %}

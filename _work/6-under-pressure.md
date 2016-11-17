@@ -1,17 +1,20 @@
 ---
 layout: work
 title: Under Pressure
+slug: under-pressure
 subtitle: Visualizing the stress of drinking from the MIT firehose
 categories: work
+post-img: pressure_thumb.jpg
 year: 2012
-post-img: pressure_tech.jpg
-prev-slug: govt-snooping
-prev-title: Gov't Snooping
-next-slug: 21st-century-boy
-next-title: 21st Century Boy
+services:
+  - Design
+  - Visualization
 links:
   - url: //tech.mit.edu/V132/N59/pressure/index.htm
-    text: Issue
+    text: Online package
+    icon: link
+  - url: //tech.mit.edu/V132/PDF/V132-N59.pdf
+    text: Print edition
     icon: newspaper-o
 ---
 
@@ -23,7 +26,7 @@ links:
 
 In the last five years, the school has reported an average of 12.5 suicides per 100,000 students, far beyond the national average (somewhere between 6.5 and 7.5 per 100,000 students). To delve into this issue, <em>The Tech</em> ran a schoolwide survey exploring how academic pressure affected students' lives, from workload to self-image, from social life to happiness.
 
-Nearly 3,200 people — 29% of the entire student population — responded to our survey. Based on the results, we put together [Under Pressure](//tech.mit.edu/V132/N59/pressure), a special issue of *The Tech* comprised of data-driven stories and interviews on all angles of stress at MIT. I was brought on as the data editor for this project, helping design and deploy the questionnaire. Once we had the responses, I was responsible for cleaning and querying the dataset with OpenRefine and SQL, surfacing story ideas and extracting interesting statistics for infographics.
+Nearly 3,200 people — 29% of the entire student population — responded to our survey. Based on the results, we put together [Under Pressure](//tech.mit.edu/V132/N59/pressure/index.htm), a special issue of *The Tech* comprised of data-driven stories and interviews on all angles of stress at MIT. I was brought on as the data editor for this project, helping design and deploy the questionnaire. Once we had the responses, I was responsible for cleaning and querying the dataset with OpenRefine and SQL, surfacing story ideas and extracting interesting statistics for infographics.
 
 {% include image.html src='pressure_print.png' alt='Our spread of infographics for the print edition of The Tech\'s pressure special' caption='Our spread of infographics for the print edition of <em>The Tech</em>\'s pressure special' class='wide' %}
 

@@ -7,13 +7,13 @@ categories: about
 
 ## About me
 
-I recently graduated from the Massachusetts Institute of Technology, where I concentrated in [Comparative Media Studies](//cms.mit.edu), essentially creating my own major that blended computer science, design, and the social sciences. There, I did research with the [MIT Media Lab](//media.mit.edu) and the [MIT Game Lab](//gamelab.mit.edu) and worked at the school newspaper, [*The Tech*](//thetech.com), as its online media and interactives editor.
+I am a freelance digital product designer and front-end developer with a focus in data visualization and interactive media. In 2015 I graduated from MIT's [Comparative Media Studies](//cms.mit.edu) program, creating my own major that blended computer science, interaction design, and the social sciences.
 
-I was born in Los Angeles, but I grew up in Hong Kong and currently live in Boston. I am now seeking a full-time position as a digital product designer or front-end developer, particularly in news and media. You can see my technical qualifications and previous work experience on [my resume](/resume/).
+I was born in Los Angeles, but grew up in Hong Kong and now live in Boston. I am currently seeking a full-time position in the San Francisco Bay Area or on a remote team. You can see my technical qualifications and previous job experience on [my resume](/resume/).
 
 ## Contact
 
-The best way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@mit.edu](mailto:ssuen@mit.edu), if you're not into the whole brevity thing. I am available to meet over Skype/Google Hangout or IRL in the Boston area.
+The easiest way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@mit.edu](mailto:ssuen@mit.edu), if you're not into the whole brevity thing. I am availablle to meet over Skype/Google Hangout or IRL if we happen to be in the same city.
 
 ## Colophon
 

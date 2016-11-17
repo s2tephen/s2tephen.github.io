@@ -1,0 +1,83 @@
+/**
+ * Styles
+ */
+
+.u-textUppercase {
+  text-transform: uppercase;
+}
+
+.u-pt-textNormal {
+  @media print {
+    text-transform: normal;
+  }
+}
+
+.u-textCenter {
+  text-align: center;
+}
+
+.u-textLeft {
+  text-align: left;
+}
+
+.u-textRight {
+  text-align: right;
+}
+
+.u-textTruncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.u-textShadow {
+  text-shadow: 0 1px 4px rgba($black, .3);
+  @media print {
+    text-shadow: none;
+  }
+}
+
+.u-textYellow {
+  color: $primary-color;
+}
+
+.u-textWhite {
+  color: $white;
+  @media print {
+    color: $black;
+  }
+}
+
+.u-textLightGray {
+  color: $lighter-gray;
+  @media print {
+    color: $medium-gray;
+  }
+}
+
+.u-textGray {
+  color: $medium-gray;
+}
+
+.u-textDarkGray {
+  color: $dark-gray;
+}
+
+.u-bgYellow {
+  background-color: $primary-color;
+  -webkit-print-color-adjust: exact;
+}
+
+.u-bgGray {
+  background-color: $lighter-gray;
+}
+
+.u-underline {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 95%, $underline-color 95%);
+}
+
+.u-circle {
+  border-radius: 50%;
+}

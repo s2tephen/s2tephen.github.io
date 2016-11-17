@@ -1,0 +1,46 @@
+/**
+ * Typography
+ */
+
+$sans-font:  'Karla', -apple-system, '.SFNSText-Regular',
+             'San Francisco', 'Roboto', 'Segoe UI',
+             'Helvetica Neue', 'Lucida Grande', sans-serif;
+$serif-font: 'freight-text-pro', 'Georgia', serif;
+
+/* Scale */
+
+$type-scale: (.375rem, .5rem, .875rem, 1rem, 1.25rem,
+              1.5rem, 2.25rem, 3rem, 4.5rem, 6rem);
+
+@function scale($index) {
+  @return nth($type-scale, $index + 6);
+}
+
+/* Underlines */
+
+@mixin crop-underline($color) {
+  text-shadow: .03em 0 $color, -.03em 0 $color, 0 .03em $color, 0 -.03em $color,
+               .06em 0 $color, -.06em 0 $color, .09em 0 $color, -.09em 0 $color,
+               .12em 0 $color, -.12em 0 $color, .15em 0 $color, -.15em 0 $color;
+}
+
+@mixin underline($bg, $color) {
+  text-decoration: none;
+  @include crop-underline($bg);
+  background-image: linear-gradient($bg, $bg), linear-gradient($bg, $bg), linear-gradient($color, $color);
+  background-size: .05em 1px, .05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 95%, 100% 95%, 0% 95%;
+  &::selection {
+    background: $highlight-color;
+    @include crop-underline($highlight-color);
+  }
+  &::-moz-selection {
+    background: $highlight-color;
+    @include crop-underline($highlight-color);
+  }
+  @media print {
+    background-image: none;
+    border-bottom: 2px solid $light-gray;
+  }
+}

@@ -1,0 +1,61 @@
+/**
+ * Embed
+ */
+
+.Embed {
+  position: relative;
+  width: 125%;
+  height: 0;
+  padding-bottom: 70.3125%;
+  margin: 0 0 scale(2) -12.5%;
+  @include media($not-small) {
+    width: 100%;
+    margin-left: 0;
+    padding-bottom: 56.25%;
+  }
+  @media print {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-caption {
+    position: absolute;
+    bottom: 0;
+    margin-left: 10%;
+    margin-bottom: -(scale(-2));
+    font: scale(-2) $sans-font;
+    @include transform(translateY(100%));
+    @include media($not-small) {
+      margin-left: 0;
+    }
+    @media print {
+      margin-left: 0;
+    }
+    &::after {
+      content: '';
+      display: block;
+      height: scale(0);
+    }
+  }
+
+  &-caption > a {
+    color: $medium-gray;
+    @include underline($white, $underline-color);
+    @include prop-transition(color);
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  + p {
+    padding-top: scale(-4);
+  }
+}

@@ -1,20 +1,14 @@
-<footer class="page-footer">
-  <div class="footer-wrapper">
+<footer class="Footer{% if page.categories contains 'error' %} u-absoluteBottom u-zi-3 u-fullWidth{% endif %} u-pt-hidden u-bgYellow">
+  <div class="Footer-content u-container">
     {% if page.cover == 'full' and page.cover-credit %}
-      <h4 class="footer-credit">{{ page.cover-credit }}</h4>
+      <h4 class="Footer-credit u-fullWidth u-textGray">{{ page.cover-credit }}</h4>
     {% endif %}
-    <div class="footer-social">
-      <h3>
-        <a href="{{ '/feed.xml' | prepend: site.baseurl }}"><i class="fa fa-fw fa-rss"></i> <span>RSS</span></a>
-        <a href="//twitter.com/s2tephen"><i class="fa fa-fw fa-twitter"></i> <span>Twitter</span></a>
-        <a href="//github.com/s2tephen"><i class="fa fa-fw fa-github"></i> <span>GitHub</span></a>
-        <a href="//linkedin.com/in/s2tephen"><i class="fa fa-fw fa-linkedin"></i> <span>LinkedIn</span></a>
-      </h3>
-    </div>
-    <div class="footer-copy">
-      <h3>
-        &copy; 2016 Stephen Suen
-      </h3>
-    </div>
+    <ul class="Footer-social u-inlineList u-textCenter u-textUppercase">
+        <li class="Footer-socialItem u-ml-0"><a class="Footer-socialLink" href="{{ '/feed.xml' | prepend: site.baseurl }}"><i class="Footer-socialIcon fa fa-fw fa-rss"></i> <span class="Footer-socialText u-xs-hidden u-sm-hidden">RSS</span></a></li>
+        <li class="Footer-socialItem"><a class="Footer-socialLink" href="//twitter.com/s2tephen"><i class="Footer-socialIcon fa fa-fw fa-twitter"></i> <span class="Footer-socialText u-xs-hidden u-sm-hidden">Twitter</span></a></li>
+        <li class="Footer-socialItem"><a class="Footer-socialLink" href="//github.com/s2tephen"><i class="Footer-socialIcon fa fa-fw fa-github"></i> <span class="Footer-socialText u-xs-hidden u-sm-hidden">GitHub</span></a></li>
+        <li class="Footer-socialItem"><a class="Footer-socialLink" href="//linkedin.com/in/s2tephen"><i class="Footer-socialIcon fa fa-fw fa-linkedin"></i> <span class="Footer-socialText u-xs-hidden u-sm-hidden">LinkedIn</span></a></li>
+    </ul>
+    <span class="Footer-copy u-block u-textUppercase">&copy; 2016 Stephen Suen</span>
   </div>
 </footer>

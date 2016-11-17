@@ -1,0 +1,139 @@
+/**
+ * CaseStudy
+ */
+
+.CaseStudy {
+  padding-top: scale(1);
+  &:first-child {
+    padding-top: scale(-3);
+  }
+  &:last-child {
+    margin-bottom: scale(1);
+  }
+  @include media($not-small) {
+    @include display(flex);
+    padding-top: scale(2);
+    margin-bottom: scale(4);
+    &:first-child {
+      padding-top: scale(1);
+    }
+  }
+
+  &-image {
+    width: 100%;
+    @include media($not-small) {
+      @include span-columns(10);
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @media print {
+      float: left;
+      width: 50%;
+      margin-left: 0;
+    }
+  }
+
+  &:nth-child(odd) > .CaseStudy-image {
+    @include order(2);
+  }
+
+  &-content {
+    display: block;
+    width: 100%;
+    padding: scale(0) 10% 0;
+    @include media($not-small) {
+      @include display(flex);
+      width: 4 * (flex-grid(1, 12) + flex-gutter(12));
+      height: 100%;
+      margin-top: -(scale(4));
+      @include shift(-2);
+      background-color: $near-white;
+      &::before {
+        content: '';
+        float: left;
+        padding-bottom: 100%;
+      }
+    }
+    @include media($medium) {
+      padding: scale(0);
+    }
+    @include media($large) {
+      padding: scale(1);
+    }
+    @include media($xlarge) {
+      padding: scale(2);
+    }
+    @media print {
+      float: left;
+      width: 50%;
+      padding-left: scale(2);
+      padding-right: 0;
+    }
+  }
+
+  &:nth-child(odd) > .CaseStudy-content {
+    @include media($not-small) {
+      margin-left: 0;
+      margin-right: -2 * (flex-grid(1, 12) + flex-gutter(12));
+    }
+  }
+
+  &-title {
+    @include align-self(flex-start);
+    margin-bottom: scale(-4);
+    @include media($medium) {
+      margin-bottom: 0;
+    }
+    @include media($large) {
+      margin-bottom: 0;
+      letter-spacing: .1em;
+    }
+    @include media($xlarge) {
+      letter-spacing: .25em;
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: scale(2);
+      margin: scale(-3) 0;
+      border-bottom: 4px solid $primary-color;
+      @include prop-transition(width);
+    }
+  }
+
+  &-image:hover + .CaseStudy-content {
+    color: $primary-color;
+  }
+
+  &-content:hover > div > .CaseStudy-title::after,
+  &-image:hover + .CaseStudy-content > div > .CaseStudy-title::after {
+    width: calc(100% - .25em);
+  }
+
+  &-subtitle {
+    font-family: $serif-font;
+    font-weight: 400;
+    @include media($medium) {
+      margin-bottom: 0;
+      font-size: scale(-1);
+    }
+    @include media($large) {
+      margin-bottom: scale(-3);
+      font-size: 1.8vw;
+    }
+    @include media($xlarge) {
+      font-size: 1.875rem;
+    }
+  }
+
+  &-meta {
+    font-family: $sans-font;
+    font-size: scale(-2);
+    @include media($medium) {
+      display: none;
+    }
+    @include media($large) {
+      font-size: scale(-3);
+    }
+  }
+}

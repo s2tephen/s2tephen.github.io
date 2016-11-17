@@ -1,0 +1,114 @@
+/**
+ * Base
+ */
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  @include flex-direction(column);
+  min-height: 100vh;
+  @include prop-black(color);
+  @media print {
+    @include display(block);
+    min-height: auto;
+  }
+}
+
+main {
+  @include flex(1);
+  @media print {
+    @include flex(none);
+  }
+}
+
+article {
+  width: 100%;
+  margin: scale(-4) 0 scale(1);
+  @include media($not-small) {
+    margin-top: scale(2);
+    margin-bottom: scale(2);
+  }
+  @media print {
+    margin-bottom: 0;
+  }
+}
+
+p {
+  margin: 0 0 scale(0);
+  font: scale(0) $serif-font;
+  line-height: 1.5;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0 0 scale(0);
+  list-style: none;
+}
+
+li {
+  font: scale(0) $serif-font;
+  line-height: 1.5;
+  &::before {
+    content: '\25A0';
+    margin-right: scale(0);
+  }
+}
+
+h1 {
+  margin: 0 0 scale(0);
+  font-family: $sans-font;
+  font-size: scale(1);
+}
+
+h2 {
+  margin: scale(1) 0 scale(0);
+  font-family: $sans-font;
+  font-size: scale(0);
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h3 {
+  margin: 0 0 scale(0);
+  font-family: $sans-font;
+  font-size: scale(-1);
+  text-transform: uppercase;
+}
+
+a {
+  @include prop-black(color);
+  @include prop-transition(color);
+  text-decoration: none;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+p > a,
+p > span > a,
+p > a > em {
+  @include underline($white, $underline-color);
+}
+
+img {
+  width: 100%;
+}
+
+hr {
+  width: 30%;
+  height: 1px;
+  margin: scale(1) 35%;
+  background-color: $lighter-gray;
+  border: 0;
+}
+
+::selection {
+  background: $highlight-color;
+}
+
+::-moz-selection {
+  background: $highlight-color;
+}

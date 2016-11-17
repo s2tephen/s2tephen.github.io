@@ -1,0 +1,31 @@
+/**
+ * Colors
+ */
+
+$primary-color:   rgb(243,178,21);
+$light-primary:   rgb(245,194,70);
+$highlight-color: rgb(208,221,253);
+$underline-color: rgba(119,123,145,.6);
+$twitter-color:   rgb(85,172,238);
+$facebook-color:  rgb(59,89,152);
+
+$white:           rgb(255,255,255);
+$near-white:      rgb(247,247,247);
+$lighter-gray:    rgb(238,238,238);
+$light-gray:      rgb(204,204,204);
+$medium-gray:     rgb(153,153,153);
+$dark-gray:       rgb(102,102,102);
+$web-black:       rgb(68,68,68);
+$black:           rgb(0,0,0);
+$transparent:     rgba(0,0,0,0);
+
+@mixin prop-black($props...) {
+  @each $prop in $props {
+    #{$prop}: $web-black;
+  }
+  @media print {
+    @each $prop in $props {
+      #{$prop}: $black;
+    }
+  }
+}

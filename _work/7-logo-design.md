@@ -1,15 +1,16 @@
 ---
 layout: work
 title: Logo Design
+slug: logo-design
 subtitle: Branding and logo design for various products and projects
 categories: work
+post-img: logo_work.png
 year: 2012-2014
-post-img: ssuen_logo.png
-prev-slug: 21st-century-boy
-prev-title: 21st Century Boy
+services:
+  - Design
 links:
   - url: /resume
-    text: Resume
+    text: See my resume
     icon: briefcase
 ---
 

@@ -2,53 +2,48 @@
 layout: default
 ---
 
+{% assign year = page.date | date: '%Y' %}
+
 {% unless page.cover %}
-  <div class="post-header">
-    <p class="meta">{{ page.date | date: '%b %-d, %Y' }}</p>
-    <h1 class="title">{{ page.title }}</h1>
-    {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+  <div class="Post-header">
+    <p class="Post-meta u-textUppercase u-textGray">{{ page.date | date: '%b %-d, %Y' }}</p>
+    {% if page.subtitle %}
+      <h1 class="Post-title u-mb-0">{{ page.title }}</h1>
+      <h2 class="Post-subtitle u-mt-0 u-textGray">{{ page.subtitle }}</h2>
+    {% else %}
+      <h1 class="Post-title">{{ page.title }}</h1>
+    {% endif %}
   </div>
 {% endunless %}
 
-<div class="post-content">
+<div class="Post-content">
   {{ content }}
-  <img class="post-end" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+  <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
 </div>
 
-<div class="post-footer">
+<div class="Post-footer u-pt-hidden u-textCenter">
+  <p class="Post-meta u-textUppercase u-textGray">Share this post</p>
   {% if page.previous %}
-    <a class="post-nav post-prev" href="{{ page.previous.url | prepend: site.baseurl }}">
-      <span></span>
-      <span>{{ page.previous.title }}</span>
-    </a>
-  {% else %}
-    <a class="post-nav post-nav--inactive post-prev">
-      <span></span>
+    {% assign prev-year = page.previous.date | date: '%Y' %}
+    <a class="Post-nav Post-nav--prev u-textLeft" href="{{ page.previous.url | prepend: site.baseurl }}">
+      <div class="Post-navLabel u-nx-hidden u-inlineBlock">Prev</div>
+      <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{% if year == prev-year %}{{ page.previous.date | date: '%b %-d' }}{% else %}{{ prev-year }}{% endif %}</div>
+      <div class="Post-navTitle u-xs-hidden u-textTruncate">{{ page.previous.title }}</div>
     </a>
   {% endif %}
-  <div class="post-social">
-    <p class="meta">Share this post</p>
-    <ul>
-      <li><a href="//twitter.com/intent/tweet/?text={{ page.title }}&url={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-      <li><a href="//www.facebook.com/sharer/sharer.php?u={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
-      <li><a href="mailto:?subject={{ page.title }}&body={{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
-    </ul>
-  </div>
+  <ul class="Post-social u-inlineList u-mb-0">
+    <li><a class="Post-socialLink Post-socialLink--twitter u-block u-bgGray" href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
+    <li><a class="Post-socialLink Post-socialLink--facebook u-block u-bgGray" href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
+    <li><a class="Post-socialLink Post-socialLink--email u-block u-bgGray" href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
+  </ul>
   {% if page.next %}
-    <a class="post-nav post-next" href="{{ page.next.url | prepend: site.baseurl }}">
-      <span></span>
-      <span>{{ page.next.title }}</span>
-    </a>
-  {% else %}
-    <a class="post-nav post-nav--inactive post-next">
-      <span></span>
+    {% assign next-year = page.next.date | date: '%Y' %}
+    <a class="Post-nav Post-nav--next u-textRight" href="{{ page.next.url | prepend: site.baseurl }}">
+      <div class="Post-navLabel u-nx-hidden u-inlineBlock">Next</div>
+      <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{% if year == next-year %}{{ page.next.date | date: '%b %-d' }}{% else %}{{ next-year }}{% endif %}</div>
+      <div class="Post-navTitle u-xs-hidden u-textTruncate">{{ page.next.title }}</div>
     </a>
   {% endif %}
 </div>
 
-<div class="post-bio">
-  <a href="{{ '/about' | prepend: site.baseurl }}" title="About me"><img class="avatar" src="{{ '/assets/img/self_thumb.jpg' | prepend: site.baseurl }}"></a>
-  <h3>Stephen Suen</h3>
-  <p>I'm a designer and developer with a passion for data-driven storytelling and human-centered products. I graduated from MIT's Comparative Media Studies program.</p>
-  <a class="btn" href="//twitter.com/intent/follow?screen_name=s2tephen" target="_blank"><i class="fa fa-twitter"></i> <span>Follow</span></a>
-</div>
+{% include bio.html %}

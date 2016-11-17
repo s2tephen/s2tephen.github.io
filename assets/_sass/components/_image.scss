@@ -1,0 +1,156 @@
+/**
+ * Image
+ */
+
+.Image {
+  width: 125%;
+  margin: 0 0 scale(0) -12.5%;
+  @include media($not-small) {
+    width: 100%;
+    margin-left: 0;
+  }
+  @media print {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Caption */
+
+  &-caption {
+    margin: scale(-3) 10% 0;
+    font: scale(-2) $sans-font;
+    @include media($not-small) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    @media print {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &-caption > a {
+    color: $medium-gray;
+    @include underline($white, $underline-color);
+    @include prop-transition(color);
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  /* Sizes/Modifiers */
+
+  &--wide {
+    @include media($not-small) {
+      @include span-columns(12 of 8);
+      @include shift(-2);
+    }
+  }
+
+  &--left {
+    @include media($not-small) {
+      @include span-columns(4 of 8);
+      margin-top: scale(-4);
+      margin-bottom: scale(-2);
+    }
+    @media print {
+      @include span-columns(4 of 8);
+      margin-top: scale(-4);
+      margin-bottom: scale(-2);
+    }
+  }
+
+  &--right {
+    @include media($not-small) {
+      @include span-columns(4 of 8);
+      float: right;
+      margin: scale(-4) 0 scale(-2) flex-gutter(8);
+    }
+    @media print {
+      @include span-columns(4 of 8);
+      float: right;
+      margin: scale(-4) 0 scale(-2) flex-gutter(8);
+    }
+  }
+
+  &--leftOverflow {
+    @include media($not-small) {
+      @include span-columns(6 of 8);
+      @include shift(-2);
+      margin-top: scale(-4);
+      margin-right: flex-gutter(8);
+      margin-bottom: scale(-2);
+    }
+    @media print {
+      @include span-columns(4 of 8);
+      margin-top: scale(-4);
+      margin-bottom: scale(-2);
+    }
+  }
+
+  &--rightOverflow {
+    @include media($not-small) {
+      @include span-columns(6 of 8);
+      float: right;
+      margin: scale(-4) (-2 * (flex-grid(1, 8) + flex-gutter(8))) scale(-2) flex-gutter(8);
+    }
+    @media print {
+      @include span-columns(4 of 8);
+      float: right;
+      margin: scale(-4) 0 scale(-2) flex-gutter(8);
+    }
+  }
+
+  &--double.Image--left {
+    margin-right: flex-gutter(8);
+  }
+
+  &--double.Image--right {
+    @include media($not-small) {
+      margin-left: 0;
+    }
+    @media print {
+      margin-left: 0;
+    }
+  }
+
+  &--double.Image--leftOverflow {
+    @include media($not-small) {
+      margin-right: 0;
+    }
+    @media print {
+      margin-right: 0;
+    }
+  }
+
+  &--double.Image--rightOverflow {
+    @include media($not-small) {
+      margin-left: 0;
+    }
+    @media print {
+      margin-left: 0;
+    }
+  }
+
+  &--double + p {
+    clear: both;
+  }
+
+  &--doubleCaption > .Image-caption {
+    @include media($not-small) {
+      @include span-columns(12 of 6);
+      @include shift(-6);
+    }
+    @media print {
+      @include span-columns(12 of 6);
+      @include shift(-6);
+    }
+  }
+
+  &--shadow > img {
+    box-shadow: 0 scale(-5) scale(-2) 0 rgba($black, .1);
+    @media print {
+      box-shadow: none;
+    }
+  }
+}

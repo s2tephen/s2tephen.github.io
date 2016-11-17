@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" class="u-fullWidth u-fullHeight">
   {% include head.html %}
-  <body {% if page.categories contains 'error' %}class="error"{% endif %}>
-    <div class="page-wrap">
-      {% if page.cover %}
-        {% include cover.html %}
-      {% else %}
-        <header class="page-header page-header--nocover">
-          {% include nav.html %}
-        </header>
-      {% endif %}
-      <section class="page-main">
-        <article class="{{ page.categories }}">
+  <body class="u-flex u-fullWidth{% if page.categories contains 'error' %} u-viewportHeight{% else %}u-fullHeight{% endif %} u-ma-0">
+    {% if page.cover %}
+      {% include cover.html %}
+    {% else %}
+      <header class="Header Header--noCover">
+        {% include navbar.html %}
+      </header>
+    {% endif %}    
+    {% unless page.categories contains 'error' %}
+      <main{% unless page.categories contains 'home' %} class="u-container"{% endunless %}>
+        {% capture class-list %}{% if page.categories contains 'about' or page.categories contains 'blog' or page.categories contains 'work' %}{% if page.title != 'About' or page.title != 'Blog' %}Post {% endif %}u-ns-inner{% else %}{{ page.categories | capitalize }}{% endif %}{% endcapture %}
+        <article class="{{ class-list }}">
           {{ content }}
         </article>
-      </section>
-    </div>
+      </main>
+    {% endunless %}
     {% include footer.html %}
 
     <script>

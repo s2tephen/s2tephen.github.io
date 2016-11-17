@@ -1,0 +1,41 @@
+- category: Development
+  skills:
+    - - HTML5
+      - CSS3
+      - SASS/LESS/Stylus
+      - JavaScript
+      - jQuery
+      - D3.js
+      - Webpack
+    - - Node.js
+      - React
+      - Express
+      - Python
+      - Django
+      - Flask
+      - Ruby
+      - Rails
+      - Sinatra
+    - - PHP
+      - Wordpress
+      - Drupal
+      - SQL
+      - MongoDB
+      - Java
+      - C#
+      - Arduino
+      - Unix
+      - Git
+
+- category: Design
+  skills:
+    - - Sketch
+      - Illustrator
+      - Photoshop
+      - visualization
+      - animation
+      - branding
+    - - qualitative research
+      - storyboarding
+      - rapid prototyping
+      - user testing

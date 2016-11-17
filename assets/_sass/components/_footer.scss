@@ -1,0 +1,90 @@
+/**
+ * Footer
+ */
+
+.Footer {
+  padding: scale(-2) 0;
+  @include media($not-small) {
+    height: scale(2);
+  }
+
+  &-content {
+    position: relative;
+  }
+
+  &-credit {
+    position: absolute;
+    bottom: scale(3);
+    font: 400 scale(-3) $sans-font;
+    text-align: center;
+    @include media($not-small) {
+      bottom: scale(2);
+      font-size: scale(-2);
+      text-align: left;
+    }
+  }
+
+  &-credit > a {
+    color: $medium-gray;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 95%, $underline-color 95%);
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &-copy {
+    font-family: $sans-font;
+    font-size: scale(-2);
+    letter-spacing: .1em;
+    text-align: center;
+    color: rgba($black, .5);
+    @include media($not-small) {
+      float: left;
+      letter-spacing: normal;
+    }
+  }
+
+  /* Social */
+
+  &-social {
+    margin-bottom: scale(-4);
+    @include media($not-small) {
+      position: absolute;
+      top: -1 * scale(-4);
+      right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &-socialItem {
+    margin-left: scale(-1);
+    font-family: $sans-font;
+    line-height: normal;
+  }
+
+  &-socialIcon {
+    font-size: scale(0);
+    @include media($not-small) {
+      font-size: scale(-2);
+      color: rgba($black, .5);
+    }
+  }
+
+  &-socialText {
+    font-size: scale(-2);
+    color: rgba($black, .5);
+    border-bottom: 1px solid rgba($black, 0);
+    @include prop-transition(border-bottom-color);
+  }
+
+  &-socialLink:hover > .Footer-socialIcon {
+    color: $white;
+    @include media($not-small) {
+      color: rgba($black, .5);
+    }
+  }
+
+  &-socialLink:hover > .Footer-socialText {
+    border-bottom-color: $black;
+  }
+}

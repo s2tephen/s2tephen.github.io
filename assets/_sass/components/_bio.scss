@@ -1,0 +1,29 @@
+/**
+ * Bio
+ */
+
+.Bio {
+  &-avatar {
+    width: scale(4);
+    height: scale(4);
+    @include prop-transition(opacity);
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &-name {
+    margin-top: scale(-2);
+    &::after {
+      content: '';
+      display: block;
+      width: scale(2);
+      margin: scale(-2) auto;
+      border-bottom: 3px solid rgb(243, 178, 21);
+    }
+  }
+
+  &-description {
+    font-size: scale(-1);
+  }
+}

@@ -1,0 +1,211 @@
+/**
+ * Post
+ */
+
+.Post {
+  
+  /* Header */
+
+  &-meta {
+    margin-bottom: scale(-4);
+    font: scale(-2) $sans-font;
+  }
+
+  &-title {
+    @include prop-transition(color);
+  }
+
+  &-header--index:hover > .Post-title {
+    color: $medium-gray;
+  }
+
+  &-subtitle {
+    font: italic scale(0) $serif-font;
+  }
+
+  /* Content */
+
+  &-content {
+    margin-bottom: scale(0);
+  }
+
+  &-content > p:last-of-type {
+    display: inline;
+  }
+
+  &-endMark {
+    display: none;
+    width: scale(-2);
+    padding-left: 2px;
+  }
+
+  &-content > p + .Post-endMark {
+    display: inline;
+  }
+
+  /* Footer */
+
+  &-nav {
+    @include span-columns(3);
+    font-family: $sans-font;
+    @include transition(none);
+    @include media($medium) {
+      @include span-columns(7 of 24);
+    }
+    @include media($large) {
+      @include span-columns(4);
+    }
+    @include media($xlarge) {
+      @include span-columns(9 of 24);
+    }
+  }
+
+  &-navLabel {
+    margin-top: scale(-5);
+    font-size: scale(0);
+    font-weight: 700;
+    @include prop-black(color);
+    background-image: linear-gradient(to bottom, $transparent 95%, $underline-color 95%);
+    &:first-child {
+      @include transition(color $transition-out $transition-tf);
+    }
+    @include media($not-xsmall) {
+      font-size: scale(-2);
+      font-weight: 400;
+      color: $medium-gray;
+      background-image: none;
+    }
+  }
+
+  &-nav--prev > .Post-navLabel::before {
+    @include media($not-xsmall) {
+      content: '\2190';
+      position: relative;
+      margin-left: -1.5em;
+      margin-right: .5em;
+      @include transition(margin $transition-out $transition-tf);
+    }
+  }
+
+  &-nav--next > .Post-navLabel::after {
+    @include media($not-xsmall) {
+      content: '\2192';
+      position: relative;
+      right: 0;
+      margin-left: .5em;
+      margin-right: -1.5em;
+      @include transition(margin $transition-out $transition-tf);
+    }
+  }
+
+  &-nav:hover > .Post-navLabel:first-child {
+    color: $primary-color;
+    @include transition-duration($transition-in);
+  }
+
+  &-nav:hover > .Post-navLabel::before,
+  &-nav:hover > .Post-navLabel::after {
+    @include media($not-xsmall) {
+      @include transition-duration($transition-in);
+    }
+  }
+
+  &-nav--prev:hover > .Post-navLabel::before {
+    @include media($not-xsmall) {
+      margin-left: -2em;
+      margin-right: 1em;
+    }
+  }
+
+  &-nav--next:hover > .Post-navLabel::after {
+    @include media($not-xsmall) {
+      margin-left: 1em;
+      margin-right: -2em;
+    }
+  }
+
+  &-navTitle {
+    font-size: scale(-2);
+    font-weight: 700;
+    @include prop-transition(color);
+  }
+
+  &-nav:hover > .Post-navTitle {
+    color: $medium-gray;
+  }
+
+  &-social,
+  &-related {
+    @include span-columns(6);
+    @include shift(3);
+    font-size: 0;
+    @include media($medium) {
+      @include span-columns(10 of 24);
+      @include shift(7 of 24);
+    }
+    @include media($large) {
+      @include span-columns(4);
+      @include shift(4);
+    }
+    @include media($xlarge) {
+      @include span-columns(6 of 24);
+      @include shift(9 of 24);
+    }
+  }
+  
+  &-nav + .Post-social,
+  &-nav + .Post-related {
+    @include shift(0);
+  }
+
+  &-socialLink--email > .fa {
+    font-size: scale(-1);
+    &::before {
+      position: relative;
+      top: -1px;
+      left: -1px;
+    }
+  }
+
+  &-socialLink,
+  &-relatedLink {
+    width: scale(2);
+    height: scale(2);
+    line-height: scale(2);
+    @include prop-transition(color, background-color);
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &-socialLink--twitter:hover {
+    background-color: $twitter-color;
+  }
+
+  &-socialLink--facebook:hover {
+    background-color: $facebook-color;
+  }
+
+  &-socialLink--email:hover,
+  &-relatedLink:hover {
+    background-color: $primary-color;
+  }
+
+  &-footer::after {
+    content: '';
+    display: block;
+    width: 100%;
+    margin: scale(4) 0 scale(1);
+    clear: both;
+    border-bottom: 1px solid $lighter-gray;
+    @include media($not-small) {
+      width: 30%;
+      margin-left: 35%;
+      margin-right: 35%;
+    }
+    @media print {
+      width: 30%;
+      margin: scale(1) 35%;
+    }
+  }
+}

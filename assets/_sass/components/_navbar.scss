@@ -1,0 +1,156 @@
+/**
+ * Navbar
+ */
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  padding: 0 5%;
+  background-color: $primary-color;
+  @include media($not-small) {
+    position: relative;
+    top: scale(-1);
+    padding: 0;
+    background: none;
+  }
+  @media print {
+    position: relative;
+    padding: 0 0 scale(-4);
+    margin-bottom: scale(-4);
+    background: none;
+    border-bottom: 1px solid $lighter-gray;
+  }
+
+  /* Logo */
+
+  &-logo {
+    float: left;
+    &:hover {
+      cursor: pointer;
+    }
+    @include media($not-small) {
+      float: none;
+      width: scale(3);
+      height: scale(3);
+    }
+    @media print {
+      float: none;
+      width: scale(1);
+      height: scale(1);
+      &::after {
+        content: 'Stephen Suen';
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        height: scale(1);
+        margin-left: scale(-2);
+        font: 700 scale(0) $sans-font;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: .25em;
+      }
+    }
+  }
+
+  &-logoSvg {
+    position: relative;
+    top: scale(-5);
+    width: scale(1);
+    height: scale(1);
+    @include media($not-small) {
+      top: 0;
+      width: scale(3);
+      height: scale(3);
+    }
+    @media print {
+      top: 0;
+      width: scale(1);
+      height: scale(1);
+    }
+  }
+
+  &-logoSvg > path {
+    @include prop-black(fill);
+    @include prop-transition(fill);
+    @include media($not-small) {
+      fill: $white;
+    }
+  }
+
+  &-logoSvg:hover > path {
+    fill: $white;
+    @include media($not-small) {
+      fill: $primary-color;
+    }
+  }
+
+  &-logoSvg--noCover > path {
+    @include media($not-small) {
+      @include prop-black(fill);
+    }
+  }
+
+  /* Menu */
+
+  &-menu {
+    height: scale(2);
+    @include media($not-small) {
+      position: absolute;
+      top: scale(-4);
+      right: 0;
+      margin-bottom: scale(0);
+    }
+  }
+
+  &-item {
+    margin-left: 5vw;
+    font-family: $sans-font;
+    font-size: scale(-2);
+    @include media($not-small) {
+      font-size: scale(0);
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &-link {
+    height: scale(2);
+    line-height: scale(2);
+    @include prop-black(color);
+    border-bottom: 3px solid $primary-color;
+    @include prop-transition(border-bottom-color);
+    &:hover {
+      @include prop-black(color, border-bottom-color);
+    }
+    @include media($not-small) {
+      color: $light-gray;
+      border-bottom: none;
+      @include prop-transition(color);
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &-link--noCover {
+    @include media($not-small) {
+      color: $medium-gray;
+      &:hover {
+        @include prop-black(color);
+      }
+    }
+  }
+
+  &-link.is-active {
+    color: $white;
+    border-bottom-color: $white;
+    &:hover {
+      cursor: default;
+    }
+    @include media($not-small) {
+      color: $primary-color;
+      border-bottom: 3px solid $primary-color;
+    }
+  }
+}

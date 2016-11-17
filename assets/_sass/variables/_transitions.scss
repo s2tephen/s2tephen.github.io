@@ -1,0 +1,21 @@
+/**
+ * Transitions
+ */
+
+$transition: .15s;
+
+$transition-in:   50ms;
+$transition-out: 150ms;
+$transition-tf:  ease-in;
+
+@mixin prop-transition($props...) {
+  $prop-list: ();
+  @each $prop in $props {
+    $prop-list: append($prop-list, ($prop, $transition-out, $transition-tf), comma);
+  }
+
+  @include transition($prop-list);
+  &:hover {
+    @include transition-duration($transition-in);
+  }
+}

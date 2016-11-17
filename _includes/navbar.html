@@ -1,0 +1,9 @@
+<nav class="Navbar{% if page.categories contains 'resume' %} u-pt-hidden{% endif %} u-zi-3 u-fullWidth u-ns-container">
+  {% include logo.html %}
+  <ul class="Navbar-menu u-pt-hidden u-inlineList u-mb-0">
+    <li class="Navbar-item"><a class="Navbar-link{% unless page.cover %} Navbar-link--noCover{% endunless %}{% if page.categories contains 'home' or page.categories contains 'work' %} is-active{% endif %} u-block" href="{{ '/' | prepend: site.baseurl }}">Work</a></li>
+    <li class="Navbar-item"><a class="Navbar-link{% unless page.cover %} Navbar-link--noCover{% endunless %}{% if page.categories contains 'about' %} is-active{% endif %} u-block" href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+    <li class="Navbar-item"><a class="Navbar-link{% unless page.cover %} Navbar-link--noCover{% endunless %}{% if page.categories contains 'resume' %} is-active{% endif %} u-block" href="{{ '/resume' | prepend: site.baseurl }}">Resume</a></li>
+    <li class="Navbar-item"><a class="Navbar-link{% unless page.cover %} Navbar-link--noCover{% endunless %}{% if page.categories contains 'blog' %} is-active{% endif %} u-block" href="{{ '/blog' | prepend: site.baseurl }}">Blog</a></li>
+  </ul>
+</nav>

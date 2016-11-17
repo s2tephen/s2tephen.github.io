@@ -1,5 +1,5 @@
-<a href="{{ '/' | prepend: site.baseurl }}" title="Stephen Suen">
-  <svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<a class="{% if include.source == 'resume' %}Resume-logo{% else %}Navbar-logo{% endif %}" href="{{ '/' | prepend: site.baseurl }}" title="Stephen Suen">
+  <svg class="{% if include.source == 'resume' %}Resume-logoSvg{% else %}Navbar-logoSvg{% unless page.cover %} Navbar-logoSvg--noCover{% endunless %}{% endif %}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
       <path d="M50.395,8.302c-0.155,1.094-0.633,2.042-1.437,2.845c-1.018,1.017-2.239,1.526-3.663,1.526
         c-1.403,0-2.615-0.51-3.632-1.526c-1.018-1.019-1.526-2.237-1.526-3.663c0-1.465,0.519-2.695,1.556-3.694
         c0.049-0.047,0.099-0.093,0.15-0.136C38.76,2.582,35.448,2,32,2C15.431,2,2,15.431,2,32s13.431,30,30,30s30-13.431,30-30

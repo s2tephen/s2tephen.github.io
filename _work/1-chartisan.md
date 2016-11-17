@@ -1,16 +1,21 @@
 ---
 layout: work
 title: Chartisan
-subtitle: Farm to table to chart, with React and D3.
+slug: chartisan
+subtitle: Farm to table to chart, with React and D3.js
 categories: work
+post-img: chartisan_logo.png
 year: 2016
-post-img: tech_home.png
-next-slug: snap-judgments
-next-title: SNAP Judgments
+services:
+  - Development
+  - Visualization
 links:
-  - url: //stephensuen.com/chartisan
-    text: Link
+  - url: /chartisan
+    text: Project page
     icon: link
+  - url: //github.com/s2tephen/chartisan
+    text: GitHub repository
+    icon: github
 ---
 
 {% include image.html src='chartisan_app.png' alt='Chartisan, a web app for designing simple yet stylish charts right in the browser' caption='Chartisan, a web app for designing simple yet stylish charts right in the browser' class='wide shadow' %}
@@ -21,4 +26,4 @@ Chartisan takes a CSV or TSV dataset, parses the data, and draws it on a graph a
 
 {% include image.html src='chartisan_example.png' alt='An example bar chart made with Chartisan' caption='An example bar chart made with Chartisan' class='right-overflow' %}
 
-Thanks to React, changes happen in the browser in real-time with no need for a page refresh or server request, allowing users to freely modify their chart on the fly. Once the user is happy with it, they can add additional labels for context (e.g. title, subtitle, data source). Finally, these charts can be exported as static PNG images to be embedded in articles or shared on social media. Alternatively, they can be exported as SVG files for further editing in another vector image program like Illustrator.
+Thanks to React, changes happen in the browser in real-time with no need for a page refresh or server request. This allows users to freely modify their chart on the fly and visually verify throughout the design process. Once the user is happy with it, they can add additional labels for context (e.g. title, subtitle, data source). Finally, these charts can be exported as static PNG images to be embedded in articles or shared on social media. Alternatively, they can be exported as SVG files for further editing in a separate vector image program like Illustrator or Sketch.
