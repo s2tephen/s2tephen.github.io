@@ -25,10 +25,10 @@ subtitle-small: I make data tangible and user interfaces playful on the web.
   <div class="u-ns-container">
     {% for item in site.work %}
       <div class="CaseStudy u-clearfix">
-        <a class="CaseStudy-image u-block" href="{{ '/work/' | prepend: site.baseurl | append: item.slug }}">
-          <img src="{{ '/assets/img/' | prepend: site.baseurl | append: item.post-img }}">
+        <a class="CaseStudy-image u-block" href="{{ '/work/' | prepend: site.baseurl | append: item.slug }}" aria-hidden="true">
+          <img src="{{ '/assets/img/' | prepend: site.baseurl | append: item.post-img }}" alt="{{ item.title }}" title="{{ item.title }}">
         </a>
-        <a class="CaseStudy-content u-zi-1" href="{{ '/work/' | prepend: site.baseurl | append: item.slug }}">
+        <a class="CaseStudy-content u-zi-1" href="{{ '/work/' | prepend: site.baseurl | append: item.slug }}" aria-label="{{ item.title }} - {{ item.subtitle }}">
           <div class="u-centerFlex">
             <h3 class="CaseStudy-title u-textUppercase">{% if item.shortname %}{{ item.shortname }}{% else %}{{ item.title }}{% endif %}</h3>
             <h2 class="CaseStudy-subtitle u-mt-0 u-textGray">{{ item.subtitle }}.</h2>

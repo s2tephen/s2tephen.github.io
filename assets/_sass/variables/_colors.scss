@@ -29,3 +29,9 @@ $transparent:     rgba(0,0,0,0);
     }
   }
 }
+
+@mixin exact-colors {
+  @media print {
+    -webkit-print-color-adjust: exact;
+  }
+}

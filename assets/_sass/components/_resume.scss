@@ -34,9 +34,6 @@
     font-family: $sans-font;
     font-size: scale(-3);
     line-height: 1.5;
-    &:first-child {
-      margin-bottom: scale(-1);
-    }
     @include media($small) {
       font-size: scale(-2);
     }
@@ -58,6 +55,9 @@
       width: 100%;
       line-height: 1.15;
       text-align: right;
+      &:first-child {
+        margin-bottom: scale(-3);
+      }
     }
     &::before {
       content: none;
@@ -134,7 +134,7 @@
       letter-spacing: .25em;
     }
     @media print {
-      margin-top: scale(-3);
+      margin-top: scale(-4);
     }
   }
 
@@ -162,6 +162,7 @@
     letter-spacing: .1em;
     @include media($not-small) {
       float: right;
+      margin-top: scale(0);
     }
     @include media($medium) {
       font-size: scale(-2);
@@ -172,7 +173,7 @@
     }
     @media print {
       float: right;
-      margin-top: scale(-4);
+      margin-top: scale(-3);
       font-size: scale(-2);
     }
   }
@@ -198,8 +199,11 @@
 
   &-aside + .Resume-item {
     margin-top: scale(-2);
+    @include media($not-small) {
+      margin-top: scale(0);
+    }
     @media print {
-      margin-top: scale(-4);
+      margin-top: scale(-3);
     }
   }
 
@@ -258,6 +262,9 @@
     margin-bottom: scale(-2);
     font-family: $sans-font;
     font-size: scale(-2);
+    @include media($not-small) {
+      margin-bottom: scale(0);
+    }
     @include media($medium) {
       letter-spacing: -.02em;
     }
@@ -268,7 +275,7 @@
       font-size: scale(-1);
     }
     @media print {
-      margin-bottom: scale(-4);
+      margin-bottom: scale(-3);
       font-size: scale(-3);
       line-height: 1.375;
       letter-spacing: -.01em;

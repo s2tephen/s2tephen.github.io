@@ -1,6 +1,6 @@
 ---
 layout: work
-title: Has the Gov't Lied on Snooping?
+title: Has the Government Lied on Snooping?
 shortname: Gov't Snooping
 slug: govt-snooping
 subtitle: Debunking claims about NSA surveillance via pop-up video

@@ -80,3 +80,9 @@ $breakpoints: (
     display: block;
   }
 }
+
+.u-ariaLabel {
+  display: inline;
+  font-size: 0;
+  visibility: hidden;
+}

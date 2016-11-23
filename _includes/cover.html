@@ -4,7 +4,7 @@
     <div class="Header-coverImage{% if page.cover-align %} Header-coverImage--align{{ page.cover-align | capitalize }}{% endif %} u-absoluteTop u-pt-hidden u-fullWidth u-coverHeight" style="background-image: url('{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-img }}');"></div>
   {% elsif page.cover-vid %}
     <div class="Header-overlay u-absoluteTop u-pt-hidden u-zi-1 u-fullWidth{% if page.categories contains 'error' %} u-fullHeight{% else %} u-coverHeight{% endif %}"></div>
-    <video class="Header-coverVideo u-absoluteTop u-pt-hidden" autoplay loop muted poster="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.jpg' }}">
+    <video class="Header-coverVideo u-absoluteTop u-pt-hidden" autoplay loop muted poster="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.jpg' }}" aria-hidden="true">
       <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.webm' }}" type="video/webm">
       <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.cover-vid | append: '.mp4' }}" type="video/mp4">
     </video>

@@ -35,6 +35,7 @@
     padding-top: scale(2);
     @media print {
       padding-top: 0;
+      background: none !important;
     }
   }
 }

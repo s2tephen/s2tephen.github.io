@@ -7,7 +7,7 @@ categories: blog
 
 {% for post in paginator.posts %}
   <div class="Post">
-    <a class="Post-header Post-header--index" href="{{ post.url | prepend: site.baseurl }}">
+    <a class="Post-header Post-header--index" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}">
       <p class="Post-meta u-textUppercase u-textGray">{{ post.date | date: "%b %-d, %Y" }}</p>
       {% if post.subtitle %}
         <h1 class="Post-title u-mb-0">{{ post.title }}</h1>
@@ -21,14 +21,14 @@ categories: blog
         {% include image.html src=post.cover-img class='wide' %}
       {% endif %}
       {{ post.content }}
-      <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+      <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}" aria-hidden="true">
     </div>
     <div class="Post-footer u-pt-hidden u-textCenter u-textGray">
-      <p class="Post-meta u-pt-hidden u-textUppercase">Share this post</p>
-      <ul class="Post-social u-inlineList u-mb-0">
-        <li><a class="Post-socialLink Post-socialLink--twitter u-block u-bgGray" href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-        <li><a class="Post-socialLink Post-socialLink--facebook u-block u-bgGray" href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
-        <li><a class="Post-socialLink Post-socialLink--email u-block u-bgGray" href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
+      <p class="Post-meta u-pt-hidden u-textUppercase" aria-hidden="true">Share this post</p>
+      <ul class="Post-social u-inlineList u-mb-0" aria-label="Share this post">
+        <li><a class="Post-socialLink Post-socialLink--twitter u-block u-bgGray" href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a class="Post-socialLink Post-socialLink--facebook u-block u-bgGray" href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i></a></li>
+        <li><a class="Post-socialLink Post-socialLink--email u-block u-bgGray" href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane" aria-hidden="true"></i></a></li>
       </ul>
     </div>
   </div>

@@ -41,6 +41,7 @@
 
 .u-textYellow {
   color: $primary-color;
+  @include exact-colors;
 }
 
 .u-textWhite {
@@ -52,13 +53,11 @@
 
 .u-textLightGray {
   color: $lighter-gray;
-  @media print {
-    color: $medium-gray;
-  }
 }
 
 .u-textGray {
   color: $medium-gray;
+  @include exact-colors;
 }
 
 .u-textDarkGray {
@@ -67,7 +66,7 @@
 
 .u-bgYellow {
   background-color: $primary-color;
-  -webkit-print-color-adjust: exact;
+  @include exact-colors;
 }
 
 .u-bgGray {

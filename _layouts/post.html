@@ -18,27 +18,27 @@ layout: default
 
 <div class="Post-content">
   {{ content }}
-  <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+  <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}" aria-hidden="true">
 </div>
 
 <div class="Post-footer u-pt-hidden u-textCenter">
-  <p class="Post-meta u-textUppercase u-textGray">Share this post</p>
+  <p class="Post-meta u-textUppercase u-textGray" aria-hidden="true">Share this post</p>
   {% if page.previous %}
     {% assign prev-year = page.previous.date | date: '%Y' %}
-    <a class="Post-nav Post-nav--prev u-textLeft" href="{{ page.previous.url | prepend: site.baseurl }}">
+    <a class="Post-nav Post-nav--prev u-textLeft" href="{{ page.previous.url | prepend: site.baseurl }}" aria-label="Previous post - {{ page.previous.title }}">
       <div class="Post-navLabel u-nx-hidden u-inlineBlock">Prev</div>
       <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{% if year == prev-year %}{{ page.previous.date | date: '%b %-d' }}{% else %}{{ prev-year }}{% endif %}</div>
       <div class="Post-navTitle u-xs-hidden u-textTruncate">{{ page.previous.title }}</div>
     </a>
   {% endif %}
-  <ul class="Post-social u-inlineList u-mb-0">
-    <li><a class="Post-socialLink Post-socialLink--twitter u-block u-bgGray" href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter"></i></a></li>
-    <li><a class="Post-socialLink Post-socialLink--facebook u-block u-bgGray" href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square"></i></a></li>
-    <li><a class="Post-socialLink Post-socialLink--email u-block u-bgGray" href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane"></i></a></li>
+  <ul class="Post-social u-inlineList u-mb-0" aria-label="Share this post">
+    <li><a class="Post-socialLink Post-socialLink--twitter u-block u-bgGray" href="//twitter.com/intent/tweet/?text={{ post.title }}&url={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}&via=s2tephen" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i></a></li>
+    <li><a class="Post-socialLink Post-socialLink--facebook u-block u-bgGray" href="//www.facebook.com/sharer/sharer.php?u={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" target="_blank" title="Share on Facebook"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i></a></li>
+    <li><a class="Post-socialLink Post-socialLink--email u-block u-bgGray" href="mailto:?subject={{ post.title }}&body={{ post.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}" title="Share via email"><i class="fa fa-fw fa-paper-plane" aria-hidden="true"></i></a></li>
   </ul>
   {% if page.next %}
     {% assign next-year = page.next.date | date: '%Y' %}
-    <a class="Post-nav Post-nav--next u-textRight" href="{{ page.next.url | prepend: site.baseurl }}">
+    <a class="Post-nav Post-nav--next u-textRight" href="{{ page.next.url | prepend: site.baseurl }}" aria-label="Next post - {{ page.next.title }}">
       <div class="Post-navLabel u-nx-hidden u-inlineBlock">Next</div>
       <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{% if year == next-year %}{{ page.next.date | date: '%b %-d' }}{% else %}{{ next-year }}{% endif %}</div>
       <div class="Post-navTitle u-xs-hidden u-textTruncate">{{ page.next.title }}</div>

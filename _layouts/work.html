@@ -16,27 +16,27 @@ layout: default
 
 <div class="Post-content">
   {{ content }}
-  <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}">
+  <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}" aria-hidden="true">
 </div>
 
 <div class="Post-footer u-pt-hidden u-textCenter">
-  <p class="Post-meta u-textUppercase u-textGray">See more</p>
+  <p class="Post-meta u-textUppercase u-textGray" aria-hidden="true">See more</p>
   {% if page.previous %}
-    <a class="Post-nav Post-nav--prev u-textLeft" href="{{ '/work/' | prepend: site.baseurl | append: page.previous.slug }}">
+    <a class="Post-nav Post-nav--prev u-textLeft" href="{{ '/work/' | prepend: site.baseurl | append: page.previous.slug }}" aria-label="Previous project - {{ page.previous.title }}">
       <div class="Post-navLabel u-nx-hidden u-inlineBlock">Prev</div>
       <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{{ page.previous.year }}</div>
       <div class="Post-navTitle u-xs-hidden u-textTruncate">{% if page.previous.shortname %}{{ page.previous.shortname }}{% else %}{{ page.previous.title }}{% endif %}</div>
     </a>
   {% endif %}
   {% if page.links %}
-    <ul class="Post-related u-inlineList u-mb-0">
+    <ul class="Post-related u-inlineList u-mb-0" aria-label="See more">
       {% for link in page.links %}
-        <li><a class="Post-relatedLink u-block u-bgGray" href="{{ link.url }}" title="{{ link.text }}"><i class="fa fa-fw fa-{{ link.icon }}"></i></a></li>
+        <li><a class="Post-relatedLink u-block u-bgGray" href="{{ link.url }}" title="{{ link.text }}"><i class="fa fa-fw fa-{{ link.icon }}" aria-hidden="true"></i></a></li>
       {% endfor %}
     </ul>
   {% endif %}
   {% if page.next %}
-    <a class="Post-nav Post-nav--next u-textRight" href="{{ '/work/' | prepend: site.baseurl | append: page.next.slug }}">
+    <a class="Post-nav Post-nav--next u-textRight" href="{{ '/work/' | prepend: site.baseurl | append: page.next.slug }}" aria-label="Next project - {{ page.next.title }}">
       <div class="Post-navLabel u-nx-hidden u-inlineBlock">Next</div>
       <div class="Post-navLabel u-xs-hidden u-inlineBlock u-fullWidth">{{ page.next.year }}</div>
       <div class="Post-navTitle u-xs-hidden u-textTruncate">{% if page.next.shortname %}{{ page.next.shortname }}{% else %}{{ page.next.title }}{% endif %}</div>
