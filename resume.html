@@ -27,11 +27,10 @@ categories: resume
     <h3 class="Resume-section u-textYellow">Experience</h3>
   </div>
   {% for hash in site.data.resume.experience %}
-    {% assign position = hash[1] %}
     <div class="Resume-item u-mr-0">
-      <h3 class="Resume-itemTitle">{{ position.title }} <span class="Resume-itemLocation">{{ position.location }}</span></h3>
-      <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ position.role }}</strong><span class="u-xs-hidden u-sm-hidden"> — </span><span class="u-sm-wbr u-mt-0">{{ position.date }}</span></h3>
-      <p class="Resume-itemDescription">{{ position.description }}</p>
+      <h3 class="Resume-itemTitle">{{ hash.title }} <span class="Resume-itemLocation">{{ hash.location }}</span></h3>
+      <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ hash.role }}</strong><span class="u-xs-hidden u-sm-hidden"> — </span><span class="u-sm-wbr u-mt-0">{{ hash.date }}</span></h3>
+      <p class="Resume-itemDescription">{{ hash.description }}</p>
     </div>
   {% endfor %}
 </div>

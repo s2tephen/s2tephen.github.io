@@ -1,0 +1,23 @@
+- title: Freelance
+  location: Cambridge, MA
+  role: Web Developer
+  date: Mar 2016 to Present
+  description: Build websites and web apps for clients such as Emerson College and the MIT Media Lab, working at various layers of the stack. Previous projects have involved front-end UI design and templating, WordPress custom theming and plugin deployment, data visualization/mapping with D3.js, and backend development with Python/Flask.
+
+- title: The Tech
+  location: Cambridge, MA
+  role: Online Media Editor
+  date: Sep 2012 to Jun 2015
+  description: Led the newspaper’s interactive graphics team to develop visualizations and deploy online packages for data-driven news stories. Conducted internal hack nights and workshops in HTML/CSS/JS, D3.js, and web scraping. Launched the website’s first redesign in nearly a decade as its sole UI/UX designer and lead front-end developer, migrating from a legacy PHP CMS to a digital-first, responsively-designed Rails app.
+
+- title: Microsoft
+  location: Redmond, WA
+  role: Program Manager Intern, Outlook
+  date: Jun 2014 to Aug 2014
+  description: Designed and wrote functional specs for UI/UX features in the Windows 10 Calendar universal app. Integrated design vocabularies from the OS, Office, Outlook.com, and legacy conventions while still pushing new interaction paradigms. Created animated mockups and C#/XAML prototypes for user testing and design crits. Coordinated with an engineer to implement designs through agile methodologies and sprint planning.
+
+- title: ProPublica
+  location: New York, New York
+  role: Google Journalism Fellow
+  date: Jun 2013 to Aug 2013
+  description: Produced online news graphics on NSA surveillance and unpaid internships as a part of ProPublica’s news apps team. Designed and implemented a reusable lawsuit tracker in Sinatra, oEmbed-based modules for a social media story-sharing platform in Rails, and a synchronized video transcript using JavaScript and the YouTube API.
