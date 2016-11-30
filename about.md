@@ -9,7 +9,7 @@ categories: about
 
 I am a freelance digital product designer and front-end developer with a focus in data visualization and interactive media. In 2015 I graduated from MIT's [Comparative Media Studies](//cms.mit.edu) program, creating my own major that blended computer science, interaction design, and the social sciences.
 
-I was born in Los Angeles, but grew up in Hong Kong and now live in Boston. I am currently seeking a full-time position in the San Francisco Bay Area or on a remote team. You can see my technical qualifications and previous job experience on [my resume](/resume/).
+I was born in Los Angeles, but grew up in Hong Kong and went to school in Boston. I now live in the San Francisco Bay Area, where I am currently seeking a full-time position (remote teams are 👌 too). You can see my technical qualifications and previous job experience on [my resume](/resume/).
 
 ## Contact
 
