@@ -7,7 +7,7 @@ categories: blog
 
 {% for post in paginator.posts %}
   <div class="Post">
-    <a class="Post-header Post-header--index" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.date | date: "%b %-d, %Y" }} - {{ post.title }}{% if post.subtitle %} - {{ post.subtitle }}{% endif %}">
+    <a class="Post-header Post-header--index" href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.title }}">
       <p class="Post-meta u-textUppercase u-textGray">{{ post.date | date: "%b %-d, %Y" }}</p>
       {% if post.subtitle %}
         <h1 class="Post-title u-mb-0">{{ post.title }}</h1>

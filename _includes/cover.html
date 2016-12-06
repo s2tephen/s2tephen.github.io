@@ -1,12 +1,12 @@
-<header class="Header">
+<header class="Header" role="banner">
   {% if page.cover == 'image' %}
     <div class="Header-overlay u-absoluteTop u-pt-hidden u-zi-1 u-fullWidth u-coverHeight"></div>
     <div class="Header-coverImage{% if page.cover-align %} Header-coverImage--align{{ page.cover-align | capitalize }}{% endif %} u-absoluteTop u-pt-hidden u-fullWidth u-coverHeight" style="background-image: url('{{ '/assets/img/' | prepend: site.baseurl | append: page.image }}');"></div>
   {% elsif page.cover == 'video' %}
     <div class="Header-overlay u-absoluteTop u-pt-hidden u-zi-1 u-fullWidth{% if page.categories contains 'error' %} u-fullHeight{% else %} u-coverHeight{% endif %}"></div>
     <video class="Header-coverVideo u-absoluteTop u-pt-hidden" autoplay loop muted poster="{{ '/assets/img/' | prepend: site.baseurl | append: page.video | append: '.jpg' }}" aria-hidden="true">
-      <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.video | append: '.webm' }}" type="video/webm">
-      <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.video | append: '.mp4' }}" type="video/mp4">
+      <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.video | append: '.webm' }}" type="video/webm"></source>
+      <source src="{{ '/assets/img/' | prepend: site.baseurl | append: page.video | append: '.mp4' }}" type="video/mp4"></source>
     </video>
   {% endif %}
   {% include navbar.html %}
@@ -19,7 +19,7 @@
       {% endif %}
       <h1 class="Header-title u-mb-0 u-textUppercase u-pt-textNormal u-textWhite u-textShadow">{{ page.title }}</h1>
       {% if page.subtitle-small %}
-        <h2 class="Header-subtitle u-mt-0 u-mb-0 u-textLightGray u-textShadow u-ns-visible">{{ page.subtitle }}</h2>
+        <h2 class="Header-subtitle u-mt-0 u-mb-0 u-textLightGray u-textShadow u-ns-visible"{% if page.categories contains 'home' %} aria-label="{{ page.subtitle | strip_html }}"{% endif %}>{{ page.subtitle }}</h2>
         <h2 class="Header-subtitle u-mt-0 u-mb-0 u-textLightGray u-textShadow u-ns-hidden">{{ page.subtitle-small }}</h2>
       {% else %}
         <h2 class="Header-subtitle u-mt-0 u-mb-0 u-textLightGray u-textShadow">{{ page.subtitle }}</h2>

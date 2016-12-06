@@ -48,6 +48,10 @@
   }
 }
 
+.u-viewportHeight {
+  min-height: 100vh;
+}
+
 .u-coverHeight {
   height: 95vh;
   min-height: $min-height;

@@ -1,4 +1,4 @@
-<nav class="Navbar{% if page.categories contains 'resume' %} u-pt-hidden{% endif %} u-zi-3 u-fullWidth u-ns-container">
+<nav class="Navbar{% if page.categories contains 'resume' %} u-pt-hidden{% endif %} u-zi-3 u-fullWidth u-ns-container" role="navigation">
   {% include logo.html %}
   <ul class="Navbar-menu u-pt-hidden u-inlineList u-mb-0">
     <li class="Navbar-item"><a class="Navbar-link{% unless page.cover %} Navbar-link--noCover{% endunless %}{% if page.categories contains 'home' or page.categories contains 'work' %} is-active{% endif %} u-block" href="{{ '/' | prepend: site.baseurl }}">Work</a></li>

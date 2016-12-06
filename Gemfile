@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rake'
-gem 'github-pages', group: :jekyll_plugins
-gem 'nokogiri'
-gem 'bourbon'
-gem 'neat'
+gem 'github-pages', '104', group: :jekyll_plugins
 gem 'guard'
 gem 'guard-jekyll-plus'
 gem 'guard-livereload'
+gem 'rake'
+gem 'nokogiri'
+gem 'bourbon'
+gem 'neat'

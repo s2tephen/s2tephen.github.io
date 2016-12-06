@@ -10,8 +10,8 @@ task :default do
   Process.wait pid
 end
 
-desc 'prettify html'
-task :pp do
+desc 'pretty print html'
+task :prettify do
   require 'nokogiri'
 
   xsl = Nokogiri::XSLT(File.open('pretty_print.xsl'))
@@ -22,7 +22,13 @@ task :pp do
   files.each do |f|
     html = Nokogiri(File.open(f))
     pretty = xsl.apply_to(html).to_s
-    pretty = header + pretty[(pretty.index(meta) + meta.size), pretty.size].gsub!(/\n    /, "\n")
+    pretty = header + pretty[(pretty.index(meta) + meta.size), pretty.size]
+    pretty.gsub!(/\n    /, "\n").gsub!(/<\/source>/, '')
     File.open(f, 'w') { |file| file.write(pretty) }
   end
+end
+
+desc 'deploy _site folder'
+task :deploy do
+  exec('git subtree push --prefix _site origin gh-pages')
 end

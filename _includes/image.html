@@ -8,6 +8,6 @@
   <img src="{{ '/assets/img/' | prepend: site.baseurl | append: include.src }}" alt="{{ include.alt }}" title="{{ include.alt }}">
 {% endif %}
 {% if include.caption %}
-  <figcaption class="Image-caption u-textGray">{{ include.caption }}</figcaption>
+  <figcaption class="Image-caption u-textGray" aria-hidden="true">{{ include.caption }}</figcaption>
 {% endif %}
 </figure>

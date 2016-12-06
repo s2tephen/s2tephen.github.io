@@ -158,11 +158,10 @@
   }
 
   &-section {
-    margin-top: scale(-2);
+    margin-top: scale(0);
     letter-spacing: .1em;
     @include media($not-small) {
       float: right;
-      margin-top: scale(0);
     }
     @include media($medium) {
       font-size: scale(-2);
@@ -217,6 +216,7 @@
   }
 
   &-itemTitle {
+    font-weight: 400;
     text-transform: none;
     margin-bottom: scale(-4);
     @include media($medium) {
@@ -229,7 +229,6 @@
   }
 
   &-itemTitle > .Resume-itemLocation {
-    font-weight: 400;
     font-style: italic;
     margin-left: scale(-4);
   }

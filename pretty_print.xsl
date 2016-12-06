@@ -7,11 +7,13 @@
     </xsl:text>
   </xsl:template>
 
-  <xsl:template match="comment() | processing-instruction()">
+  <xsl:template match="comment()">
     <xsl:param name="indent" select="''"/>
     <xsl:call-template name="newline"/>
     <xsl:value-of select="$indent"/>
-    <xsl:copy/>
+    <xsl:comment>
+      <xsl:value-of select="."/>
+    </xsl:comment>
   </xsl:template>
 
   <xsl:template match="text()">
@@ -31,7 +33,7 @@
       <xsl:when test="count(child::*) > 0">
         <xsl:copy>
           <xsl:copy-of select="@*"/>
-          <xsl:apply-templates select="*|text()">
+          <xsl:apply-templates select="*|text()|comment()">
             <xsl:with-param name="indent" select="concat($indent, $indent-increment)"/>
           </xsl:apply-templates>
           <xsl:call-template name="newline"/>
@@ -42,5 +44,19 @@
         <xsl:copy-of select="."/>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="p|span|figcaption">
+    <xsl:param name="indent" select="''"/>
+    <xsl:call-template name="newline"/>
+    <xsl:value-of select="$indent"/>
+    <xsl:copy-of select="."/>
+  </xsl:template>
+
+  <xsl:template match="source">
+    <xsl:param name="indent" select="''"/>
+    <xsl:call-template name="newline"/>
+    <xsl:value-of select="$indent"/>
+    <xsl:copy-of select=".">
   </xsl:template>
 </xsl:stylesheet>

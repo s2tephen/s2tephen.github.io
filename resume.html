@@ -15,7 +15,7 @@ categories: resume
     <li class="Resume-contactItem"><i class="fa fa-fw fa-phone u-ns-hidden u-pt-hidden u-textGray" aria-hidden="true"></i> 805 252 4498</li>
   </ul>
   <div class="Resume-title">
-    <h1 class="Resume-name u-mb-0 u-textYellow">Stephen<br>J Suen</h1>
+    <h1 class="Resume-name u-mb-0 u-textYellow" aria-label="Stephen J Suen"><span class="u-block" aria-hidden="true">Stephen</span><span class="u-block" aria-hidden="true">J Suen</span></h1>
     <h3 class="Resume-role u-inlineBlock u-mb-0 u-textUppercase u-textGray" aria-hidden="true">Front-end Developer / <span class="u-sm-wbr u-mt-0"><span class="u-md-hidden">Product </span>Designer</span></h3>
     <h2 class="u-ariaLabel u-pt-hidden" aria-hidden="false">Front-end Developer and Product Designer</h2>
     <a class="Resume-button Button u-pt-hidden" href="{{ '/assets/files/stephen-suen-resume-2016.pdf' | prepend: site.baseurl }}" aria-label="Download as PDF"><i class="Button-icon fa fa-fw fa-cloud-download"></i><span class="u-ns-hidden u-textUppercase"> Download</span><span class="u-inline u-xs-hidden u-sm-hidden"> PDF</span></a>
@@ -28,8 +28,8 @@ categories: resume
   </div>
   {% for hash in site.data.resume.experience %}
     <div class="Resume-item u-mr-0">
-      <h3 class="Resume-itemTitle">{{ hash.title }} <span class="Resume-itemLocation">{{ hash.location }}</span></h3>
-      <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ hash.role }}</strong><span class="u-xs-hidden u-sm-hidden"> — </span><span class="u-sm-wbr u-mt-0">{{ hash.date }}</span></h3>
+      <h3 class="Resume-itemTitle"><strong>{{ hash.title }}</strong> <span class="Resume-itemLocation">{{ hash.location }}</span></h3>
+      <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ hash.role }}</strong><span class="u-xs-hidden u-sm-hidden" aria-hidden="true"> — </span><span class="u-sm-wbr u-mt-0">{{ hash.date }}</span></h3>
       <p class="Resume-itemDescription">{{ hash.description }}</p>
     </div>
   {% endfor %}
@@ -41,8 +41,8 @@ categories: resume
   </div>
   {% assign education = site.data.resume.education %}
   <div class="Resume-item u-mr-0">
-    <h3 class="Resume-itemTitle">{{ education.title }} <span class="Resume-itemLocation">{{ education.location }}</span></h3>
-    <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ education.role }}</strong><span class="u-xs-hidden u-sm-hidden"> — </span><span class="u-sm-wbr u-mt-0">{{ education.date }}</span></h3>
+    <h3 class="Resume-itemTitle"><strong>{{ education.title }}</strong> <span class="Resume-itemLocation">{{ education.location }}</span></h3>
+    <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ education.role }}</strong><span class="u-xs-hidden u-sm-hidden" aria-hidden="true"> — </span><span class="u-sm-wbr u-mt-0">{{ education.date }}</span></h3>
     <p class="Resume-itemDescription">Relevant Courses: {{ education.courses | join: ', ' }}</p>
   </div>
 </div>
@@ -53,8 +53,8 @@ categories: resume
   </div>
   {% for hash in site.data.resume.skills %}
     <div class="Resume-item u-mr-0">
-      <h3 class="Resume-itemTitle">{{ hash.category }}</h3>
-      <p class="Resume-itemDescription">{% for line in hash.skills %}{% if forloop.first %}{{ line | join: ', ' }}<span class="u-ns-hidden u-pt-hidden">, </span>{% else %}<span class="u-ns-wbr u-mt-0">{{ line | join: ', ' }}</span>{% unless forloop.last %}<span class="u-ns-hidden u-pt-hidden">, </span>{% endunless %}{% endif %}{% endfor %}</p>
+      <h3 class="Resume-itemTitle"><strong>{{ hash.category }}</strong></h3>
+      <p class="Resume-itemDescription" role="" aria-label="{{ hash.skills | join: ', ' }}">{% for line in hash.skills %}{% if forloop.first %}<span aria-hidden="true">{{ line | join: ', ' }}</span><span class="u-ns-hidden u-pt-hidden" aria-hidden="true">, </span>{% else %}<span class="u-ns-wbr u-mt-0" aria-hidden="true">{{ line | join: ', ' }}</span>{% unless forloop.last %}<span class="u-ns-hidden u-pt-hidden" aria-hidden="true">, </span>{% endunless %}{% endif %}{% endfor %}</p>
     </div>
   {% endfor %}
 </div>

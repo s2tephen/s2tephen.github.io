@@ -66,9 +66,10 @@ h2 {
   margin: scale(1) 0 scale(0);
   font-family: $sans-font;
   font-size: scale(0);
-  &:first-child {
-    margin-top: 0;
-  }
+}
+
+article > h2:first-child {
+  margin-top: 0;
 }
 
 h3 {
