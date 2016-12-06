@@ -30,5 +30,5 @@ end
 
 desc 'deploy _site folder'
 task :deploy do
-  exec('git subtree push --prefix _site origin gh-pages')
+  exec('git cp -r _site docs; git add -A; git commit -m "Deployed site updates."; git push origin master')
 end

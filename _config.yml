@@ -9,7 +9,7 @@ url: 'http://stephensuen.com'
 gems: [jekyll-paginate]
 markdown: kramdown
 permalink: /:categories/:title
-exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'pretty_print.xsl', 'vendor']
+exclude: ['docs', 'Gemfile', 'Gemfile.lock', 'Guardfile', 'Rakefile', 'README.md', 'pretty_print.xsl', 'vendor']
 sass:
   sass_dir: assets/_sass
   style: compressed
