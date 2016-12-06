@@ -15,7 +15,7 @@ task :prettify do
   require 'nokogiri'
 
   xsl = Nokogiri::XSLT(File.open('pretty_print.xsl'))
-  header = "<!DOCTYPE html>\n<html lang=\"en-us\" class=\"u-fullWidth u-fullHeight\">\n  <head>"
+  header = "<!DOCTYPE html>\n<html lang=\"en-us\" class=\"u-fullWidth\">\n  <head>"
   meta = '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'
 
   files = Dir[File.join('_site', '**/*.{html}')]
@@ -30,5 +30,5 @@ end
 
 desc 'deploy _site folder'
 task :deploy do
-  exec('cp -r _site docs; git add -A; git commit -m "Deployed site updates."; git push origin master')
+  exec('rm -rf docs; mv _site docs; git add -A; git commit -m "Deployed site updates."; git push origin master')
 end
