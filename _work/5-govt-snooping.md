@@ -5,7 +5,7 @@ shortname: Gov't Snooping
 slug: govt-snooping
 subtitle: Debunking claims about NSA surveillance via pop-up video
 categories: work
-post-img: nsa_thumb.jpg
+image: nsa_thumb.jpg
 year: 2013
 services:
   - Design

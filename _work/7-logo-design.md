@@ -4,7 +4,7 @@ title: Logo Design
 slug: logo-design
 subtitle: Branding and logo design for various products and projects
 categories: work
-post-img: logo_work.png
+image: logo_work.png
 year: 2012-2014
 services:
   - Design

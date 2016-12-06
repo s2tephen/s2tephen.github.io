@@ -4,7 +4,7 @@ title: UpBeat
 slug: upbeat
 subtitle: Universal drum attachments for interactive music learning
 categories: work
-post-img: upbeat_thumb.jpg
+image: upbeat_thumb.jpg
 year: 2014
 services:
   - Design

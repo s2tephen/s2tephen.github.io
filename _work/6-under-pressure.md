@@ -4,7 +4,7 @@ title: Under Pressure
 slug: under-pressure
 subtitle: Visualizing the stress of drinking from the MIT firehose
 categories: work
-post-img: pressure_thumb.jpg
+image: pressure_thumb.jpg
 year: 2012
 services:
   - Design

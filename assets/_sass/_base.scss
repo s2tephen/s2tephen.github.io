@@ -87,9 +87,7 @@ a {
   }
 }
 
-p > a,
-p > span > a,
-p > a > em {
+p a {
   @include underline($white, $underline-color);
 }
 

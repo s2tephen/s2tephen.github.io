@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Blog
-subtitle: Stephen Suen is a designer and developer who tells stories through data visualization and interactive media.
+subtitle: Stephen Suen is a designer and developer of data visualizations and human-centered products.
 categories: blog
 ---
 
@@ -17,8 +17,8 @@ categories: blog
       {% endif %}
     </a>
     <div class="Post-content">
-      {% if post.cover %}
-        {% include image.html src=post.cover-img class='wide' %}
+      {% if post.cover == 'image' %}
+        {% include image.html src=post.image class='wide' %}
       {% endif %}
       {{ post.content }}
       <img class="Post-endMark" src="{{ '/assets/img/logo.png' | prepend: site.baseurl }}" aria-hidden="true">

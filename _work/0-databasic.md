@@ -4,7 +4,7 @@ title: DataBasic
 slug: databasic
 subtitle: Teaching data literacy with simple browser-based analysis tools
 categories: work
-post-img: databasic_thumb.png
+image: databasic_thumb.png
 year: 2016
 services:
   - Development

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us" class="u-fullWidth u-fullHeight">
   {% include head.html %}
-  <body class="u-flex u-fullWidth{% if page.categories contains 'error' %} u-viewportHeight{% else %}u-fullHeight{% endif %} u-ma-0">
+  <body class="u-flex u-fullWidth{% if page.categories contains 'error' %} u-viewportHeight{% else %} u-fullHeight{% endif %} u-ma-0">
     {% if page.cover %}
       {% include cover.html %}
     {% else %}
       <header class="Header Header--noCover">
         {% include navbar.html %}
       </header>
-    {% endif %}    
+    {% endif %}
     {% unless page.categories contains 'error' %}
       <main{% unless page.categories contains 'home' %} class="u-container"{% endunless %}>
         {% capture class-list %}{% if page.categories contains 'about' or page.categories contains 'blog' or page.categories contains 'work' %}{% if page.title != 'About' or page.title != 'Blog' %}Post {% endif %}u-ns-inner{% else %}{{ page.categories | capitalize }}{% endif %}{% endcapture %}
@@ -24,7 +24,7 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      
+
       ga('create', 'UA-33378940-2', 'auto');
       ga('send', 'pageview');
     </script>

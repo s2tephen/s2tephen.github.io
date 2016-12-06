@@ -4,7 +4,7 @@ title: Chartisan
 slug: chartisan
 subtitle: Farm to table to chart, with React and D3.js
 categories: work
-post-img: chartisan_logo.png
+image: chartisan_logo.png
 year: 2016
 services:
   - Development

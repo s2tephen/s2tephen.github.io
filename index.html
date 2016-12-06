@@ -1,7 +1,7 @@
 ---
 layout: default
-cover: default
-cover-img: self_main.jpg
+cover: image
+image: self_main.jpg
 cover-align: right
 categories: home
 title: Stephen Suen
@@ -26,7 +26,7 @@ subtitle-small: I make data tangible and user interfaces playful on the web.
     {% for item in site.work %}
       <div class="CaseStudy u-clearfix">
         <a class="CaseStudy-image u-block" href="{{ '/work/' | prepend: site.baseurl | append: item.slug }}" aria-hidden="true">
-          <img src="{{ '/assets/img/' | prepend: site.baseurl | append: item.post-img }}" alt="{{ item.title }}" title="{{ item.title }}">
+          <img src="{{ '/assets/img/' | prepend: site.baseurl | append: item.image }}" alt="{{ item.title }}" title="{{ item.title }}">
         </a>
         <a class="CaseStudy-content u-zi-1" href="{{ '/work/' | prepend: site.baseurl | append: item.slug }}" aria-label="{{ item.title }} - {{ item.subtitle }}">
           <div class="u-centerFlex">

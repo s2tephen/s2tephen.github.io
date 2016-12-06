@@ -5,36 +5,25 @@
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="{{ site.description }}">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary{% if page.image and (page.categories contains 'blog' or page.categories contains 'work') %}_large_image{% endif %}">
   <meta name="twitter:title" content="{% if page.categories contains 'home' %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.categories contains 'work' or page.categories contains 'blog' %}{{ page.subtitle }}{% else %}{{ site.description }}{% endif %}">
   <meta name="twitter:site" content="@s2tephen">
   <meta name="twitter:creator" content="@s2tephen">
-  {% if page.categories contains 'blog' or page.categories contains 'work' %}
-    {% if page.cover-img %}
-      <meta name="twitter:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.cover-img }}">
-    {% elsif page.post-img %}
-      <meta name="twitter:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.post-img }}">
-    {% else %}
-      <meta name="twitter:image" content="{{ '/assets/img/self_twitter.jpg' | prepend: site.baseurl | prepend: site.url }}">
-    {% endif %}
+  {% if page.image and (page.categories contains 'blog' or page.categories contains 'work') %}
+    <meta name="twitter:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.image }}">
   {% else %}
     <meta name="twitter:image" content="{{ '/assets/img/self_twitter.jpg' | prepend: site.baseurl | prepend: site.url }}">
   {% endif %}
+
   <meta property="og:type" content="article">
   <meta property="og:url" content="{{ page.url | replace: '/index.html', '' | prepend: site.url }}">
   <meta property="og:title" content="{% if page.categories contains 'home' %}{{ site.title }}{% else %}{{ page.title }}{% endif %}">
   <meta property="og:description" content="{% if page.categories contains 'work' or page.categories contains 'blog' %}{{ page.subtitle }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:site_name" content="Stephen Suen">
   <meta property="article:author" content="ssuen">
-  {% if page.categories contains 'blog' or page.categories contains 'work' %}
-    {% if page.cover-img %}
-      <meta property="og:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.cover-img }}">
-    {% elsif page.post-img %}
-      <meta property="og:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.post-img }}">
-    {% else %}
-      <meta property="og:image" content="{{ '/assets/img/self_facebook.jpg' | prepend: site.baseurl | prepend: site.url }}">
-    {% endif %}
+  {% if page.image and (page.categories contains 'blog' or page.categories contains 'work') %}
+    <meta property="og:image" content="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: page.image }}">
   {% else %}
     <meta property="og:image" content="{{ '/assets/img/self_facebook.jpg' | prepend: site.baseurl | prepend: site.url }}">
   {% endif %}
@@ -46,7 +35,7 @@
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic">
   <script src="//use.typekit.net/rzu6dry.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
-  
+
   <link rel="stylesheet" href="{{ '/assets/css/app.css' | prepend: site.baseurl }}">
 
   <!--[if lt IE 9]>

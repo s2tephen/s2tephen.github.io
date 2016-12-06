@@ -4,7 +4,7 @@ title: SNAP Judgments
 slug: snap-judgments
 subtitle: Visualizing food (in)security and building empathy via game design
 categories: work
-post-img: snap_map.png
+image: snap_map.png
 year: 2015
 services:
   - Development

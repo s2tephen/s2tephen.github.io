@@ -4,7 +4,7 @@ title: The Tech
 slug: the-tech
 subtitle: The first newspaper on the web, rebuilt for the modern web
 categories: work
-post-img: tech_thumb.png
+image: tech_thumb.png
 year: 2015
 services:
   - Design
