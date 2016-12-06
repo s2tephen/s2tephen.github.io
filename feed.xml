@@ -10,14 +10,18 @@
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
-      <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.excerpt | xml_escape }} <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">Continue reading {{ '&rarr;' | xml_escape }}</a></description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-      </item>
-    {% endfor %}
+    {% for post in site.posts limit:10 %}<item>
+      <title>{{ post.title | xml_escape }}</title>
+      <description>
+        &lt;h2&gt;{{ post.subtitle | xml_escape }}&lt;/h2&gt;
+        &lt;img src="{{ '/assets/img/' | prepend: site.baseurl | prepend: site.url | append: post.image }}" width="640" /&gt;
+        &lt;p&gt;{% capture caption %}{% assign a = post.excerpt | strip | xml_escape | split: 'figcaption' %}{% assign b = a[1] | split: '&gt;' %}{% for c in b offset: 1 %}{{ c }}&gt;{% endfor %}{% endcapture %}{% assign offset = caption | size | minus: 9 %}{{ caption | slice: 0, offset }}&lt;p&gt;
+        {% capture excerpt %}{% assign d = a[2] | split: '&gt;' %}{% for e in d offset: 2 %}{{ e }}&gt;{% endfor %}{% endcapture %}{{ excerpt | strip | strip_newlines }}
+        &lt;a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"&gt;&lt;strong&gt;Continue reading {{ '&rarr;' | xml_escape }}&lt;/strong&gt;&lt;/a&gt;
+      </description>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+      <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+    </item>{% endfor %}
   </channel>
 </rss>
