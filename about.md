@@ -17,4 +17,4 @@ The easiest way to get in touch with me is through Twitter at [@s2tephen](//twit
 
 ## Colophon
 
-This site is powered by [Jekyll](//jekyllrb.com), [Bourbon](//bourbon.io), and [Neat](//neat.bourbon.io). The words are set in [Karla](//www.google.com/fonts/specimen/Karla) and [Freight Text](//typekit.com/fonts/freight-text-pro); the logo uses [Braggadocio](//www.linotype.com/en/146816/braggadocio-family.html). Icons courtesy of [Font Awesome](//fortawesome.github.io). The source code is stored on and served via [GitHub Pages](//github.com/s2tephen/stephensuen.com).
+This site is powered by [Jekyll](//jekyllrb.com), [Bourbon](//bourbon.io), and [Neat](//neat.bourbon.io). The words are set in [Karla](//www.google.com/fonts/specimen/Karla) and [Tiempos Text](//klim.co.nz/retail-fonts/tiempos-text); the logo uses [Braggadocio](//www.linotype.com/en/146816/braggadocio-family.html). Icons courtesy of [Font Awesome](//fontawesome.io). The source code is stored on and served via [GitHub Pages](//github.com/s2tephen/stephensuen.com).

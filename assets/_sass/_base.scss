@@ -10,6 +10,8 @@ body {
   @include flex-direction(column);
   min-height: 100vh;
   @include prop-black(color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   @media print {
     @include display(block);
     min-height: auto;
@@ -37,8 +39,8 @@ article {
 
 p {
   margin: 0 0 scale(0);
-  font: scale(0) $serif-font;
-  line-height: 1.5;
+  font: scale(-1) $serif-font;
+  line-height: 1.75;
 }
 
 ul {

@@ -96,7 +96,7 @@
       display: block;
       width: scale(2);
       margin: scale(-3) 0;
-      border-bottom: 4px solid $primary-color;
+      border-bottom: 3px solid $primary-color;
       @include prop-transition(width);
     }
   }
@@ -113,16 +113,20 @@
   &-subtitle {
     font-family: $serif-font;
     font-weight: 400;
+    line-height: 1.5;
     @include media($medium) {
       margin-bottom: 0;
-      font-size: scale(-1);
+      font-size: scale(-2);
     }
     @include media($large) {
       margin-bottom: scale(-3);
       font-size: 1.8vw;
     }
     @include media($xlarge) {
-      font-size: 1.875rem;
+      font-size: scale(0);
+    }
+    @media print {
+      font-size: scale(-1);
     }
   }
 
@@ -133,7 +137,8 @@
       display: none;
     }
     @include media($large) {
-      font-size: scale(-3);
+      font-size: scale(-2);
+      letter-spacing: -0.01em;
     }
   }
 }

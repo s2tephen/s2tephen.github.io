@@ -94,7 +94,14 @@
   &-title {
     font-size: scale(2);
     letter-spacing: .1em;
-    @include media($not-small) {
+    @include media($medium) {
+      font-size: 4rem;
+    }
+    @include media($large) {
+      font-size: scale(3);
+      letter-spacing: .25em;
+    }
+    @include media($xlarge) {
       font-size: scale(3);
       letter-spacing: .25em;
     }
@@ -108,9 +115,9 @@
       display: block;
       width: scale(4);
       margin: scale(-3) 0;
-      border-bottom: scale(-4) solid $primary-color;
+      border-bottom: scale(-5) solid $primary-color;
       @include media($not-small) {
-        border-bottom-width: scale(-3);
+        border-bottom-width: scale(-4);
       }
       @media print {
         display: none;
@@ -125,7 +132,20 @@
   }
 
   &-subtitle {
-    font: 400 scale(1) $serif-font;
+    font: 400 1.875rem $serif-font;
+    line-height: 1.5;
+    @include media($small) {
+      font-size: 2rem;
+    }
+    @include media($medium) {
+      font-size: 2rem;
+    }
+    @include media($large) {
+      font-size: scale(1);
+    }
+    @include media($xlarge) {
+      font-size: scale(1);
+    }
     @media print {
       margin-top: 0;
       font-size: scale(0);
