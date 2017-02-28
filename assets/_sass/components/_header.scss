@@ -99,11 +99,9 @@
     }
     @include media($large) {
       font-size: scale(3);
-      letter-spacing: .25em;
     }
     @include media($xlarge) {
       font-size: scale(3);
-      letter-spacing: .25em;
     }
     @media print {
       margin-top: scale(-4);
@@ -115,9 +113,9 @@
       display: block;
       width: scale(4);
       margin: scale(-3) 0;
-      border-bottom: scale(-5) solid $primary-color;
+      border-bottom: scale(-4) solid $primary-color;
       @include media($not-small) {
-        border-bottom-width: scale(-4);
+        border-bottom-width: scale(-3);
       }
       @media print {
         display: none;

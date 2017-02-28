@@ -119,7 +119,7 @@
     height: scale(2);
     line-height: scale(2);
     @include prop-black(color);
-    border-bottom: 2px solid $primary-color;
+    border-bottom: 3px solid $primary-color;
     @include prop-transition(border-bottom-color);
     &:hover {
       @include prop-black(color, border-bottom-color);

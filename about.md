@@ -13,7 +13,7 @@ I was born in Los Angeles, but grew up in Hong Kong and went to school in Boston
 
 ## Contact
 
-The easiest way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@mit.edu](mailto:ssuen@mit.edu), if you're not into the whole brevity thing. I am availablle to meet over Skype/Google Hangout or IRL if we happen to be in the same city.
+The easiest way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@alum.mit.edu](mailto:ssuen@alum.mit.edu), if you're not into the whole brevity thing. I am availablle to meet over Skype/Google Hangout or IRL if we happen to be in the same city.
 
 ## Colophon
 
