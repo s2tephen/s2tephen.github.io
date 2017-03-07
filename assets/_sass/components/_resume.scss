@@ -30,11 +30,12 @@
 
   &-contactItem {
     float: left;
-    width: 50%;
+    width: 100%;
     font-family: $sans-font;
     font-size: scale(-3);
     line-height: 1.5;
     @include media($small) {
+      width: 50%;
       font-size: scale(-2);
     }
     @include media($not-small) {
@@ -143,7 +144,6 @@
     margin-top: scale(0);
     @include media($not-small) {
       display: inline-block;
-      margin-top: 0;
       margin-left: scale(-4);
     }
   }
