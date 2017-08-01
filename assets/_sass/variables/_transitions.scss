@@ -11,7 +11,7 @@ $transition-tf:  ease-in;
 @mixin prop-transition($props...) {
   $prop-list: ();
   @each $prop in $props {
-    $prop-list: append($prop-list, ($prop, $transition-out, $transition-tf), comma);
+    $prop-list: append($prop-list, ($prop $transition-out $transition-tf), comma);
   }
 
   @include transition($prop-list);
