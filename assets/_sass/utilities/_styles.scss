@@ -32,6 +32,10 @@
   word-wrap: normal;
 }
 
+.u-textNoWrap {
+  white-space: nowrap;
+}
+
 .u-textShadow {
   text-shadow: 0 1px 4px rgba($black, .3);
   @media print {

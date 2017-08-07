@@ -7,13 +7,11 @@ categories: about
 
 ## About me
 
-I am a freelance digital product designer and front-end developer with a focus in data visualization and interactive media. In 2015 I graduated from MIT's [Comparative Media Studies](//cms.mit.edu) program, creating my own major that blended computer science, interaction design, and the social sciences.
-
-I was born in Los Angeles, but grew up in Hong Kong and went to school in Boston. I now live in the San Francisco Bay Area, where I am currently seeking a full-time position (remote teams are 👌 too). You can see my technical qualifications and previous job experience on [my resume](/resume/).
+I am a digital product designer and front-end developer with a focus in data visualization and interactive media. Currently, I work at [Cloudstitch](//cloudstitch.com), a startup making web development more accessible with the untapped power of the office suite. I am from Hong Kong and majored in [Comparative Media Studies](//cmsw.mit.edu) at MIT. For an overview of my skills and (rather eclectic) story so far, see [my resume](/resume/).
 
 ## Contact
 
-The easiest way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also shoot me an email at [ssuen@alum.mit.edu](mailto:ssuen@alum.mit.edu), if you're not into the whole brevity thing. I am availablle to meet over Skype/Google Hangout or IRL if we happen to be in the same city.
+The easiest way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also [shoot me an email](mailto:stephen@cloudstitch.com), if you're not into the whole brevity thing. I am available to meet over Skype/Google Hangout or IRL if we happen to be in the same city.
 
 ## Colophon
 

@@ -9,25 +9,27 @@ categories: resume
   <ul class="Resume-contact u-mb-0" aria-label="Contact information">
     <li class="Resume-contactItem u-pt-visible">{% include logo.html source='resume' %}</li>
     <li class="Resume-contactItem u-pt-hidden" aria-hidden="true"><img class="Resume-avatar u-ns-visible u-floatRight u-circle" src="{{ '/assets/img/self_thumb.jpg' | prepend: site.baseurl }}"></a></li>
-    <li class="Resume-contactItem u-textTruncate"><i class="fa fa-fw fa-globe u-ns-hidden u-pt-hidden u-textGray" aria-hidden="true"></i> <a href="//stephensuen.com">stephensuen.com</a></li>
-    <li class="Resume-contactItem u-textTruncate"><i class="fa fa-fw fa-envelope u-ns-hidden u-pt-hidden u-textGray" aria-hidden="true"></i> <a href="mailto:ssuen@alum.mit.edu">ssuen@alum.mit.edu</a></li>
+    <li class="Resume-contactItem"><i class="fa fa-fw fa-globe u-ns-hidden u-pt-hidden u-textGray" aria-hidden="true"></i> <a href="//stephensuen.com">stephensuen.com</a></li>
+    <li class="Resume-contactItem"><i class="fa fa-fw fa-envelope u-ns-hidden u-pt-hidden u-textGray" aria-hidden="true"></i> <a href="mailto:stephen@cloudstitch.com">stephen@cloudstitch.com</a></li>
     <li class="Resume-contactItem"><i class="fa fa-fw fa-twitter u-ns-hidden u-pt-hidden u-textGray" aria-hidden="true"></i> <a href="//twitter.com/s2tephen">@s2tephen</a></li>
     <li class="Resume-contactItem"><i class="fa fa-fw fa-phone u-ns-hidden u-pt-hidden u-textGray" aria-hidden="true"></i> 805 252 4498</li>
   </ul>
   <div class="Resume-title">
     <h1 class="Resume-name u-mb-0 u-textYellow" aria-label="Stephen J Suen"><span class="u-block" aria-hidden="true">Stephen</span><span class="u-block" aria-hidden="true">J Suen</span></h1>
-    <h3 class="Resume-role u-inlineBlock u-mb-0 u-textUppercase u-textGray" aria-hidden="true">Front-end Developer / <span class="u-sm-wbr u-mt-0"><span class="u-md-hidden">Product </span>Designer</span></h3>
-    <h2 class="u-ariaLabel u-pt-hidden" aria-hidden="false">Front-end Developer and Product Designer</h2>
-    <a class="Resume-button Button u-pt-hidden" href="{{ '/assets/files/stephen-suen-resume-2017.pdf' | prepend: site.baseurl }}" aria-label="Download as PDF"><i class="Button-icon fa fa-fw fa-cloud-download"></i><span class="u-ns-hidden u-textUppercase"> Download</span><span class="u-inline u-xs-hidden u-sm-hidden"> PDF</span></a>
+    <div class="u-textNoWrap">
+      <h3 class="Resume-role u-inlineBlock u-mb-0 u-textUppercase u-textGray" aria-hidden="true">Front-end Developer / <span class="u-sm-wbr u-mt-0"><span class="u-md-hidden">Product </span>Designer</span></h3>
+      <h2 class="u-ariaLabel u-pt-hidden" aria-hidden="false">Front-end Developer and Product Designer</h2>
+      <a class="Resume-button Button u-pt-hidden" href="{{ '/assets/files/stephen-suen-resume-2017.pdf' | prepend: site.baseurl }}" aria-label="Download as PDF"><i class="Button-icon fa fa-fw fa-cloud-download"></i><span class="u-ns-hidden u-textUppercase"> Download</span><span class="u-inline u-xs-hidden u-sm-hidden"> PDF</span></a>
+    </div>
   </div>
 </div>
 
-<div class="u-clearfix">
+<div class="Resume-experience u-clearfix">
   <div class="Resume-aside">
     <h3 class="Resume-section u-textYellow">Experience</h3>
   </div>
   {% for hash in site.data.resume.experience %}
-    <div class="Resume-item u-mr-0">
+    <div class="Resume-item u-mr-0{% unless hash.print %} u-pt-hidden{% endunless %}">
       <h3 class="Resume-itemTitle"><strong>{{ hash.title }}</strong> <span class="Resume-itemLocation">{{ hash.location }}</span></h3>
       <h3 class="Resume-itemSubtitle u-textGray"><strong>{{ hash.role }}</strong><span class="u-xs-hidden u-sm-hidden" aria-hidden="true"> — </span><span class="u-sm-wbr u-mt-0">{{ hash.date }}</span></h3>
       <p class="Resume-itemDescription">{{ hash.description }}</p>
@@ -35,7 +37,7 @@ categories: resume
   {% endfor %}
 </div>
 
-<div class="u-clearfix">
+<div class="Resume-education u-clearfix">
   <div class="Resume-aside">
     <h3 class="Resume-section u-textYellow">Education</h3>
   </div>
@@ -47,7 +49,7 @@ categories: resume
   </div>
 </div>
 
-<div class="u-clearfix">
+<div class="Resume-skills u-clearfix">
   <div class="Resume-aside">
     <h3 class="Resume-section u-textYellow">Skills</h3>
   </div>

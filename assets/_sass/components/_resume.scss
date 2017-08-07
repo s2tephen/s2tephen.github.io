@@ -18,7 +18,7 @@
     margin-top: scale(0);
     @include media($not-small) {
       @include order(1);
-      @include span-columns(2);
+      @include span-columns(3);
       margin-top: 0;
     }
     @media print {
@@ -54,10 +54,11 @@
     }
     @media print {
       width: 100%;
+      font-size: .75rem;
       line-height: 1.15;
       text-align: right;
       &:first-child {
-        margin-bottom: scale(-3);
+        margin-bottom: scale(0);
       }
     }
     &::before {
@@ -95,7 +96,7 @@
   &-title {
     @include media($not-small) {
       @include order(2);
-      @include span-columns(10);
+      @include span-columns(9);
     }
     @include media($medium) {
       padding-left: flex-gutter(5);
@@ -128,7 +129,7 @@
     margin-top: scale(-1);
     letter-spacing: .1em;
     @include media($medium) {
-      margin-top: scale(-4);
+      margin-top: 0;
       font-size: scale(-2);
     }
     @include media($xlarge) {
@@ -144,13 +145,14 @@
     margin-top: scale(0);
     @include media($not-small) {
       display: inline-block;
+      margin-top: 0;
       margin-left: scale(-4);
     }
   }
 
   &-aside {
     @include media($not-small) {
-      @include span-columns(2);
+      @include span-columns(3);
     }
     @media print {
       @include span-columns(2 of 9);
@@ -179,7 +181,7 @@
 
   &-item {
     @include media($not-small) {
-      @include span-columns(10);
+      @include span-columns(9);
     }
     @include media($medium) {
       padding-left: flex-gutter(5);
@@ -206,9 +208,18 @@
     }
   }
 
+  &-education > .Resume-aside {
+    & > .Resume-section,
+    & + .Resume-item {
+      @media print {
+        margin-top: 0;
+      }
+    }
+  }
+
   &-item + .Resume-item {
     @include media($not-small) {
-      @include shift(2 of 12);
+      @include shift(3 of 12);
     }
     @media print {
       @include shift(2 of 9);
@@ -276,7 +287,7 @@
     @media print {
       margin-bottom: scale(-3);
       font-size: scale(-3);
-      line-height: 1.375;
+      line-height: 1.35;
       letter-spacing: -.01em;
     }
   }
