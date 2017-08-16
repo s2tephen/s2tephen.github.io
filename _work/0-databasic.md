@@ -10,6 +10,9 @@ services:
   - Development
   - Visualization
 links:
+  - url: //www.databasic.io/en/connectthedots
+    text: ConnectTheDots
+    icon: link
   - url: //github.com/c4fcm/DataBasic
     text: GitHub repository
     icon: github
@@ -31,4 +34,4 @@ On the back-end, ConnectTheDots (and all of DataBasic) is built on top of the Py
 
 {% include image.html src='databasic_marvel.png' alt='A network graph of all the characters in the Marvel Cinematic Universe' caption='A network graph of all the characters in the Marvel Cinematic Universe' class='right-overflow' %}
 
-This information is passed to the front-end, where it is rendered as a D3.js interactive graphic, allowing users to inspect and play with the network. Presented alongside this is a sortable table of all the nodes, which makes it even more clear how the data itself maps to the visualization. This is also followed by a "what next?" section, which highlights key facts and raises questions about the network in order to get users to think critically about the data. Finally, the graph can be exported in a variety of formats: PNG/SVG for sharing and printing, or GEXF for further analysis with <a href="//gephi.org">Gephi</a>. The new tool, along with an overhauled homepage UI, will roll out in DataBasic's next public release, slated for the end of the month.
+This information is passed to the front-end, where it is rendered as a D3.js interactive graphic, allowing users to inspect and play with the network. Presented alongside this is a sortable table of all the nodes, which makes it even more clear how the data itself maps to the visualization. This is also followed by a "what next?" section, which highlights key facts and raises questions about the network in order to get users to think critically about the data. Finally, the graph can be exported in a variety of formats: PNG/SVG for sharing and printing, or GEXF for further analysis with <a href="//gephi.org">Gephi</a>.
