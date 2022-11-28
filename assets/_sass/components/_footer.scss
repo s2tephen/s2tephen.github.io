@@ -67,6 +67,11 @@
     @include media($not-small) {
       font-size: scale(-2);
       color: rgba($black, .5);
+      fill: rgba($black, .5);
+    }
+    &--mastodon {
+      position: relative;
+      top: 2px;
     }
   }
 
