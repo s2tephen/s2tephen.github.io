@@ -7,11 +7,11 @@ categories: about
 
 ## About me
 
-I am a digital product designer and front-end developer with a focus in data visualization and interactive media. Currently, I work at [Cloudstitch](//cloudstitch.com), a startup making web development more accessible with the untapped power of the office suite. I am from Hong Kong and majored in [Comparative Media Studies](//cmsw.mit.edu) at MIT. For an overview of my skills and (rather eclectic) story so far, see [my resume](/resume/).
+I am a digital product designer and front-end developer with a focus in data visualization and interactive media. Currently, I work at [Airtable](//airtable.com). I am from Hong Kong and majored in [Comparative Media Studies](//cmsw.mit.edu) at MIT. For an overview of my skills and (rather eclectic) story so far, see [my resume](/resume/).
 
 ## Contact
 
-The easiest way to get in touch with me is through Twitter at [@s2tephen](//twitter.com/s2tephen). You can also [shoot me an email](mailto:stephen@cloudstitch.com), if you're not into the whole brevity thing. I am available to meet over Skype/Google Hangout or IRL if we happen to be in the same city.
+The easiest way to get in touch with me is through Mastodon at <a rel="me" href="https://mastodon.lol/@s2tephen">@s2tephen.mastodon.lol</a>. You can also [shoot me an email](mailto:s2tephen@gmail.com), if you're not into the whole brevity thing. I am available to meet over Skype/Google Hangout or IRL if we happen to be in the same city.
 
 ## Colophon
 
