@@ -10,7 +10,7 @@ import {Content as Contact} from '../data/contact.md';
 ---
 
 <Layout>
-	<div class="flex flex-col mx-auto py-32 max-w-2xl">
+	<div class="flex flex-col mx-auto px-8 py-16 sm:py-32 max-w-2xl">
 		<div class="mb-8">
 			<Image
 				src={avatar}
@@ -30,7 +30,7 @@ import {Content as Contact} from '../data/contact.md';
 		<ul class="mb-8">
 			{work.map(item => (
 				<li class="flex flex-col mb-12">
-					<div class="flex justify-between font-sans text-2xl mb-4">
+					<div class="flex flex-col sm:flex-row sm:justify-between font-sans text-2xl mb-4">
 						<a
 							class="group flex items-center"
 							href={item.data.url}
@@ -42,13 +42,17 @@ import {Content as Contact} from '../data/contact.md';
 								alt={item.data.company}
 								width={32}
 								height={32}
-								class="-ml-12 mr-4 transition group-hover:opacity-50"
+								class="md:-ml-12 mr-3 md:mr-4 transition group-hover:opacity-50"
 								priority={item.data.priority}
 							/>
-							<div class="font-medium transition group-hover:text-gray-500">{item.data.company}</div>
-							<div class="ml-3 text-gray-500">{item.data.title}</div>
+							<div class="font-medium transition group-hover:text-gray-500 flex-1">{item.data.company}</div>
+							<div class="ml-3 text-gray-500 hidden sm:flex">{item.data.title}</div>
+							<div class="ml-3 text-gray-500 sm:hidden">{item.data.timestamp}</div>
 						</a>
-						<div class="text-gray-500">{item.data.timestamp}</div>
+						<div class="flex justify-between">
+							<div class="text-gray-500 sm:hidden">{item.data.title}</div>
+							<div class="text-gray-500 hidden sm:flex">{item.data.timestamp}</div>
+						</div>
 					</div>
 					<p class="prose font-serif text-2xl leading-[1.6]">{item.data.description}</p>
 				</li>
