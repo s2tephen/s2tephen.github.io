@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+import avatar from './src/assets/avatar.webp';
+import {Content as About} from './src/data/about.md';
+const work = await getCollection('work');
+import {Content as Contact} from './src/data/contact.md';
+---
+
+<Layout>
+	<div class="flex flex-col mx-auto py-32 max-w-2xl">
+		<div class="mb-8">
+			<Image
+				src={avatar}
+				width={196}
+				height={196}
+				alt="Stephen striking a cheeky pose"
+				class="w-24 h-24 rounded-full mb-8"
+				priority
+			/>
+			<h1 class="font-sans font-medium text-4xl">Stephen Suen</h1>
+		</div>
+		<div class="prose font-serif text-2xl leading-[1.6] mb-20">
+			<About />
+		</div>
+
+		<h2 class="font-sans font-medium text-xl text-gray-500 mb-8">Work</h2>
+		<ul class="mb-8">
+			{work.map(item => (
+				<li class="flex flex-col mb-12">
+					<div class="flex justify-between font-sans text-2xl mb-4">
+						<a
+							class="group flex items-center"
+							href={item.data.url}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Image
+								src={item.data.logoPath}
+								alt={item.data.company}
+								width={32}
+								height={32}
+								class="-ml-12 mr-4 transition group-hover:opacity-50"
+								priority={item.data.priority}
+							/>
+							<div class="font-medium transition group-hover:text-gray-500">{item.data.company}</div>
+							<div class="ml-3 text-gray-500">{item.data.title}</div>
+						</a>
+						<div class="text-gray-500">{item.data.timestamp}</div>
+					</div>
+					<p class="prose font-serif text-2xl leading-[1.6]">{item.data.description}</p>
+				</li>
+			))}
+		</ul>
+
+		<h2 class="font-sans font-medium text-xl text-gray-500 mb-8">Contact</h2>
+		<div class="prose font-serif text-2xl leading-[1.6] mb-20">
+			<Contact />
+		</div>
+
+		<div class="font-sans text-lg text-gray-500">Last updated Feb 2025</div>
+	</div>
+</Layout>
