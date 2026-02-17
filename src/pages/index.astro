@@ -10,7 +10,7 @@ import {Content as Contact} from '../data/contact.md';
 ---
 
 <Layout>
-	<div class="flex flex-col mx-auto px-8 py-16 sm:py-32 max-w-2xl">
+	<div class="flex flex-col mx-auto px-6 py-16 sm:py-32 max-w-2xl">
 		<div class="mb-8">
 			<Image
 				src={avatar}
@@ -20,17 +20,17 @@ import {Content as Contact} from '../data/contact.md';
 				class="w-24 h-24 rounded-full mb-8"
 				priority
 			/>
-			<h1 class="font-sans font-medium text-4xl">Stephen Suen</h1>
+			<h1 class="font-sans font-medium text-3xl sm:text-4xl">Stephen Suen</h1>
 		</div>
-		<div class="prose font-serif text-2xl leading-[1.6] mb-20">
+		<div class="prose font-serif text-xl sm:text-2xl leading-[1.6] mb-16 sm:mb-20">
 			<About />
 		</div>
 
-		<h2 class="font-sans font-medium text-xl text-gray-500 mb-8">Work</h2>
-		<ul class="mb-8">
+		<h2 class="font-sans font-medium text-lg sm:text-xl text-gray-500 mb-8">Work</h2>
+		<ul class="mb-4 sm:mb-8">
 			{work.map(item => (
 				<li class="flex flex-col mb-12">
-					<div class="flex flex-col sm:flex-row sm:justify-between font-sans text-2xl mb-4">
+					<div class="flex flex-col sm:flex-row sm:justify-between font-sans text-xl sm:text-2xl mb-4">
 						<a
 							class="group flex items-center"
 							href={item.data.url}
@@ -54,16 +54,16 @@ import {Content as Contact} from '../data/contact.md';
 							<div class="text-gray-500 hidden sm:flex">{item.data.timestamp}</div>
 						</div>
 					</div>
-					<p class="prose font-serif text-2xl leading-[1.6]">{item.data.description}</p>
+					<p class="prose font-serif text-xl sm:text-2xl leading-[1.6]">{item.data.description}</p>
 				</li>
 			))}
 		</ul>
 
-		<h2 class="font-sans font-medium text-xl text-gray-500 mb-8">Contact</h2>
-		<div class="prose font-serif text-2xl leading-[1.6] mb-20">
+		<h2 class="font-sans font-medium text-lg sm:text-xl text-gray-500 mb-8">Contact</h2>
+		<div class="prose font-serif text-xl sm:text-2xl leading-[1.6] mb-16">
 			<Contact />
 		</div>
 
-		<div class="font-sans text-lg text-gray-500">Last updated Feb 2025</div>
+		<div class="font-sans text-md sm:text-lg text-gray-500">Last updated Feb 2025</div>
 	</div>
 </Layout>
