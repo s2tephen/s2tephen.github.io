@@ -5,7 +5,7 @@
     "title": "Product Designer",
     "description": "Product design, software engineering, and design systems for the no-code / AI enterprise app building platform.",
     "url": "https://airtable.com",
-    "logoPath": "/src/assets/logos/airtable.svg",
+    "logoPath": "../assets/logos/airtable.svg",
     "timestamp": "2017 - Current",
     "priority": true
   },
@@ -15,7 +15,7 @@
     "title": "Software Engineer",
     "description": "UX design and front-end engineering for a spreadsheet-powered developer platform. Acquired by Instabase.",
     "url": "https://www.ycombinator.com/companies/cloudstitch",
-    "logoPath": "/src/assets/logos/cloudstitch.svg",
+    "logoPath": "../assets/logos/cloudstitch.svg",
     "timestamp": "2017",
     "priority": false
   },
@@ -25,7 +25,7 @@
     "title": "Web Developer",
     "description": "Freelance web development for various clients including Emerson College and the MIT Media Lab.",
     "url": "https://weareweirdo.com",
-    "logoPath": "/src/assets/logos/weirdo.svg",
+    "logoPath": "../assets/logos/weirdo.svg",
     "timestamp": "2016 - 2017",
     "priority": false
   },
@@ -35,7 +35,7 @@
     "title": "Comparative Media Studies",
     "description": "Undergraduate studies in data storytelling and product design, including research with the Center for Civic Media.",
     "url": "https://cmsw.mit.edu",
-    "logoPath": "/src/assets/logos/mit.svg",
+    "logoPath": "../assets/logos/mit.svg",
     "timestamp": "2011 - 2015",
     "priority": false
   }
