@@ -4,13 +4,13 @@ import { z } from 'astro/zod';
 
 const work = defineCollection({
   loader: file("src/data/work.json"),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     id: z.string(),
     company: z.string(),
     title: z.string(),
     description: z.string(),
     url: z.string().url(),
-    logoPath: z.string(),
+    logoPath: image(),
     timestamp: z.string(),
     priority: z.boolean(),
   }),
