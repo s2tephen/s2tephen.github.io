@@ -3,10 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
-import avatar from './src/assets/avatar.webp';
-import {Content as About} from './src/data/about.md';
+import avatar from '../assets/avatar.webp';
+import {Content as About} from '../data/about.md';
 const work = await getCollection('work');
-import {Content as Contact} from './src/data/contact.md';
+import {Content as Contact} from '../data/contact.md';
 ---
 
 <Layout>
