@@ -4,33 +4,55 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 import avatar from '../assets/avatar.webp';
+import favicon from '../../public/favicon.svg';
 import {Content as About} from '../data/about.md';
 const work = await getCollection('work');
 import {Content as Contact} from '../data/contact.md';
 ---
 
 <Layout>
-	<div class="flex flex-col mx-auto px-6 lg:px-0 py-16 sm:py-32 max-w-2xl">
-		<div class="mb-8">
+	<div class="flex flex-col mx-auto px-6 lg:px-0 py-16 sm:py-32 max-w-2xl print:max-w-none print:py-4">
+		<div class="flex flex-col print:flex-row print:items-center mb-8">
 			<Image
 				src={avatar}
 				width={196}
 				height={196}
 				alt="Stephen striking a cheeky pose"
-				class="w-24 h-24 rounded-full mb-8"
+				class="w-24 h-24 rounded-full mb-8 print:hidden"
 				priority
 			/>
-			<h1 class="font-sans font-medium text-3xl sm:text-4xl">Stephen Suen</h1>
+			<Image
+				src={favicon}
+				width={196}
+				height={196}
+				alt="Logo"
+				class="w-18 h-18 rounded-full -m-3 mr-4 hidden print:flex"
+				priority
+			/>
+			<div class="flex-1">
+				<h1 class="font-sans font-medium text-3xl sm:text-4xl">Stephen Suen</h1>
+				<h2 class="font-sans text-2xl text-gray-500 hidden print:flex">Product Designer</h2>
+			</div>
+			<div class="flex-col items-end hidden print:flex text-gray-500">
+				<a href="mailto:hello@stephensuen.com">hello@stephensuen.com</a>
+				<a href="https://stephensuen.com">stephensuen.com</a>
+				<a href="https://linkedin.com/in/s2tephen">linkedin.com/in/s2tephen</a>
+			</div>
 		</div>
-		<div class="prose font-serif text-xl sm:text-2xl leading-[1.6] mb-16 sm:mb-20">
+		<div class="prose font-serif text-xl sm:text-2xl leading-[1.6] mb-16 sm:mb-20 print:hidden">
 			<About />
 		</div>
 
-		<h2 class="font-sans font-medium text-lg sm:text-xl text-gray-500 mb-8">Work</h2>
-		<ul class="mb-4 sm:mb-8">
+		<div class="prose font-serif text-xl hidden print:flex mb-8 leading-[1.6]">
+			Design-engineer hybrid with 10+ years of experience creating tools
+			that empower people to understand their data and build their own software.
+		</div>
+
+		<h2 class="font-sans font-medium text-lg sm:text-xl text-gray-500 mb-8 print:mb-6">Work</h2>
+		<ul class="mb-4 sm:mb-8 print:mb-0">
 			{work.map(item => (
-				<li class="flex flex-col mb-12">
-					<div class="flex flex-col sm:flex-row sm:justify-between font-sans text-xl sm:text-2xl mb-4">
+				<li class="flex flex-col mb-12 print:mb-8">
+					<div class="flex flex-col sm:flex-row sm:justify-between font-sans text-xl sm:text-2xl print:text-xl mb-4">
 						<a
 							class="group flex items-center"
 							href={item.data.url}
@@ -54,16 +76,22 @@ import {Content as Contact} from '../data/contact.md';
 							<div class="text-gray-500 hidden sm:flex">{item.data.timestamp}</div>
 						</div>
 					</div>
-					<p class="prose font-serif text-xl sm:text-2xl leading-[1.6]">{item.data.description}</p>
+					<p class="prose font-serif text-xl sm:text-2xl print:text-xl leading-[1.6]">{item.data.description}</p>
 				</li>
 			))}
 		</ul>
 
-		<h2 class="font-sans font-medium text-lg sm:text-xl text-gray-500 mb-8">Contact</h2>
-		<div class="prose font-serif text-xl sm:text-2xl leading-[1.6] mb-16">
+		<h2 class="font-sans font-medium text-lg text-gray-500  mb-4 hidden print:flex">Skills</h2>
+		<p class="prose font-serif text-xl leading-[1.6] hidden print:flex">
+			UX design & research, design systems, prototyping, Figma<br />
+			HTML, CSS, JavaScript, TypeScript, React, Git
+		</p>
+
+		<h2 class="font-sans font-medium text-lg sm:text-xl text-gray-500 mb-8 print:hidden">Contact</h2>
+		<div class="prose font-serif text-xl sm:text-2xl leading-[1.6] mb-16 print:hidden">
 			<Contact />
 		</div>
 
-		<div class="font-sans text-md sm:text-lg text-gray-500">Last updated Feb 2026</div>
+		<div class="font-sans text-md sm:text-lg text-gray-500 print:hidden">Last updated Feb 2026</div>
 	</div>
 </Layout>
