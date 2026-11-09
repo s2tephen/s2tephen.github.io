@@ -9,6 +9,7 @@ const work = defineCollection({
     company: z.string(),
     title: z.string(),
     description: z.string(),
+    descriptionExtra: z.string().optional(),
     url: z.string().url(),
     logoPath: image(),
     timestamp: z.string(),
