@@ -1,5 +1,4 @@
 ---
-import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
@@ -8,6 +7,10 @@ import headshotThumb from '../assets/headshot_thumb.jpg';
 import {Content as About} from '../data/about.md';
 const work = await getCollection('work');
 import {Content as Contact} from '../data/contact.md';
+
+import Layout from '../layouts/Layout.astro';
+import Heading from '../components/Heading.astro';
+import WorkItem from '../components/WorkItem.astro';
 
 const lastUpdated = new Date().toLocaleDateString('en-US', {
   month: 'short',
@@ -45,7 +48,7 @@ const lastUpdated = new Date().toLocaleDateString('en-US', {
 						<a href="https://linkedin.com/in/s2tephen">linkedin.com/in/s2tephen</a>
 					</div>
 				</div>
-				<div class="prose font-serif text-xl leading-[1.6] print:hidden">
+				<div class="prose dark:prose-invert font-serif text-xl leading-[1.6] print:hidden">
 					<About />
 				</div>
 			</div>
@@ -56,48 +59,19 @@ const lastUpdated = new Date().toLocaleDateString('en-US', {
 			that empower people to understand their own data and build their own software.
 		</div>
 
-		<h2 class="font-sans font-medium text-lg text-gray-500 mb-8 print:mb-6">Work</h2>
+		<Heading class="mb-8 print:mb-6">Work</Heading>
 		<ul class="mb-4 sm:mb-8 print:mb-0">
-			{work.map(item => (
-				<li class="flex flex-col mb-12 print:mb-8">
-					<div class="flex flex-col sm:flex-row sm:justify-between font-sans text-xl mb-4">
-						<a
-							class="group flex items-center"
-							href={item.data.url}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<Image
-								src={item.data.logoPath}
-								alt={item.data.company}
-								width={28}
-								height={28}
-								class="md:-ml-12 mr-3 md:mr-4 transition group-hover:opacity-50"
-								priority={item.data.priority}
-							/>
-							<div class="font-medium transition group-hover:text-gray-500 flex-1">{item.data.company}</div>
-							<div class="ml-3 text-gray-500 hidden sm:flex">{item.data.title}</div>
-							<div class="ml-3 text-gray-500 sm:hidden">{item.data.timestamp}</div>
-						</a>
-						<div class="flex justify-between">
-							<div class="text-gray-500 sm:hidden">{item.data.title}</div>
-							<div class="text-gray-500 hidden sm:flex">{item.data.timestamp}</div>
-						</div>
-					</div>
-					<p class="prose font-serif text-xl print:text-lg leading-[1.6]">{item.data.description}</p>
-					<p class="prose font-serif text-lg hidden print:flex leading-[1.6]">{item.data.descriptionExtra}</p>
-				</li>
-			))}
+			{work.map(item => <WorkItem {...item.data} />)}
 		</ul>
 
-		<h2 class="font-sans font-medium text-lg text-gray-500  mb-4 hidden print:flex">Skills</h2>
-		<p class="prose font-serif text-lg leading-[1.6] hidden print:flex">
+		<Heading class="mb-4 hidden print:flex">Skills</h2>
+		<p class="prose dark:prose-invert font-serif text-lg leading-[1.6] hidden print:flex">
 			UX design & research, design systems, prototyping, accessibility, data viz<br />
 			HTML, CSS, JavaScript, TypeScript, React, Git, Figma, agentic tools
 		</p>
 
-		<h2 class="font-sans font-medium text-lg text-gray-500 mb-8 print:hidden">Contact</h2>
-		<div class="prose font-serif text-xl leading-[1.6] mb-16 print:hidden">
+		<Heading class="mb-8 print:hidden">Contact</Heading>
+		<div class="prose dark:prose-invert font-serif text-xl leading-[1.6] mb-16 print:hidden">
 			<Contact />
 		</div>
 

@@ -1,0 +1,33 @@
+---
+import SunIcon from '../assets/sun_icon.svg';
+import MoonIcon from '../assets/moon_icon.svg';
+---
+
+<button id="theme" class="fixed top-8 right-8 p-3 rounded-full dark:hover:bg-gray-800 hover:bg-gray-200 transition-colors cursor-pointer hidden md:flex print:hidden">
+  <SunIcon width={24} height={24} class="fill-current dark:hidden" />
+  <MoonIcon width={24} height={24} class="fill-current hidden dark:flex" />
+</button>
+
+<script>
+  const button = document.querySelector('button#theme');
+  setAriaLabel();
+
+  function setAriaLabel() {
+    button!.ariaLabel = `Switch to ${document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'}`;
+  }
+
+  button!.addEventListener('click', () => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const newTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    const systemTheme = mediaQuery.matches ? 'dark' : 'light';
+
+    if (newTheme === systemTheme) {
+      localStorage.removeItem('theme');
+    } else {
+      localStorage.setItem('theme', newTheme);
+    }
+
+    document.documentElement.dataset.theme = newTheme;
+    setAriaLabel();
+  });
+</script>

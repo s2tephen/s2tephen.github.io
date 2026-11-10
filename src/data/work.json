@@ -7,6 +7,7 @@
     "descriptionExtra": "Led design for Hyperagent, custom interfaces, and enterprise-managed apps and drove the design team's adoption of agentic tools and workflows.",
     "url": "https://airtable.com",
     "logoPath": "../assets/logos/airtable.svg",
+    "shouldInvertInDarkTheme": false,
     "timestamp": "2017–2026",
     "priority": true
   },
@@ -17,6 +18,7 @@
     "description": "UX design and front-end engineering for an early-stage developer platform powered by spreadsheets and office documents. Acquired by Instabase.",
     "url": "https://www.ycombinator.com/companies/cloudstitch",
     "logoPath": "../assets/logos/cloudstitch.svg",
+    "shouldInvertInDarkTheme": false,
     "timestamp": "2017",
     "priority": false
   },
@@ -27,6 +29,7 @@
     "description": "Freelance web developer building sites in WordPress, Rails, and Flask for clients including Emerson College and the MIT Media Lab.",
     "url": "https://weareweirdo.com",
     "logoPath": "../assets/logos/weirdo.svg",
+    "shouldInvertInDarkTheme": true,
     "timestamp": "2016–2017",
     "priority": false
   },
@@ -37,6 +40,7 @@
     "description": "Undergraduate studies in data storytelling, computer science, and product design, including research with the Center for Civic Media.",
     "url": "https://cmsw.mit.edu",
     "logoPath": "../assets/logos/mit.svg",
+    "shouldInvertInDarkTheme": false,
     "timestamp": "2011–2015",
     "priority": false
   }

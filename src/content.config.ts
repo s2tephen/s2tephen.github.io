@@ -12,6 +12,7 @@ const work = defineCollection({
     descriptionExtra: z.string().optional(),
     url: z.string().url(),
     logoPath: image(),
+    shouldInvertInDarkTheme: z.boolean(),
     timestamp: z.string(),
     priority: z.boolean(),
   }),

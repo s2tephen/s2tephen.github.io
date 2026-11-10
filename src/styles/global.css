@@ -5,3 +5,15 @@
   --font-sans: var(--font-general), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif: var(--font-tiempos), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  :root {
+    @apply scheme-light dark:scheme-dark;
+  }
+
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors;
+  }
+}

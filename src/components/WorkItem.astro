@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  id: string;
+  company: string;
+  title: string;
+  description: string;
+  descriptionExtra?: string;
+  url: string;
+  logoPath: ImageMetadata;
+  shouldInvertInDarkTheme: boolean;
+  timestamp: string;
+  priority: boolean;
+}
+
+const { company, title, description, descriptionExtra, url, logoPath, shouldInvertInDarkTheme, timestamp, priority } = Astro.props;
+---
+
+<li class="flex flex-col mb-12 print:mb-8">
+  <div class="flex flex-col sm:flex-row sm:justify-between font-sans text-xl mb-4">
+    <a
+      class="group flex items-center"
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Image
+        src={logoPath}
+        alt={company}
+        width={28}
+        height={28}
+        class={`md:-ml-12 mr-3 md:mr-4 transition-opacity group-hover:opacity-50 ${shouldInvertInDarkTheme ? 'dark:invert' : ''}`}
+        priority={priority}
+      />
+      <div class="font-medium transition-opacity group-hover:text-gray-500 flex-1">{company}</div>
+      <div class="ml-3 text-gray-500 hidden sm:flex">{title}</div>
+      <div class="ml-3 text-gray-500 sm:hidden">{timestamp}</div>
+    </a>
+    <div class="flex justify-between">
+      <div class="text-gray-500 sm:hidden">{title}</div>
+      <div class="text-gray-500 hidden sm:flex">{timestamp}</div>
+    </div>
+  </div>
+  <p class="prose dark:prose-invert font-serif text-xl print:text-lg leading-[1.6]">{description}</p>
+  {descriptionExtra && <p class="prose dark:prose-invert font-serif text-lg hidden print:flex leading-[1.6]">{descriptionExtra}</p>}
+</li>
